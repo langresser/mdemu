@@ -45,6 +45,7 @@
 #ifndef _unz_H
 #define _unz_H
 
+#define NOUNCRYPT
 #ifdef __cplusplus
 extern "C" {
 #endif

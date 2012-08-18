@@ -9,15 +9,18 @@
 #endif
 
 // Make symbol remain visible after linking
-#define LVISIBLE __attribute__((visibility("default"), externally_visible))
+#define LVISIBL//E __attribute__((visibility("default"), externally_visible))
+#define LVISIBLE
 
 // Make symbol remain visible outside compilation unit
-#if GCC_VERSION <= 40101
-	// hack to prevent PS3 GCC from crashing
-	#define EVISIBLE
-#else
-	#define EVISIBLE __attribute__((externally_visible))
-#endif
+//#if GCC_VERSION <= 40101
+//	// hack to prevent PS3 GCC from crashing
+//	#define EVISIBLE
+//#else
+//	#define EVISIBLE __attribute__((externally_visible))
+//#endif
+
+#define EVISIBLE
 
 // Shortcut for GCC attributes
 #define ATTRS(...) __attribute__((__VA_ARGS__))

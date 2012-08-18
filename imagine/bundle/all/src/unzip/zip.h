@@ -46,6 +46,8 @@
 #ifndef _zip_H
 #define _zip_H
 
+#define NOCRYPT
+
 #ifdef __cplusplus
 extern "C" {
 #endif

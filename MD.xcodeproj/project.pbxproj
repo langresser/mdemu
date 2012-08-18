@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2212BF15DFB50700219D4B /* libbtstack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2212B815DFB22200219D4B /* libbtstack.a */; };
+		3B2212C115DFB50D00219D4B /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B22127C15DFB04700219D4B /* liblibpng.a */; };
+		3B22137D15DFBC3700219D4B /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B22122115DFAF7600219D4B /* libfreetype.a */; };
+		3B221A3B15DFD1FA00219D4B /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3515DFD1FA00219D4B /* ioapi.c */; };
+		3B221A3C15DFD1FA00219D4B /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3715DFD1FA00219D4B /* unzip.c */; };
+		3B221A3D15DFD1FA00219D4B /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3915DFD1FA00219D4B /* zip.c */; };
 		69CFDD5F1506039500F0C0AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDD5E1506039500F0C0AE /* Foundation.framework */; };
 		69CFDD611506039500F0C0AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDD601506039500F0C0AE /* CoreGraphics.framework */; };
 		69CFDEC2150604AD00F0C0AE /* coreaudio.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDD81150604AC00F0C0AE /* coreaudio.cc */; settings = {COMPILER_FLAGS = "-DIMAGINE_SRC"; }; };
@@ -38,11 +44,6 @@
 		69CFDF3F15060B3A00F0C0AE /* ResourceFace.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDE6A150604AC00F0C0AE /* ResourceFace.cc */; settings = {COMPILER_FLAGS = "-DIMAGINE_SRC"; }; };
 		69CFDF4015060B3A00F0C0AE /* ResourceFontFreetype.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDE72150604AC00F0C0AE /* ResourceFontFreetype.cc */; settings = {COMPILER_FLAGS = "-DIMAGINE_SRC"; }; };
 		69CFDF4115060B3A00F0C0AE /* ResourceImagePng.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDE7E150604AC00F0C0AE /* ResourceImagePng.cc */; settings = {COMPILER_FLAGS = "-DIMAGINE_SRC"; }; };
-		69CFDF4915060C5C00F0C0AE /* ioapi.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDF4415060C5C00F0C0AE /* ioapi.o */; };
-		69CFDF4A15060C5C00F0C0AE /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDF4515060C5C00F0C0AE /* libfreetype.a */; };
-		69CFDF4B15060C5C00F0C0AE /* libpng15.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDF4615060C5C00F0C0AE /* libpng15.a */; };
-		69CFDF4C15060C5C00F0C0AE /* unzip.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDF4715060C5C00F0C0AE /* unzip.o */; };
-		69CFDF4D15060C5C00F0C0AE /* zip.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDF4815060C5C00F0C0AE /* zip.o */; };
 		69CFDFC415060F8300F0C0AE /* fileio.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDF4F15060F8200F0C0AE /* fileio.cc */; };
 		69CFDFC515060F8300F0C0AE /* areplay.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDF5415060F8200F0C0AE /* areplay.cc */; };
 		69CFDFC615060F8300F0C0AE /* eeprom.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDF5615060F8200F0C0AE /* eeprom.cc */; };
@@ -93,7 +94,6 @@
 		69E5585115061D6D001407C0 /* Recent.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69E5584815061D6D001407C0 /* Recent.cc */; };
 		69E5585215061D6D001407C0 /* Screenshot.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69E5584915061D6D001407C0 /* Screenshot.cc */; };
 		69E5585315061D6D001407C0 /* VController.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69E5584A15061D6D001407C0 /* VController.cc */; };
-		69E5585515061EA6001407C0 /* libBTstack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E5585415061EA6001407C0 /* libBTstack.a */; };
 		69E5585D15061F32001407C0 /* btstack.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69E5585B15061F32001407C0 /* btstack.cc */; settings = {COMPILER_FLAGS = "-DIMAGINE_SRC"; }; };
 		69E5585E15061F32001407C0 /* build.mk in Resources */ = {isa = PBXBuildFile; fileRef = 69E5585C15061F32001407C0 /* build.mk */; };
 		69E5586115061F5B001407C0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E5586015061F5B001407C0 /* libz.dylib */; };
@@ -104,7 +104,61 @@
 		69E558AB1506468D001407C0 /* overlays128.png in Resources */ = {isa = PBXBuildFile; fileRef = 69E558A91506468D001407C0 /* overlays128.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3B22122015DFAF7600219D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B22121915DFAF7600219D4B /* freetype.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3B220FD415DFACFF00219D4B;
+			remoteInfo = freetype;
+		};
+		3B22127B15DFB04700219D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B22127415DFB04700219D4B /* libpng.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3B22122D15DFAFE200219D4B;
+			remoteInfo = libpng;
+		};
+		3B2212B715DFB22200219D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B2212B015DFB22200219D4B /* btstack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3B22129115DFB1FD00219D4B;
+			remoteInfo = btstack;
+		};
+		3B2212BB15DFB2F700219D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B22127415DFB04700219D4B /* libpng.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B22122C15DFAFE200219D4B;
+			remoteInfo = libpng;
+		};
+		3B22131E15DFB66E00219D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B2212B015DFB22200219D4B /* btstack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B22129015DFB1FD00219D4B;
+			remoteInfo = btstack;
+		};
+		3B22137B15DFBC0E00219D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B22121915DFAF7600219D4B /* freetype.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B220FD315DFACFF00219D4B;
+			remoteInfo = freetype;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3B22121915DFAF7600219D4B /* freetype.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = freetype.xcodeproj; path = ../3rdframework/freetype/builds/ios/freetype.xcodeproj; sourceTree = "<group>"; };
+		3B22127415DFB04700219D4B /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../3rdframework/png/projects/ios/libpng.xcodeproj; sourceTree = "<group>"; };
+		3B2212B015DFB22200219D4B /* btstack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = btstack.xcodeproj; path = ../3rdframework/btstack/btstack.xcodeproj; sourceTree = "<group>"; };
+		3B221A3515DFD1FA00219D4B /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = imagine/bundle/all/src/unzip/ioapi.c; sourceTree = SOURCE_ROOT; };
+		3B221A3615DFD1FA00219D4B /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = imagine/bundle/all/src/unzip/ioapi.h; sourceTree = SOURCE_ROOT; };
+		3B221A3715DFD1FA00219D4B /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = imagine/bundle/all/src/unzip/unzip.c; sourceTree = SOURCE_ROOT; };
+		3B221A3815DFD1FA00219D4B /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = imagine/bundle/all/src/unzip/unzip.h; sourceTree = SOURCE_ROOT; };
+		3B221A3915DFD1FA00219D4B /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = imagine/bundle/all/src/unzip/zip.c; sourceTree = SOURCE_ROOT; };
+		3B221A3A15DFD1FA00219D4B /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = imagine/bundle/all/src/unzip/zip.h; sourceTree = SOURCE_ROOT; };
 		69CFDD581506039500F0C0AE /* MD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69CFDD5C1506039500F0C0AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		69CFDD5E1506039500F0C0AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -306,11 +360,6 @@
 		69CFDF33150608C800F0C0AE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		69CFDF351506096600F0C0AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		69CFDF371506097E00F0C0AE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		69CFDF4415060C5C00F0C0AE /* ioapi.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = ioapi.o; path = "imagine/bundle/darwin-iOS/armv7/lib/ioapi.o"; sourceTree = "<group>"; };
-		69CFDF4515060C5C00F0C0AE /* libfreetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreetype.a; path = "imagine/bundle/darwin-iOS/armv7/lib/libfreetype.a"; sourceTree = "<group>"; };
-		69CFDF4615060C5C00F0C0AE /* libpng15.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng15.a; path = "imagine/bundle/darwin-iOS/armv7/lib/libpng15.a"; sourceTree = "<group>"; };
-		69CFDF4715060C5C00F0C0AE /* unzip.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = unzip.o; path = "imagine/bundle/darwin-iOS/armv7/lib/unzip.o"; sourceTree = "<group>"; };
-		69CFDF4815060C5C00F0C0AE /* zip.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = zip.o; path = "imagine/bundle/darwin-iOS/armv7/lib/zip.o"; sourceTree = "<group>"; };
 		69CFDF4F15060F8200F0C0AE /* fileio.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileio.cc; sourceTree = "<group>"; };
 		69CFDF5015060F8200F0C0AE /* fileio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileio.h; sourceTree = "<group>"; };
 		69CFDF5115060F8200F0C0AE /* genplus-config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "genplus-config.h"; path = "MD.emu/src/genplus-config.h"; sourceTree = SOURCE_ROOT; };
@@ -427,7 +476,6 @@
 		69E5584815061D6D001407C0 /* Recent.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Recent.cc; path = EmuFramework/src/Recent.cc; sourceTree = SOURCE_ROOT; };
 		69E5584915061D6D001407C0 /* Screenshot.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Screenshot.cc; path = EmuFramework/src/Screenshot.cc; sourceTree = SOURCE_ROOT; };
 		69E5584A15061D6D001407C0 /* VController.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VController.cc; path = EmuFramework/src/VController.cc; sourceTree = SOURCE_ROOT; };
-		69E5585415061EA6001407C0 /* libBTstack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBTstack.a; path = "imagine/bundle/darwin-iOS/armv7/lib/libBTstack.a"; sourceTree = "<group>"; };
 		69E5585B15061F32001407C0 /* btstack.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = btstack.cc; sourceTree = "<group>"; };
 		69E5585C15061F32001407C0 /* build.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.mk; sourceTree = "<group>"; };
 		69E5586015061F5B001407C0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -443,13 +491,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B22137D15DFBC3700219D4B /* libfreetype.a in Frameworks */,
+				3B2212C115DFB50D00219D4B /* liblibpng.a in Frameworks */,
+				3B2212BF15DFB50700219D4B /* libbtstack.a in Frameworks */,
 				69E5586115061F5B001407C0 /* libz.dylib in Frameworks */,
-				69E5585515061EA6001407C0 /* libBTstack.a in Frameworks */,
-				69CFDF4915060C5C00F0C0AE /* ioapi.o in Frameworks */,
-				69CFDF4A15060C5C00F0C0AE /* libfreetype.a in Frameworks */,
-				69CFDF4B15060C5C00F0C0AE /* libpng15.a in Frameworks */,
-				69CFDF4C15060C5C00F0C0AE /* unzip.o in Frameworks */,
-				69CFDF4D15060C5C00F0C0AE /* zip.o in Frameworks */,
 				69CFDF391506099000F0C0AE /* UIKit.framework in Frameworks */,
 				69CFDF381506097E00F0C0AE /* MessageUI.framework in Frameworks */,
 				69CFDF361506096700F0C0AE /* QuartzCore.framework in Frameworks */,
@@ -463,9 +508,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B22121A15DFAF7600219D4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B22122115DFAF7600219D4B /* libfreetype.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B22127515DFB04700219D4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B22127C15DFB04700219D4B /* liblibpng.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B2212B115DFB22200219D4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B2212B815DFB22200219D4B /* libbtstack.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		69CFDD4D1506039500F0C0AE = {
 			isa = PBXGroup;
 			children = (
+				3B2212B015DFB22200219D4B /* btstack.xcodeproj */,
+				3B22127415DFB04700219D4B /* libpng.xcodeproj */,
+				3B22121915DFAF7600219D4B /* freetype.xcodeproj */,
 				69E5584115061D51001407C0 /* EmuFramework */,
 				69CFDD5B1506039500F0C0AE /* Frameworks */,
 				69CFDD73150603F600F0C0AE /* Imagine */,
@@ -486,13 +558,7 @@
 		69CFDD5B1506039500F0C0AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				69CFDF4415060C5C00F0C0AE /* ioapi.o */,
-				69E5585415061EA6001407C0 /* libBTstack.a */,
-				69CFDF4515060C5C00F0C0AE /* libfreetype.a */,
-				69CFDF4615060C5C00F0C0AE /* libpng15.a */,
 				69E5586015061F5B001407C0 /* libz.dylib */,
-				69CFDF4715060C5C00F0C0AE /* unzip.o */,
-				69CFDF4815060C5C00F0C0AE /* zip.o */,
 				69CFDF33150608C800F0C0AE /* AudioToolbox.framework */,
 				69CFDD601506039500F0C0AE /* CoreGraphics.framework */,
 				69CFDD5E1506039500F0C0AE /* Foundation.framework */,
@@ -530,6 +596,12 @@
 		69CFDD73150603F600F0C0AE /* Imagine */ = {
 			isa = PBXGroup;
 			children = (
+				3B221A3515DFD1FA00219D4B /* ioapi.c */,
+				3B221A3615DFD1FA00219D4B /* ioapi.h */,
+				3B221A3715DFD1FA00219D4B /* unzip.c */,
+				3B221A3815DFD1FA00219D4B /* unzip.h */,
+				3B221A3915DFD1FA00219D4B /* zip.c */,
+				3B221A3A15DFD1FA00219D4B /* zip.h */,
 				69CFDD78150604AC00F0C0AE /* assert.h */,
 				69CFDD79150604AC00F0C0AE /* audio */,
 				69CFDD89150604AC00F0C0AE /* base */,
@@ -1427,6 +1499,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				3B22137C15DFBC0E00219D4B /* PBXTargetDependency */,
+				3B22131F15DFB66E00219D4B /* PBXTargetDependency */,
+				3B2212BC15DFB2F700219D4B /* PBXTargetDependency */,
 			);
 			name = MD;
 			productName = MD;
@@ -1452,12 +1527,50 @@
 			mainGroup = 69CFDD4D1506039500F0C0AE;
 			productRefGroup = 69CFDD591506039500F0C0AE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3B2212B115DFB22200219D4B /* Products */;
+					ProjectRef = 3B2212B015DFB22200219D4B /* btstack.xcodeproj */;
+				},
+				{
+					ProductGroup = 3B22121A15DFAF7600219D4B /* Products */;
+					ProjectRef = 3B22121915DFAF7600219D4B /* freetype.xcodeproj */;
+				},
+				{
+					ProductGroup = 3B22127515DFB04700219D4B /* Products */;
+					ProjectRef = 3B22127415DFB04700219D4B /* libpng.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				69CFDD571506039500F0C0AE /* MD */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3B22122115DFAF7600219D4B /* libfreetype.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfreetype.a;
+			remoteRef = 3B22122015DFAF7600219D4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B22127C15DFB04700219D4B /* liblibpng.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblibpng.a;
+			remoteRef = 3B22127B15DFB04700219D4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3B2212B815DFB22200219D4B /* libbtstack.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libbtstack.a;
+			remoteRef = 3B2212B715DFB22200219D4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		69CFDD561506039500F0C0AE /* Resources */ = {
@@ -1555,10 +1668,31 @@
 				69E5585215061D6D001407C0 /* Screenshot.cc in Sources */,
 				69E5585315061D6D001407C0 /* VController.cc in Sources */,
 				69E5585D15061F32001407C0 /* btstack.cc in Sources */,
+				3B221A3B15DFD1FA00219D4B /* ioapi.c in Sources */,
+				3B221A3C15DFD1FA00219D4B /* unzip.c in Sources */,
+				3B221A3D15DFD1FA00219D4B /* zip.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B2212BC15DFB2F700219D4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libpng;
+			targetProxy = 3B2212BB15DFB2F700219D4B /* PBXContainerItemProxy */;
+		};
+		3B22131F15DFB66E00219D4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = btstack;
+			targetProxy = 3B22131E15DFB66E00219D4B /* PBXContainerItemProxy */;
+		};
+		3B22137C15DFBC0E00219D4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = freetype;
+			targetProxy = 3B22137B15DFBC0E00219D4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		69CFDD6E1506039500F0C0AE /* Debug */ = {
@@ -1629,11 +1763,17 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MD/MD-Prefix.pch";
-				INFOPLIST_FILE = "MD/MD-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/imagine/bundle/darwin-iOS/armv7/lib\"",
+				HEADER_SEARCH_PATHS = (
+					"MD/**",
+					"EmuFramework/**",
+					"MD.emu/**",
+					"imagine/**",
+					../3rdframework/btstack/include,
+					../3rdframework/png,
+					../3rdframework/freetype/include,
 				);
+				INFOPLIST_FILE = "MD/MD-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1644,11 +1784,17 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MD/MD-Prefix.pch";
-				INFOPLIST_FILE = "MD/MD-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/imagine/bundle/darwin-iOS/armv7/lib\"",
+				HEADER_SEARCH_PATHS = (
+					"MD/**",
+					"EmuFramework/**",
+					"MD.emu/**",
+					"imagine/**",
+					../3rdframework/btstack/include,
+					../3rdframework/png,
+					../3rdframework/freetype/include,
 				);
+				INFOPLIST_FILE = "MD/MD-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

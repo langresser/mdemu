@@ -21,6 +21,7 @@
 #include <base/interface.h>
 #include <mem/interface.h>
 #include <util/pixel.h>
+#include "png.h"
 
 // this must be in the range 1 to 8
 #define INITIAL_HEADER_READ_BYTES 8
