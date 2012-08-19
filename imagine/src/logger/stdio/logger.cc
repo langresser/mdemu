@@ -19,6 +19,8 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include "platform_util.h"
+#include "base/interface.h"
 
 #ifdef CONFIG_BASE_ANDROID
 	#include <android/log.h>
@@ -31,30 +33,20 @@ static FILE *logExternalFile = 0;
 
 static const char *externalLogPath()
 {
-	#ifdef CONFIG_BASE_IOS
-		const char *prefix = "/var/mobile";
-	#elif defined(CONFIG_BASE_ANDROID)
-		const char *prefix = Base::documentsPath();
-	#elif defined(CONFIG_ENV_WEBOS)
-		const char *prefix = "/media/internal";
-	#else
-		const char *prefix = ".";
-	#endif
-
-	static char path[128] = "";
+	static char path[256] = "";
 	if(!strlen(path))
 	{
-		sprintf(path, "%s/imagine.log", prefix);
+		sprintf(path, "%s/imagine.log", Base::documentsPath());
 	}
 	return path;
 }
 
-CallResult logger_init()
+extern "C" CallResult logger_init()
 {
 	if(useExternalLogFile)
 	{
 		logMsg("external log file: %s", externalLogPath());
-		logExternalFile = fopen(externalLogPath(), "wb");
+		logExternalFile = open_file(externalLogPath(), "wb");
 		if(!logExternalFile)
 		{
 			return IO_ERROR;

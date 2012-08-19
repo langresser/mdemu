@@ -48,128 +48,6 @@ static void readKeyConfig2(Io *io, uint buttonIdx, /*uint cat,*/uint readSize)
 	}
 }
 
-static bool readConfig2(Io *io)
-{
-	if(io == 0)
-	{
-		logMsg("no config file");
-		return 0;
-	}
-
-	int dirChange = 0;
-
-	uint8 blockSize;
-	io->readVar(&blockSize);
-
-	if(blockSize != 2)
-	{
-		logErr("can't read config with block size %d", blockSize);
-		return 0;
-	}
-
-	while(!io->eof())
-	{
-		uint16 size;
-		io->readVar(&size);
-
-		if(!size)
-		{
-			logMsg("invalid 0 size block, skipping rest of config");
-			return dirChange;
-		}
-		if(size < 3) // all blocks are at least a 2 byte key + 1 byte or more of data
-		{
-			logMsg("skipping %d byte block", size);
-			io->seekRel(size);
-			continue;
-		}
-
-		uint16 key;
-		io->readVar(&key);
-		size -= 2;
-
-		logMsg("got config key %u", key);
-		switch(key)
-		{
-			default:
-			{
-				if(!EmuSystem::readConfig(io, key, size))
-				{
-					logMsg("skipping unknown key %u", (uint)key);
-					io->seekRel(size);
-				}
-			}
-			bcase CFGKEY_SOUND: optionSound.readFromIO(io, size);
-			bcase CFGKEY_SOUND_RATE: optionSoundRate.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_DISPLAY: optionTouchCtrl.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_ALPHA: optionTouchCtrlAlpha.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_SIZE: optionTouchCtrlSize.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_DPAD_POS: optionTouchCtrlDpadPos.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_FACE_BTN_POS: optionTouchCtrlFaceBtnPos.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_MENU_POS: optionTouchCtrlMenuPos.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_FF_POS: optionTouchCtrlFFPos.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_FACE_BTN_SPACE: optionTouchCtrlBtnSpace.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_FACE_BTN_STAGGER: optionTouchCtrlBtnStagger.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_DPAD_DEADZONE: optionTouchDpadDeadzone.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_CENTER_BTN_POS: optionTouchCtrlCenterBtnPos.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_TRIGGER_BTN_POS: optionTouchCtrlTriggerBtnPos.readFromIO(io, size);
-			bcase CFGKEY_AUTO_SAVE_STATE: optionAutoSaveState.readFromIO(io, size);
-			bcase CFGKEY_FRAME_SKIP: optionFrameSkip.readFromIO(io, size);
-			bcase CFGKEY_LAST_DIR:
-			{
-				char lastDir[size+1];
-				io->read(lastDir, size);
-				lastDir[size] = 0;
-				logMsg("switching to last dir %s", lastDir);
-				if(FsSys::chdir(lastDir) == 0)
-					dirChange = 1;
-			}
-			bcase CFGKEY_FONT_Y_PIXELS: optionLargeFonts.readFromIO(io, size);
-			bcase CFGKEY_GAME_ORIENTATION: optionGameOrientation.readFromIO(io, size);
-			bcase CFGKEY_MENU_ORIENTATION: optionMenuOrientation.readFromIO(io, size);
-			bcase CFGKEY_GAME_IMG_FILTER: optionImgFilter.readFromIO(io, size);
-			bcase CFGKEY_GAME_ASPECT_RATIO: optionAspectRatio.readFromIO(io, size);
-			bcase CFGKEY_IMAGE_ZOOM: optionImageZoom.readFromIO(io, size);
-			bcase CFGKEY_DPI: optionDPI.readFromIO(io, size);
-			bcase CFGKEY_TOUCH_CONTROL_VIRBRATE: optionVibrateOnPush.readFromIO(io, size);
-			bcase CFGKEY_RECENT_GAMES: optionRecentGames.readFromIO(io, size);
-			bcase CFGKEY_SWAPPED_GAMEPAD_CONFIM:
-			{
-				uint8 b;
-				io->readVar(&b);
-				input_swappedGamepadConfirm = b;
-			}
-			bcase CFGKEY_PAUSE_UNFOCUSED: optionPauseUnfocused.readFromIO(io, size);
-			bcase CFGKEY_NOTIFICATION_ICON: optionNotificationIcon.readFromIO(io, size);
-			bcase CFGKEY_TITLE_BAR: optionTitleBar.readFromIO(io, size);
-			bcase CFGKEY_BACK_NAVIGATION: optionBackNavigation.readFromIO(io, size);
-			bcase CFGKEY_REMEMBER_LAST_MENU: optionRememberLastMenu.readFromIO(io, size);
-			#if defined(CONFIG_BASE_ANDROID)
-			bcase CFGKEY_REL_POINTER_DECEL: optionRelPointerDecel.readFromIO(io, size);
-			#endif
-			#if defined(SUPPORT_ANDROID_DIRECT_TEXTURE)
-			bcase CFGKEY_DIRECT_TEXTURE: optionDirectTexture.readFromIO(io, size);
-			bcase CFGKEY_GL_SYNC_HACK: optionGLSyncHack.readFromIO(io, size);
-			#endif
-			#ifdef CONFIG_BASE_IOS_ICADE
-			bcase CFGKEY_ICADE: optionICade.readFromIO(io, size);
-			#endif
-			// start gui keys
-			bcase CFGKEY_KEY_LOAD_GAME: readKeyConfig2(io, 0, size);
-			bcase CFGKEY_KEY_OPEN_MENU: readKeyConfig2(io, 1, size);
-			bcase CFGKEY_KEY_SAVE_STATE: readKeyConfig2(io, 2, size);
-			bcase CFGKEY_KEY_LOAD_STATE: readKeyConfig2(io, 3, size);
-			bcase CFGKEY_KEY_FAST_FORWARD: readKeyConfig2(io, 4, size);
-			bcase CFGKEY_KEY_SCREENSHOT: readKeyConfig2(io, 5, size);
-			//#ifndef CONFIG_ENV_WEBOS
-			bcase CFGKEY_KEY_EXIT: readKeyConfig2(io, 6, size);
-			//#endif
-		}
-	}
-	io->close();
-	return dirChange;
-}
-
 static void writeKeyConfig2(Io *io, uint buttonIdx, uint16 cfgKey)
 {
 	int keyDiff = 0;
@@ -252,17 +130,138 @@ static OptionBase *cfgFileOption[] =
 	#endif
 };
 
-static void writeConfig2(Io *io)
+static void loadConfigFile()
 {
-	if(!io)
+	FsSys::cPath configFilePath;
+    snprintf(configFilePath, sizeof(configFilePath), "%s/config", Base::documentsPath());
+    logMsg("loadConfigFile %s", configFilePath);
+
+    Io* io = IoSys::create(configFilePath);
+    if(io == 0)
+	{
+		logMsg("no config file");
+		return;
+	}
+    
+	uint8 blockSize;
+	io->readVar(&blockSize);
+    
+	if(blockSize != 2)
+	{
+		logErr("can't read config with block size %d", blockSize);
+		return;
+	}
+    
+	while(!io->eof())
+	{
+		uint16 size;
+		io->readVar(&size);
+        
+		if(!size)
+		{
+			logMsg("invalid 0 size block, skipping rest of config");
+			return;
+		}
+		if(size < 3) // all blocks are at least a 2 byte key + 1 byte or more of data
+		{
+			logMsg("skipping %d byte block", size);
+			io->seekRel(size);
+			continue;
+		}
+        
+		uint16 key;
+		io->readVar(&key);
+		size -= 2;
+        
+		logMsg("got config key %u", key);
+		switch(key)
+		{
+			default:
+			{
+				if(!EmuSystem::readConfig(io, key, size))
+				{
+					logMsg("skipping unknown key %u", (uint)key);
+					io->seekRel(size);
+				}
+			}
+                bcase CFGKEY_SOUND: optionSound.readFromIO(io, size);
+                bcase CFGKEY_SOUND_RATE: optionSoundRate.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_DISPLAY: optionTouchCtrl.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_ALPHA: optionTouchCtrlAlpha.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_SIZE: optionTouchCtrlSize.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_DPAD_POS: optionTouchCtrlDpadPos.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_FACE_BTN_POS: optionTouchCtrlFaceBtnPos.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_MENU_POS: optionTouchCtrlMenuPos.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_FF_POS: optionTouchCtrlFFPos.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_FACE_BTN_SPACE: optionTouchCtrlBtnSpace.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_FACE_BTN_STAGGER: optionTouchCtrlBtnStagger.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_DPAD_DEADZONE: optionTouchDpadDeadzone.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_CENTER_BTN_POS: optionTouchCtrlCenterBtnPos.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_TRIGGER_BTN_POS: optionTouchCtrlTriggerBtnPos.readFromIO(io, size);
+                bcase CFGKEY_AUTO_SAVE_STATE: optionAutoSaveState.readFromIO(io, size);
+                bcase CFGKEY_FRAME_SKIP: optionFrameSkip.readFromIO(io, size);
+                bcase CFGKEY_LAST_DIR:
+
+                bcase CFGKEY_FONT_Y_PIXELS: optionLargeFonts.readFromIO(io, size);
+                bcase CFGKEY_GAME_ORIENTATION: optionGameOrientation.readFromIO(io, size);
+                bcase CFGKEY_MENU_ORIENTATION: optionMenuOrientation.readFromIO(io, size);
+                bcase CFGKEY_GAME_IMG_FILTER: optionImgFilter.readFromIO(io, size);
+                bcase CFGKEY_GAME_ASPECT_RATIO: optionAspectRatio.readFromIO(io, size);
+                bcase CFGKEY_IMAGE_ZOOM: optionImageZoom.readFromIO(io, size);
+                bcase CFGKEY_DPI: optionDPI.readFromIO(io, size);
+                bcase CFGKEY_TOUCH_CONTROL_VIRBRATE: optionVibrateOnPush.readFromIO(io, size);
+                bcase CFGKEY_RECENT_GAMES: optionRecentGames.readFromIO(io, size);
+                bcase CFGKEY_SWAPPED_GAMEPAD_CONFIM:
+			{
+				uint8 b;
+				io->readVar(&b);
+				input_swappedGamepadConfirm = b;
+			}
+                bcase CFGKEY_PAUSE_UNFOCUSED: optionPauseUnfocused.readFromIO(io, size);
+                bcase CFGKEY_NOTIFICATION_ICON: optionNotificationIcon.readFromIO(io, size);
+                bcase CFGKEY_TITLE_BAR: optionTitleBar.readFromIO(io, size);
+                bcase CFGKEY_BACK_NAVIGATION: optionBackNavigation.readFromIO(io, size);
+                bcase CFGKEY_REMEMBER_LAST_MENU: optionRememberLastMenu.readFromIO(io, size);
+#if defined(CONFIG_BASE_ANDROID)
+                bcase CFGKEY_REL_POINTER_DECEL: optionRelPointerDecel.readFromIO(io, size);
+#endif
+#if defined(SUPPORT_ANDROID_DIRECT_TEXTURE)
+                bcase CFGKEY_DIRECT_TEXTURE: optionDirectTexture.readFromIO(io, size);
+                bcase CFGKEY_GL_SYNC_HACK: optionGLSyncHack.readFromIO(io, size);
+#endif
+#ifdef CONFIG_BASE_IOS_ICADE
+                bcase CFGKEY_ICADE: optionICade.readFromIO(io, size);
+#endif
+                // start gui keys
+                bcase CFGKEY_KEY_LOAD_GAME: readKeyConfig2(io, 0, size);
+                bcase CFGKEY_KEY_OPEN_MENU: readKeyConfig2(io, 1, size);
+                bcase CFGKEY_KEY_SAVE_STATE: readKeyConfig2(io, 2, size);
+                bcase CFGKEY_KEY_LOAD_STATE: readKeyConfig2(io, 3, size);
+                bcase CFGKEY_KEY_FAST_FORWARD: readKeyConfig2(io, 4, size);
+                bcase CFGKEY_KEY_SCREENSHOT: readKeyConfig2(io, 5, size);
+                //#ifndef CONFIG_ENV_WEBOS
+                bcase CFGKEY_KEY_EXIT: readKeyConfig2(io, 6, size);
+                //#endif
+		}
+	}
+	io->close();
+}
+
+static void saveConfigFile()
+{
+	FsSys::cPath configFilePath;
+
+	snprintf(configFilePath, sizeof(configFilePath), "%s/config", Base::documentsPath());
+    Io* io = IoSys::create(configFilePath);
+    if(!io)
 	{
 		logMsg("not writing config file");
 		return;
 	}
-
+    
 	uchar blockHeaderSize = 2;
 	io->writeVar(blockHeaderSize);
-
+    
 	forEachDInArray(cfgFileOption, e)
 	{
 		if(!e->isDefault())
@@ -271,82 +270,26 @@ static void writeConfig2(Io *io)
 			e->writeToIO(io);
 		}
 	}
-
+    
 	if(input_swappedGamepadConfirm == 1)
 	{
 		io->writeVar((uint16)3);
 		io->writeVar((uint16)CFGKEY_SWAPPED_GAMEPAD_CONFIM);
 		io->writeVar((uint8)input_swappedGamepadConfirm);
 	}
-
+    
 	writeKeyConfig2(io, 0, CFGKEY_KEY_LOAD_GAME);
 	writeKeyConfig2(io, 1, CFGKEY_KEY_OPEN_MENU);
 	writeKeyConfig2(io, 2, CFGKEY_KEY_SAVE_STATE);
 	writeKeyConfig2(io, 3, CFGKEY_KEY_LOAD_STATE);
 	writeKeyConfig2(io, 4, CFGKEY_KEY_FAST_FORWARD);
 	writeKeyConfig2(io, 5, CFGKEY_KEY_SCREENSHOT);
-	#ifndef CONFIG_ENV_WEBOS
+#ifndef CONFIG_ENV_WEBOS
 	writeKeyConfig2(io, 6, CFGKEY_KEY_EXIT);
-	#endif
-
-	uint len = strlen(FsSys::workDir());
-	if(len > 32000)
-	{
-		logErr("option string too long to write");
-	}
-	else
-	{
-		// TODO: last directory code may be omitted on iOS non-jailbreak build
-		logMsg("saving current directory: %s", FsSys::workDir());
-		io->writeVar((uint16)(2 + len));
-		io->writeVar((uint16)CFGKEY_LAST_DIR);
-		io->fwrite(FsSys::workDir(), len, 1);
-	}
-
+#endif
+    
 	EmuSystem::writeConfig(io);
-
+    
 	io->close();
-}
 
-static void loadConfigFile()
-{
-	FsSys::cPath configFilePath;
-	#ifdef CONFIG_BASE_USES_SHARED_DOCUMENTS_DIR
-	// TODO: remove old config location transition code
-	snprintf(configFilePath, sizeof(configFilePath), "/User/Documents/explusalpha.com/"CONFIG_FILE_NAME);
-	logMsg("checking old config location %s", configFilePath);
-	if(Fs::fileExists(configFilePath))
-	{
-		FsSys::cPath newConfigFilePath;
-		snprintf(newConfigFilePath, sizeof(configFilePath), "%s/explusalpha.com", Base::documentsPath());
-		FsSys::mkdir(newConfigFilePath);
-		snprintf(newConfigFilePath, sizeof(configFilePath), "%s/explusalpha.com/"CONFIG_FILE_NAME, Base::documentsPath());
-		logMsg("moving config file %s to %s", configFilePath, newConfigFilePath);
-		FsSys::rename(configFilePath, newConfigFilePath);
-	}
-
-	snprintf(configFilePath, sizeof(configFilePath), "%s/explusalpha.com/"CONFIG_FILE_NAME, Base::documentsPath());
-	#else
-	snprintf(configFilePath, sizeof(configFilePath), "%s/"CONFIG_FILE_NAME, Base::documentsPath());
-	#endif
-	if(!readConfig2(IoSys::open(configFilePath)))
-	{
-		FsSys::chdir(Base::storagePath());
-	}
-}
-
-static void saveConfigFile()
-{
-	FsSys::cPath configFilePath;
-	#ifdef CONFIG_BASE_USES_SHARED_DOCUMENTS_DIR
-	snprintf(configFilePath, sizeof(configFilePath), "%s/explusalpha.com", Base::documentsPath());
-	FsSys::mkdir(configFilePath);
-	/*#ifdef CONFIG_BASE_IOS_SETUID
-	fixFilePermissions(configFilePath);
-	#endif*/
-	snprintf(configFilePath, sizeof(configFilePath), "%s/explusalpha.com/"CONFIG_FILE_NAME, Base::documentsPath());
-	#else
-	snprintf(configFilePath, sizeof(configFilePath), "%s/"CONFIG_FILE_NAME, Base::documentsPath());
-	#endif
-	writeConfig2(IoSys::create(configFilePath));
 }

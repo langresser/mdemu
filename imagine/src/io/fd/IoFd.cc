@@ -39,6 +39,7 @@ static const mode_t defaultOpenMode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
 
 static int openFile (const char *location, int flags, mode_t mode)
 {
+    logMsg("openFile: %s", location);
 	int fd = open(location, flags, mode);
 
 	if(fd == -1)
@@ -67,13 +68,6 @@ Io* IoFd::open (const char *location, uint mode, CallResult *errorOut)
 	}
 
 	logMsg("opening file (%s) @ %s", mode & IO_OPEN_WRITE ? "rw" : "r", location);
-
-	#ifdef CONFIG_FS_PS3
-	char aPath[1024];
-	Fs::makePathAbs(location, aPath, sizeof(aPath));
-	location = aPath;
-	logMsg("converted path to %s", aPath);
-	#endif
 
 	int fd;
 	if((fd = openFile(location, flags, 0)) == -1)
@@ -130,13 +124,6 @@ Io* IoFd::create (const char *location, uint mode, CallResult *errorOut)
 {
 	// try to verify that mode isn't a corrupt value
 	assert(mode < BIT(IO_CREATE_USED_BITS+1));
-	
-	#ifdef CONFIG_FS_PS3
-	char aPath[1024];
-	Fs::makePathAbs(location, aPath, sizeof(aPath));
-	location = aPath;
-	logMsg("converted path to %s", aPath);
-	#endif
 
 	IoFd *inst = new IoFd;
 	if(!inst)

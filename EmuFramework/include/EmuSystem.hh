@@ -29,7 +29,7 @@ class EmuSystem
 {
 	public:
 	static bool active;
-	static FsSys::cPath gamePath, fullGamePath;
+	static FsSys::cPath fullGamePath;
 	static char gameName[256];
 	static int autoSaveStateFrameCount, autoSaveStateFrames;
 	static int saveStateSlot;
@@ -63,7 +63,7 @@ class EmuSystem
 	static void initOptions();
 	static void writeConfig(Io *io);
 	static bool readConfig(Io *io, uint key, uint readSize);
-	static int loadGame(const char *path, bool allowAutosaveState = 1);
+	static int loadGame(const char *path, bool allowAutosaveState = 1, bool userrom = false);
 	static void runFrame(bool renderGfx, bool processGfx, bool renderAudio) ATTRS(hot);
 	static bool vidSysIsPAL();
 	static void configAudioRate();

@@ -47,13 +47,7 @@ static void mem_freeSafe(void* buffer) { if(buffer != NULL) mem_free(buffer); }
 }*/
 
 #ifdef __cplusplus
-
-// default placement new for realloc()
-void *operator new (size_t size, void *o)
-#ifdef CONFIG_BASE_PS3
-throw ()
-#endif
-;
+#include <string>
 
 // TODO: this only works if the class has a non-trivial destructor
 template <class T>

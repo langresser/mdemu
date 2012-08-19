@@ -52,32 +52,4 @@ CallResult Fs::changeToAppDir(const char *launchCmd)
 	return OK;
 }
 
-void  Fs::makePathAbs(const char *path, char *outPath, size_t size)
-{
-	// TODO: implement more complex cases and error checking
-	assert(FsSys::workDir()[0] == '/');
-	logMsg("work dir %s", FsSys::workDir());
-	if(path[0] == '/')
-	{
-		strcpy(outPath, path);
-	}
-	else if(string_equal(path, "."))
-	{
-		strcpy(outPath, FsSys::workDir());
-	}
-	else if(string_equal(path, ".."))
-	{
-		char *cutoff = strrchr(FsSys::workDir(), '/');
-		size_t copySize = cutoff - FsSys::workDir();
-		if(cutoff == FsSys::workDir())
-			copySize = 1; // at root
-		memcpy(outPath, FsSys::workDir(), copySize);
-		outPath[copySize] = 0;
-	}
-	else //assume all other paths are relative and append workDir
-	{
-		sprintf(outPath, "%s/%s", strlen(FsSys::workDir()) > 1 ? FsSys::workDir() : "", path);
-	}
-}
-
 #undef thisModuleName

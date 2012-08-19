@@ -4,7 +4,6 @@
 extern BasicByteOption optionSound;
 
 bool EmuSystem::active = 0;
-FsSys::cPath EmuSystem::gamePath = "";
 FsSys::cPath EmuSystem::fullGamePath = "";
 char EmuSystem::gameName[256] = "";
 int EmuSystem::autoSaveStateFrameCount = 0;

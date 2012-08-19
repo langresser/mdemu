@@ -13,7 +13,7 @@ static int sprintScreenshotFilename(char (&str)[S])
 	int num = -1;
 	iterateTimes(maxNum, i)
 	{
-		snprintf(str, S, "%s/%s.%.3d.png", EmuSystem::gamePath, EmuSystem::gameName, i);
+		snprintf(str, S, "%s/screenshot/%s.%.3d.png", Base::documentsPath(), EmuSystem::gameName, i);
 		if(!Fs::fileExists(str))
 		{
 			num = i;

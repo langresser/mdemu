@@ -26,12 +26,6 @@
 #include <util/time/sys.hh>
 #include <EmuSystem.hh>
 
-#ifdef CONFIG_BASE_USES_SHARED_DOCUMENTS_DIR
-	#define CONFIG_FILE_NAME "MdEmu.config"
-#else
-	#define CONFIG_FILE_NAME "config"
-#endif
-
 static const GfxLGradientStopDesc navViewGrad[] =
 {
 	{ .0, VertexColorPixelFormat.build(.5, .5, .5, 1.) },
@@ -349,26 +343,20 @@ void EmuSystem::resetGame()
 	system_reset();
 }
 
-static char saveSlotChar(int slot)
-{
-	switch(slot)
-	{
-		case -1: return 'A';
-		case 0 ... 9: return '0' + slot;
-		default: bug_branch("%d", slot); return 0;
-	}
-}
-
 template <size_t S>
 static void sprintStateFilename(char (&str)[S], int slot)
 {
-	snprintf(str, S, "%s/%s.0%c.gp", EmuSystem::gamePath, EmuSystem::gameName, saveSlotChar(slot));
+    if (slot == -1) {
+        snprintf(str, S, "%s/save/%s.0%c.gp", Base::documentsPath(), EmuSystem::gameName, 'A');
+    } else {
+        snprintf(str, S, "%s/save/%s.0%c.gp", Base::documentsPath(), EmuSystem::gameName, '0' + slot);
+    }
 }
 
 template <size_t S>
 static void sprintSaveFilename(char (&str)[S])
 {
-	snprintf(str, S, "%s/%s.srm", EmuSystem::gamePath, EmuSystem::gameName);
+	snprintf(str, S, "%s/save/%s.srm", Base::documentsPath(), EmuSystem::gameName);
 }
 
 bool EmuSystem::stateExists(int slot)
@@ -437,9 +425,6 @@ int EmuSystem::saveState()
 {
 	FsSys::cPath saveStr;
 	sprintStateFilename(saveStr, saveStateSlot);
-	#ifdef CONFIG_BASE_IOS_SETUID
-		fixFilePermissions(saveStr);
-	#endif
 	logMsg("saving state %s", saveStr);
 	return saveMDState(saveStr);
 }
@@ -458,10 +443,6 @@ void EmuSystem::saveBackupMem() // for manually saving when not closing game
 	{
 		FsSys::cPath saveStr;
 		sprintSaveFilename(saveStr);
-		#ifdef CONFIG_BASE_IOS_SETUID
-			fixFilePermissions(saveStr);
-		#endif
-
 		logMsg("saving SRAM%s", optionBigEndianSram ? ", byte-swapped" : "");
 
 		uchar sramTemp[0x10000];
@@ -486,9 +467,6 @@ void EmuSystem::saveAutoState()
 	{
 		FsSys::cPath saveStr;
 		sprintStateFilename(saveStr, -1);
-		#ifdef CONFIG_BASE_IOS_SETUID
-			fixFilePermissions(saveStr);
-		#endif
 		saveMDState(saveStr);
 	}
 }
@@ -553,19 +531,20 @@ static void doAudioInit()
 	audio_init(optionSoundRate, fps);
 }
 
-int EmuSystem::loadGame(const char *path, bool allowAutosaveState)
+int EmuSystem::loadGame(const char *path, bool allowAutosaveState, bool userrom)
 {
 	closeGame(allowAutosaveState);
 
-	string_copy(gamePath, FsSys::workDir(), sizeof(gamePath));
-	#ifdef CONFIG_BASE_IOS_SETUID
-		fixFilePermissions(gamePath);
-	#endif
-	snprintf(fullGamePath, sizeof(fullGamePath), "%s/%s", gamePath, path);
+    if (userrom) {
+        snprintf(fullGamePath, sizeof(fullGamePath), "%s/%s", Base::documentsPath(), path);
+        
+    } else {
+        snprintf(fullGamePath, sizeof(fullGamePath), "%s/%s", FsSys::workDir(), path);
+    }
 	logMsg("full game path: %s", fullGamePath);
-	FsSys::cPath loadFullGamePath;
-	strcpy(loadFullGamePath, fullGamePath);
-	if(!load_rom(loadFullGamePath)) // load_rom can modifiy the string
+	FsSys::cPath tempPath;
+	strcpy(tempPath, fullGamePath);
+	if(!load_rom(tempPath)) // load_rom can modifiy the string
 	{
 		popup.post("Error loading game", 1);
 		return 0;
@@ -633,6 +612,22 @@ static void onInputEvent(void *, const InputEvent &e)
 
 CallResult main_init()
 {
+    char tempPath[256] = {0};
+    snprintf(tempPath, sizeof(tempPath), "%s/save", Base::documentsPath());
+    if (!Fs::fileExists(tempPath)) {
+        FsSys::mkdir(tempPath);
+    }
+    
+    snprintf(tempPath, sizeof(tempPath), "%s/screenshot", Base::documentsPath());
+    if (!Fs::fileExists(tempPath)) {
+        FsSys::mkdir(tempPath);
+    }
+    
+    snprintf(tempPath, sizeof(tempPath), "%s/roms", Base::documentsPath());
+    if (!Fs::fileExists(tempPath)) {
+        FsSys::mkdir(tempPath);
+    }
+
 	mainInitCommon();
 	#ifndef CONFIG_BASE_PS3
 	tcMenu.faceBtnName = "A/B/C";

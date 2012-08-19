@@ -20,8 +20,6 @@ public:
 
 	static bool fileExists(const char *path);
 
-	static void makePathAbs(const char *path, char *outPath, size_t size);
-
 	static int sortMTime(const char *name1, long int mtime1, const char *name2, long int mtime2)
 	{
 		if(mtime1 < mtime2)

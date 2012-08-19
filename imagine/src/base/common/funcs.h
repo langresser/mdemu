@@ -186,12 +186,3 @@ static void processAppMsg(int type, int shortArg, int intArg, int intArg2)
 	void operator delete (void *o) { mem_free(o); }
 	void operator delete[] (void *o) { mem_free(o); }
 #endif
-
-void *operator new (size_t size, void *o)
-#ifdef CONFIG_BASE_PS3
-throw ()
-#endif
-{
-	//logMsg("called placement new, %d bytes @ %p", (int)size, o);
-	return o;
-}

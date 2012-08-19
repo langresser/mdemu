@@ -458,20 +458,7 @@ protected:
 	struct StateSlotMenuItem : public TextMenuItem
 	{
 		constexpr StateSlotMenuItem()
-		#ifdef CONFIG_CXX11
-		: txt({0})
-		#endif
 		{ }
-
-		static char saveSlotChar(int slot)
-		{
-			switch(slot)
-			{
-				case -1: return 'a';
-				case 0 ... 9: return 48 + slot;
-				default: bug_branch("%d", slot); return 0;
-			}
-		}
 
 		char txt[sizeof("State Slot (0)")];
 
@@ -479,7 +466,11 @@ protected:
 		{
 			logMsg("size %d", (int)sizeof("State Slot (0)"));
 			strcpy(txt, "State Slot (0)");
-			txt[12] = saveSlotChar(EmuSystem::saveStateSlot);
+            if (EmuSystem::saveStateSlot == -1) {
+                txt[12] = 'A';
+            } else {
+                txt[12] = 48 + EmuSystem::saveStateSlot;
+            }
 			TextMenuItem::init(txt);
 		}
 
@@ -492,7 +483,11 @@ protected:
 
 		void refreshActive()
 		{
-			txt[12] = saveSlotChar(EmuSystem::saveStateSlot);
+            if (EmuSystem::saveStateSlot == -1) {
+                txt[12] = 'A';
+            } else {
+                txt[12] = 48 + EmuSystem::saveStateSlot;
+            }
 			compile();
 		}
 	} stateSlot;
@@ -589,11 +584,6 @@ protected:
 
 		void select(View *view, const InputEvent &e)
 		{
-			#ifdef CONFIG_BASE_IOS_SETUID
-				if(Fs::fileExists(CATS::warWasBeginning))
-					return;
-			#endif
-
 			if(Bluetooth::initBT() == OK)
 			{
 				if(Bluetooth::startBT(btDevConnected))

@@ -13,6 +13,11 @@
 		3B221A3B15DFD1FA00219D4B /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3515DFD1FA00219D4B /* ioapi.c */; };
 		3B221A3C15DFD1FA00219D4B /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3715DFD1FA00219D4B /* unzip.c */; };
 		3B221A3D15DFD1FA00219D4B /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3915DFD1FA00219D4B /* zip.c */; };
+		3B221A4215DFD5CC00219D4B /* iosUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3F15DFD5CC00219D4B /* iosUtil.mm */; };
+		3B221A4315DFD5CC00219D4B /* platform_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A4015DFD5CC00219D4B /* platform_util.cpp */; };
+		3B221A4615DFDBFD00219D4B /* CGJoystick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A4515DFDBFD00219D4B /* CGJoystick.mm */; };
+		3B221A4915DFDFF100219D4B /* lan2_cn.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B221A4815DFDFF100219D4B /* lan2_cn.bin */; };
+		3B221A4A15DFE97E00219D4B /* logger.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDE5A150604AC00F0C0AE /* logger.cc */; };
 		69CFDD5F1506039500F0C0AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDD5E1506039500F0C0AE /* Foundation.framework */; };
 		69CFDD611506039500F0C0AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CFDD601506039500F0C0AE /* CoreGraphics.framework */; };
 		69CFDEC2150604AD00F0C0AE /* coreaudio.cc in Sources */ = {isa = PBXBuildFile; fileRef = 69CFDD81150604AC00F0C0AE /* coreaudio.cc */; settings = {COMPILER_FLAGS = "-DIMAGINE_SRC"; }; };
@@ -159,6 +164,36 @@
 		3B221A3815DFD1FA00219D4B /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = imagine/bundle/all/src/unzip/unzip.h; sourceTree = SOURCE_ROOT; };
 		3B221A3915DFD1FA00219D4B /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = imagine/bundle/all/src/unzip/zip.c; sourceTree = SOURCE_ROOT; };
 		3B221A3A15DFD1FA00219D4B /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = imagine/bundle/all/src/unzip/zip.h; sourceTree = SOURCE_ROOT; };
+		3B221A3E15DFD5CC00219D4B /* iosUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iosUtil.h; path = EmuFramework/iosUtil.h; sourceTree = SOURCE_ROOT; };
+		3B221A3F15DFD5CC00219D4B /* iosUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = iosUtil.mm; path = EmuFramework/iosUtil.mm; sourceTree = SOURCE_ROOT; };
+		3B221A4015DFD5CC00219D4B /* platform_util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = platform_util.cpp; path = EmuFramework/platform_util.cpp; sourceTree = SOURCE_ROOT; };
+		3B221A4115DFD5CC00219D4B /* platform_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = platform_util.h; path = EmuFramework/platform_util.h; sourceTree = SOURCE_ROOT; };
+		3B221A4415DFDBFD00219D4B /* CGJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGJoystick.h; path = EmuFramework/CGJoystick.h; sourceTree = SOURCE_ROOT; };
+		3B221A4515DFDBFD00219D4B /* CGJoystick.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CGJoystick.mm; path = EmuFramework/CGJoystick.mm; sourceTree = SOURCE_ROOT; };
+		3B221A4815DFDFF100219D4B /* lan2_cn.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = lan2_cn.bin; sourceTree = "<group>"; };
+		3B221A4C15DFF42000219D4B /* AlertView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AlertView.hh; sourceTree = "<group>"; };
+		3B221A4D15DFF42000219D4B /* ButtonConfigView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ButtonConfigView.hh; sourceTree = "<group>"; };
+		3B221A4E15DFF42000219D4B /* CommonGui.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CommonGui.hh; sourceTree = "<group>"; };
+		3B221A4F15DFF42000219D4B /* CommonViewControl.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CommonViewControl.hh; sourceTree = "<group>"; };
+		3B221A5015DFF42000219D4B /* ConfigFile.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ConfigFile.hh; sourceTree = "<group>"; };
+		3B221A5115DFF42000219D4B /* CreditsView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CreditsView.hh; sourceTree = "<group>"; };
+		3B221A5215DFF42000219D4B /* EmuOptions.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EmuOptions.hh; sourceTree = "<group>"; };
+		3B221A5315DFF42000219D4B /* EmuSystem.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EmuSystem.hh; sourceTree = "<group>"; };
+		3B221A5415DFF42000219D4B /* FilePicker.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FilePicker.hh; sourceTree = "<group>"; };
+		3B221A5515DFF42000219D4B /* inGameActionKeys.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = inGameActionKeys.hh; sourceTree = "<group>"; };
+		3B221A5615DFF42000219D4B /* KeyCategory.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KeyCategory.hh; sourceTree = "<group>"; };
+		3B221A5715DFF42000219D4B /* KeyMapping.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KeyMapping.hh; sourceTree = "<group>"; };
+		3B221A5815DFF42000219D4B /* MenuView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MenuView.hh; sourceTree = "<group>"; };
+		3B221A5915DFF42000219D4B /* MsgPopup.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MsgPopup.hh; sourceTree = "<group>"; };
+		3B221A5A15DFF42000219D4B /* MultiChoiceView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MultiChoiceView.hh; sourceTree = "<group>"; };
+		3B221A5B15DFF42000219D4B /* Option.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Option.hh; sourceTree = "<group>"; };
+		3B221A5C15DFF42000219D4B /* OptionView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OptionView.hh; sourceTree = "<group>"; };
+		3B221A5D15DFF42000219D4B /* Recent.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Recent.hh; sourceTree = "<group>"; };
+		3B221A5E15DFF42000219D4B /* Screenshot.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Screenshot.hh; sourceTree = "<group>"; };
+		3B221A5F15DFF42000219D4B /* TouchConfigView.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TouchConfigView.hh; sourceTree = "<group>"; };
+		3B221A6015DFF42000219D4B /* TurboInput.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TurboInput.hh; sourceTree = "<group>"; };
+		3B221A6115DFF42000219D4B /* VController.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VController.hh; sourceTree = "<group>"; };
+		3B221A6215DFF42000219D4B /* ViewStack.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ViewStack.hh; sourceTree = "<group>"; };
 		69CFDD581506039500F0C0AE /* MD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69CFDD5C1506039500F0C0AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		69CFDD5E1506039500F0C0AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -532,9 +567,49 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3B221A4715DFDFF100219D4B /* Roms */ = {
+			isa = PBXGroup;
+			children = (
+				3B221A4815DFDFF100219D4B /* lan2_cn.bin */,
+			);
+			path = Roms;
+			sourceTree = "<group>";
+		};
+		3B221A4B15DFF42000219D4B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				3B221A4C15DFF42000219D4B /* AlertView.hh */,
+				3B221A4D15DFF42000219D4B /* ButtonConfigView.hh */,
+				3B221A4E15DFF42000219D4B /* CommonGui.hh */,
+				3B221A4F15DFF42000219D4B /* CommonViewControl.hh */,
+				3B221A5015DFF42000219D4B /* ConfigFile.hh */,
+				3B221A5115DFF42000219D4B /* CreditsView.hh */,
+				3B221A5215DFF42000219D4B /* EmuOptions.hh */,
+				3B221A5315DFF42000219D4B /* EmuSystem.hh */,
+				3B221A5415DFF42000219D4B /* FilePicker.hh */,
+				3B221A5515DFF42000219D4B /* inGameActionKeys.hh */,
+				3B221A5615DFF42000219D4B /* KeyCategory.hh */,
+				3B221A5715DFF42000219D4B /* KeyMapping.hh */,
+				3B221A5815DFF42000219D4B /* MenuView.hh */,
+				3B221A5915DFF42000219D4B /* MsgPopup.hh */,
+				3B221A5A15DFF42000219D4B /* MultiChoiceView.hh */,
+				3B221A5B15DFF42000219D4B /* Option.hh */,
+				3B221A5C15DFF42000219D4B /* OptionView.hh */,
+				3B221A5D15DFF42000219D4B /* Recent.hh */,
+				3B221A5E15DFF42000219D4B /* Screenshot.hh */,
+				3B221A5F15DFF42000219D4B /* TouchConfigView.hh */,
+				3B221A6015DFF42000219D4B /* TurboInput.hh */,
+				3B221A6115DFF42000219D4B /* VController.hh */,
+				3B221A6215DFF42000219D4B /* ViewStack.hh */,
+			);
+			name = include;
+			path = EmuFramework/include;
+			sourceTree = SOURCE_ROOT;
+		};
 		69CFDD4D1506039500F0C0AE = {
 			isa = PBXGroup;
 			children = (
+				3B221A4715DFDFF100219D4B /* Roms */,
 				3B2212B015DFB22200219D4B /* btstack.xcodeproj */,
 				3B22127415DFB04700219D4B /* libpng.xcodeproj */,
 				3B22121915DFAF7600219D4B /* freetype.xcodeproj */,
@@ -1450,6 +1525,13 @@
 		69E5584115061D51001407C0 /* EmuFramework */ = {
 			isa = PBXGroup;
 			children = (
+				3B221A4B15DFF42000219D4B /* include */,
+				3B221A4415DFDBFD00219D4B /* CGJoystick.h */,
+				3B221A4515DFDBFD00219D4B /* CGJoystick.mm */,
+				3B221A3E15DFD5CC00219D4B /* iosUtil.h */,
+				3B221A3F15DFD5CC00219D4B /* iosUtil.mm */,
+				3B221A4015DFD5CC00219D4B /* platform_util.cpp */,
+				3B221A4115DFD5CC00219D4B /* platform_util.h */,
 				69E5584215061D6D001407C0 /* AlertView.cc */,
 				69E5584315061D6D001407C0 /* ButtonConfigView.cc */,
 				69E5584415061D6D001407C0 /* CreditsView.cc */,
@@ -1583,6 +1665,7 @@
 				69E558A715064624001407C0 /* Vera.ttf in Resources */,
 				69E558AA1506468D001407C0 /* overlays64.png in Resources */,
 				69E558AB1506468D001407C0 /* overlays128.png in Resources */,
+				3B221A4915DFDFF100219D4B /* lan2_cn.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1593,6 +1676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B221A4A15DFE97E00219D4B /* logger.cc in Sources */,
 				69E5584015061CDF001407C0 /* Main.cc in Sources */,
 				69E5583F15061CCE001407C0 /* m68kops.cc in Sources */,
 				69CFDF3C15060B3A00F0C0AE /* reader.cc in Sources */,
@@ -1671,6 +1755,9 @@
 				3B221A3B15DFD1FA00219D4B /* ioapi.c in Sources */,
 				3B221A3C15DFD1FA00219D4B /* unzip.c in Sources */,
 				3B221A3D15DFD1FA00219D4B /* zip.c in Sources */,
+				3B221A4215DFD5CC00219D4B /* iosUtil.mm in Sources */,
+				3B221A4315DFD5CC00219D4B /* platform_util.cpp in Sources */,
+				3B221A4615DFDBFD00219D4B /* CGJoystick.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

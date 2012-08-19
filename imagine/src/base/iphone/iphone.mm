@@ -21,6 +21,8 @@
 	#include "ICadeHelper.hh"
 #endif
 
+#include <EmuSystem.hh>
+
 namespace Base
 {
 const char *appPath = 0;
@@ -241,7 +243,7 @@ uint appState = APP_RUNNING;
 	}
 }
 
-
+extern void startGameFromMenu();
 - (void)layoutSubviews
 {
 	logMsg("entered layoutSubviews");
@@ -251,6 +253,12 @@ uint appState = APP_RUNNING;
 	Base::engineInit();
 	Base::setAutoOrientation(1);
 	[self drawView];
+    
+    // 默认打开
+    if(EmuSystem::loadGame("lan2_cn.bin", false, false))
+	{
+		startGameFromMenu();
+	}
 	logMsg("exiting layoutSubviews");
 }
 
@@ -489,15 +497,6 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
 		usingiOS4 = 1;
 	}
 	
-	/*if ([currSysVer compare:@"3.2" options:NSNumericSearch] != NSOrderedAscending)
-	{
-		logMsg("enabling iOS 3.2 external display features");
-		NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-		[center addObserver:self selector:@selector(screenDidConnect:) name:UIScreenDidConnectNotification object:nil];
-		[center addObserver:self selector:@selector(screenDidDisconnect:) name:UIScreenDidDisconnectNotification object:nil];
-		[center addObserver:self selector:@selector(screenModeDidChange:) name:UIScreenModeDidChangeNotification object:nil];
-	}*/
-	
 	// TODO: get real DPI if possible
 	Gfx::viewMMWidth_ = 50, Gfx::viewMMHeight_ = 75;
 	#if !defined(__ARM_ARCH_6K__) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= 30200)
@@ -507,12 +506,6 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
     	Gfx::viewMMWidth_ = 148, Gfx::viewMMHeight_ = 197;
 		isIPad = 1;
 		logMsg("running on iPad");
-		
-		/*rotateView = preferedOrientation = iOSOrientationToGfx([[UIDevice currentDevice] orientation]);
-		logMsg("started in %s orientation", Gfx::orientationName(rotateView));
-		#ifdef CONFIG_INPUT
-			Gfx::configureInputForOrientation();
-		#endif*/
 	}
 	#endif
 
@@ -567,31 +560,7 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
 	    }
 	}
     #endif
-    
-    /*{
-    	mach_port_t mp;
-	    IOMasterPort(MACH_PORT_NULL,&mp);
-	    CFMutableDictionaryRef bt_matching = IOServiceNameMatching("bluetooth");
-	    mach_port_t bt_service = IOServiceGetMatchingService(mp, bt_matching);
-	
-	    // local-mac-address
-	    bd_addr_t address;
-	    CFTypeRef local_mac_address_ref = IORegistryEntrySearchCFProperty(bt_service,"IODeviceTree",CFSTR("local-mac-address"), kCFAllocatorDefault, 1);
-	    CFDataGetBytes(local_mac_address_ref,CFRangeMake(0,CFDataGetLength(local_mac_address_ref)),addr); // buffer needs to be unsigned char
-	
-	    IOObjectRelease(bt_service);
-	    
-	    // dump info
-	    char bd_addr_to_str_buffer[6*3];
-	    sprintf(bd_addr_to_str_buffer, "%02x:%02x:%02x:%02x:%02x:%02x", addr[0], addr[1], addr[2], addr[3], addr[4], addr[5]);
-	    log_info("local-mac-address: %s\n", bd_addr_to_str_buffer);
-    }*/
-    
-    /*iCadeReaderView *control = [[iCadeReaderView alloc] initWithFrame:CGRectZero];
-    [window addSubview:control];
-    control.active = YES;
-    [control release];*/
-    
+       
     glView.multipleTouchEnabled = YES;
 	[window addSubview:glView];
 	[glView release];
@@ -778,72 +747,24 @@ const char *documentsPath()
 {
 	if(!docPath)
 	{
-		#ifdef CONFIG_BASE_IOS_JB
-			return "/User/Library/Preferences";
-		#else
-			NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-			NSString *documentsDirectory = [paths objectAtIndex:0];
-			docPath = strdup([documentsDirectory cStringUsingEncoding: NSASCIIStringEncoding]);
-		#endif
-	}
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        docPath = strdup([documentsDirectory cStringUsingEncoding: NSASCIIStringEncoding]);
+    }
 	return docPath;
-}
-
-const char *storagePath()
-{
-	#ifdef CONFIG_BASE_IOS_JB
-		return "/User/Media";
-	#else
-		return documentsPath();
-	#endif
 }
 
 int runningDeviceType()
 {
 	return isIPad ? DEV_TYPE_IPAD : DEV_TYPE_GENERIC;
 }
-
-#ifdef CONFIG_BASE_IOS_SETUID
-
-uid_t realUID = 0, effectiveUID = 0;
-static void setupUID()
-{
-	realUID = getuid();
-	effectiveUID = geteuid();
-	seteuid(realUID);
-}
-
-void setUIDReal()
-{
-	seteuid(Base::realUID);
-}
-
-bool setUIDEffective()
-{
-	return seteuid(Base::effectiveUID) == 0;
-}
-
-#endif
-
 }
 
 int main(int argc, char *argv[])
 {
 	using namespace Base;
-	#ifdef CONFIG_BASE_IOS_SETUID
-	setupUID();
-	#endif
 	
 	doOrExit(logger_init());
-	
-	#ifdef CONFIG_BASE_IOS_SETUID
-	logMsg("real UID %d, effective UID %d", realUID, effectiveUID);
-	if(access("/Library/MobileSubstrate/DynamicLibraries/Backgrounder.dylib", F_OK) == 0)
-	{
-		logMsg("manually loading Backgrounder.dylib");
-		dlopen("/Library/MobileSubstrate/DynamicLibraries/Backgrounder.dylib", RTLD_LAZY | RTLD_GLOBAL);
-	}
-	#endif
 
 	#ifdef CONFIG_FS
 	Fs::changeToAppDir(argv[0]);
