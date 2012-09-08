@@ -18,7 +18,6 @@
 #include <gui/View.hh>
 #include <util/gui/ViewAnimation.hh>
 #include <config/version.h>
-#include <meta.h>
 
 #ifdef NDEBUG
 	#define OTHER_SUFFIX_STR
@@ -62,7 +61,7 @@
 class CreditsView : public View
 {
 public:
-	constexpr CreditsView(): View(CONFIG_APP_NAME " " IMAGINE_VERSION), str(0) { }
+	constexpr CreditsView(): View(IMAGINE_VERSION), str(0) { }
 	GfxText text;
 	FadeViewAnimation<10> fade;
 	const char *str;

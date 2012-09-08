@@ -77,7 +77,7 @@ static int generic_resizeEvent(uint x, uint y, bool force = 0)
 
 const char copyright[] = "Imagine is Copyright 2010, 2011 Robert Broglia";
 
-static void engineInit() ATTRS(cold);
+    static void engineInit();// ATTRS(cold);
 static void engineInit()
 {
 	logDMsg("%s", copyright);

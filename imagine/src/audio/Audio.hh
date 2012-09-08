@@ -41,7 +41,7 @@ static void hintPcmFramesPerWrite(uint frames) { }
 extern PcmFormat preferredPcmFormat;
 extern PcmFormat pcmFormat;
 
-CallResult init() ATTRS(cold);
+    CallResult init();// ATTRS(cold);
 CallResult openPcm(const PcmFormat &format);
 void closePcm();
 bool isOpen();

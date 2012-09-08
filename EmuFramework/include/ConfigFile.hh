@@ -136,7 +136,7 @@ static void loadConfigFile()
     snprintf(configFilePath, sizeof(configFilePath), "%s/config", Base::documentsPath());
     logMsg("loadConfigFile %s", configFilePath);
 
-    Io* io = IoSys::create(configFilePath);
+    Io* io = IoSys::create(configFilePath, IO_CREATE_KEEP);
     if(io == 0)
 	{
 		logMsg("no config file");

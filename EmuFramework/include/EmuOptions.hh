@@ -24,7 +24,7 @@ bool optionIsValidWithMax(T val)
 	return val <= MAX;
 }
 
-static BasicByteOption optionAutoSaveState(CFGKEY_AUTO_SAVE_STATE, 1);
+static BasicByteOption optionAutoSaveState(CFGKEY_AUTO_SAVE_STATE, 0);
 BasicByteOption optionSound(CFGKEY_SOUND, 1);
 static Option<OptionMethodValidatedVar<uint32, optionIsValidWithMax<48000> > > optionSoundRate(CFGKEY_SOUND_RATE,
 		(Config::envIsPS3 || Config::envIsLinux) ? 48000 : 44100, Config::envIsPS3);
@@ -294,9 +294,6 @@ static struct OptionRecentGames : public OptionBase
 		return sizeof(key) + strSizes;
 	}
 } optionRecentGames;
-
-static Option<OptionMethodValidatedVar<uint32, optionIsValidWithMax<128> >, uint16> optionTouchCtrlImgRes
-(CFGKEY_TOUCH_CONTROL_IMG_PIXELS, Config::ENV == Config::WEBOS ? 64 : 128, Config::envIsIOS);
 
 #ifdef SUPPORT_ANDROID_DIRECT_TEXTURE
 	static struct OptionDirectTexture : public Option<OptionMethodVar<uint32>, uint8>

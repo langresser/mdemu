@@ -103,7 +103,7 @@ enum {
 static bool /*using6BtnPad = 0,*/ usingMultiTap = 0;
 static BasicByteOption optionBigEndianSram(CFGKEY_MDKEY_BIG_ENDIAN_SRAM, 0);
 static BasicByteOption optionSmsFM(CFGKEY_MDKEY_SMS_FM, 1);
-static BasicByteOption option6BtnPad(CFGKEY_MDKEY_6_BTN_PAD, 0);
+BasicByteOption option6BtnPad(CFGKEY_MDKEY_6_BTN_PAD, 0);
 
 void EmuSystem::initOptions()
 {
@@ -461,14 +461,21 @@ void EmuSystem::saveBackupMem() // for manually saving when not closing game
 	}
 }
 
-void EmuSystem::saveAutoState()
+void EmuSystem::saveAutoState(int force)
 {
-	if(gameIsRunning() && optionAutoSaveState)
+	if(gameIsRunning() && (optionAutoSaveState || force))
 	{
 		FsSys::cPath saveStr;
 		sprintStateFilename(saveStr, -1);
 		saveMDState(saveStr);
 	}
+}
+
+void EmuSystem::loadAutoState()
+{
+    FsSys::cPath saveStr;
+    sprintStateFilename(saveStr, -1);
+    loadMDState(saveStr);
 }
 
 void EmuSystem::closeSystem()
@@ -491,7 +498,7 @@ const char *mdInputSystemToStr(uint8 system)
 	}
 }
 
-static void setupMDInput()
+void setupMDInput()
 {
 	mem_zero(input.system);
 	mem_zero(config.input);

@@ -11,21 +11,21 @@
 	#include <memrange/interface.h>
 	static void mem_init() { }
 
-	static void* mem_alloc(size_t size) ATTRS(malloc, alloc_size(1));
+static void* mem_alloc(size_t size);// ATTRS(malloc, alloc_size(1));
 	static void* mem_alloc(size_t size) { return memrange_alloc(size); }
 
-	static void* mem_calloc(size_t nelem, size_t size) ATTRS(malloc, alloc_size(1,2));
+static void* mem_calloc(size_t nelem, size_t size);// ATTRS(malloc, alloc_size(1,2));
 	static void* mem_calloc(size_t nelem, size_t size) { return memrange_calloc(nelem, size); }
 
-	static void* mem_realloc(void* buffer, size_t newSize) ATTRS(alloc_size(2));
+static void* mem_realloc(void* buffer, size_t newSize);// ATTRS(alloc_size(2));
 	static void* mem_realloc(void* buffer, size_t newSize) { return memrange_realloc(buffer, newSize); }
 
 	static void mem_free(void* buffer) { memrange_free(buffer); }
 #else
-	void mem_init() ATTRS(cold);
-	void* mem_alloc(size_t size) ATTRS(malloc, alloc_size(1));
-	void* mem_calloc(size_t nelem, size_t size) ATTRS(malloc, alloc_size(1,2));
-	void* mem_realloc(void* buffer, size_t newSize) ATTRS(alloc_size(2));
+void mem_init();// ATTRS(cold);
+void* mem_alloc(size_t size);// ATTRS(malloc, alloc_size(1));
+void* mem_calloc(size_t nelem, size_t size);// ATTRS(malloc, alloc_size(1,2));
+void* mem_realloc(void* buffer, size_t newSize);// ATTRS(alloc_size(2));
 	void mem_free(void* buffer);
 #endif
 

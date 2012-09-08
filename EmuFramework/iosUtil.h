@@ -9,3 +9,7 @@ void hideJoystick();
 
 void showAds();
 void closeAds();
+
+void showSetting();
+void changeSettingOrientation(int o);
+

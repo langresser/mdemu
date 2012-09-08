@@ -57,14 +57,15 @@ class EmuSystem
 	static int loadState();
 	static int saveState();
 	static bool stateExists(int slot);
-	static void saveAutoState();
+	static void saveAutoState(int force);
+    static void loadAutoState();
 	static void saveBackupMem();
 	static void resetGame();
 	static void initOptions();
 	static void writeConfig(Io *io);
 	static bool readConfig(Io *io, uint key, uint readSize);
 	static int loadGame(const char *path, bool allowAutosaveState = 1, bool userrom = false);
-	static void runFrame(bool renderGfx, bool processGfx, bool renderAudio) ATTRS(hot);
+	static void runFrame(bool renderGfx, bool processGfx, bool renderAudio);
 	static bool vidSysIsPAL();
 	static void configAudioRate();
 	static void clearInputBuffers();
@@ -113,7 +114,7 @@ class EmuSystem
 		if(gameIsRunning())
 		{
 			if(allowAutosaveState)
-				saveAutoState();
+				saveAutoState(0);
 			logMsg("closing game %s", gameName);
 			closeSystem();
 			strcpy(gameName, "");

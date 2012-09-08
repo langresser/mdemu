@@ -28,37 +28,6 @@
 
 bool Png::supportUncommonConv = 0;
 
-#ifndef PNG_ERROR_TEXT_SUPPORTED
-
-CLINK void PNGAPI EVISIBLE png_error(png_structp png_ptr, png_const_charp error_message)
-{
-	// TODO: print out more verbose error
-	logMsg("fatal libpng error");
-	Base::abort();
-}
-
-CLINK void PNGAPI EVISIBLE png_chunk_error(png_structp png_ptr, png_const_charp error_message)
-{
-	png_error(png_ptr, error_message);
-}
-
-#endif
-
-#ifndef PNG_WARNINGS_SUPPORTED
-
-CLINK void PNGAPI EVISIBLE png_warning(png_structp png_ptr, png_const_charp warning_message)
-{
-	// TODO: print out more verbose warning
-	logMsg("libpng warning");
-}
-
-CLINK void PNGAPI EVISIBLE png_chunk_warning(png_structp png_ptr, png_const_charp warning_message)
-{
-	png_warning(png_ptr, warning_message);
-}
-
-#endif
-
 static void png_ioReader(png_structp pngPtr, png_bytep data, png_size_t length)
 {
 	Io *stream = (Io*)png_get_io_ptr(pngPtr);
@@ -286,7 +255,6 @@ CallResult Png::readImage (Io * stream, void* buffer, uint pitch, const PixelFor
 	
 	int height = getHeight();
 	int width = getWidth();
-	int rowbytes = png_get_rowbytes(png, info);
 	//log_mPrintf(LOG_MSG,"width = %d, height = %d, rowbytes = %d", width, height, rowbytes);
 
 	png_infop transInfo = png_create_info_struct(png);

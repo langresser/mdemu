@@ -61,7 +61,7 @@ static const uchar maxCursors =
 	static const bool supportsKeyboard = 0;
 #endif
 
-CallResult init() ATTRS(cold);
+    CallResult init();// ATTRS(cold);
 
 void setKeyRepeat(bool on);
 

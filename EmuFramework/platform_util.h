@@ -1,7 +1,6 @@
 #pragma once
 #include <stdlib.h>
 #include <stdio.h>
-#include <string>
 
 #ifndef WIN32
 #include "iosUtil.h"
@@ -12,12 +11,12 @@
 extern char g_resource_dir[256];
 
 void initDir();
-std::string getFullPath(const char* fileName);
 FILE* open_file(const char* file, const char* mode);
 
 void openWebsite(const char* url);
 unsigned int TimeGet();
 
+#if 0
 class TimeLogger
 {
 public:
@@ -35,6 +34,7 @@ private:
 	unsigned int m_startTime;
 	std::string m_name;
 };
+#endif
 
 
 

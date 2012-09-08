@@ -15,7 +15,6 @@
 
 // Imagine
 #import "config.h"
-#import "meta.h"
 
 // MD.emu
 #define LSB_FIRST

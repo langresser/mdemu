@@ -63,7 +63,7 @@ public:
 	void init();
 	void reset();
 	void exit();
-	void run(uint cycles) ATTRS(hot);
+	void run(uint cycles);
 	void burn(uint cycles);
 	void setNmiLine(uint state);
 

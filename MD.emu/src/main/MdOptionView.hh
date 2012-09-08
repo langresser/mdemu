@@ -2,7 +2,7 @@
 #include "OptionView.hh"
 #include <util/cLang.h>
 
-static void setupMDInput();
+extern void setupMDInput();
 
 class MdOptionView : public OptionView
 {

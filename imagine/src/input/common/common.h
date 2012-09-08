@@ -27,6 +27,7 @@ void input_pointerAxis(uint mode)
 	pointerAxis = mode;
 }
 
+extern void pointerPos(int x, int y, int *xOut, int *yOut);
 void pointerPos(int x, int y, int *xOut, int *yOut)
 {
 	// x,y axis is swapped first

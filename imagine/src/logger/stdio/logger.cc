@@ -25,7 +25,7 @@
 #ifdef CONFIG_BASE_ANDROID
 	#include <android/log.h>
 #endif
-
+#ifdef USE_LOGGER
 uint loggerVerbosity = loggerMaxVerbosity;
 
 static const bool useExternalLogFile = 0;
@@ -83,5 +83,6 @@ void logger_printfn(LoggerSeverity severity, const char* msg, ...)
 	logger_vprintfn(severity, msg, args);
 	va_end(args);
 }
+#endif
 
 #undef thisModuleName

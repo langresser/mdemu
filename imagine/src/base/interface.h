@@ -24,7 +24,7 @@
 #endif
 
 // app startup
-CallResult main_init() ATTRS(cold);
+CallResult main_init();// ATTRS(cold);
 
 namespace Base
 {

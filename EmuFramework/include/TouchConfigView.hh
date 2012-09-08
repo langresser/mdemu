@@ -588,24 +588,6 @@ class TouchConfigView : public BaseMenuView
 		}
 	} ffPos;
 
-	struct ImageResolutionMenuItem : public BoolMenuItem
-	{
-		constexpr ImageResolutionMenuItem() { }
-		void init() { BoolMenuItem::init("High Resolution", optionTouchCtrlImgRes == 128U ? 1 : 0); }
-
-		void select(View *view, const InputEvent &e)
-		{
-			toggle();
-			uint newRes = on ? 128 : 64;
-			if(optionTouchCtrlImgRes != newRes)
-			{
-				optionTouchCtrlImgRes = newRes;
-				updateVControlImg();
-				vController.place();
-			}
-		}
-	} imageResolution;
-
 	struct VibrateMenuItem : public BoolMenuItem
 	{
 		constexpr VibrateMenuItem() { }
@@ -654,10 +636,6 @@ public:
 		if(!optionVibrateOnPush.isConst)
 		{
 			vibrate.init(); text[i++] = &vibrate;
-		}
-		if(!optionTouchCtrlImgRes.isConst)
-		{
-			imageResolution.init(); text[i++] = &imageResolution;
 		}
 		assert(i <= sizeofArray(text));
 		BaseMenuView::init(text, i, highlightFirst);

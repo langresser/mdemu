@@ -23,8 +23,7 @@
 #include "ViewStack.hh"
 #include "EmuOptions.hh"
 #include "KeyMapping.hh"
-
-#include <meta.h>
+#include "iosUtil.h"
 
 bool isMenuDismissKey(const InputEvent &e);
 void startGameFromMenu();
@@ -39,7 +38,7 @@ static CreditsView credits;
 YesNoAlertView ynAlertView;
 
 void removeModalView();
-static void onViewChange(void * = 0, Gfx::GfxViewState * = 0);
+void onViewChange(void * = 0, Gfx::GfxViewState * = 0);
 static bool touchControlsApplicable();
 
 
@@ -245,10 +244,7 @@ static GC largeFontMM =
 
 	static void updateVControlImg()
 	{
-		vController.setImg(ResourceImagePng::loadAsset((optionTouchCtrlImgRes == 128U) ? "overlays128.png" : "overlays64.png"));
-		#ifdef CONFIG_VCONTROLLER_KEYBOARD
-		vController.kb.setImg(ResourceImagePng::loadAsset("kbOverlay.png"));
-		#endif
+		vController.setImg(ResourceImagePng::loadAsset("overlays128.png"));
 	}
 
 #endif
@@ -278,9 +274,6 @@ static GC largeFontMM =
 			#endif
 			optionTouchCtrlTriggerBtnPos.initDefault(TRIGGERS_SPLIT);
 			optionTouchCtrlTriggerBtnPos.isConst = vController.hasTriggers() ? 0 : 1;
-			#if !defined(CONFIG_BASE_IOS)
-				optionTouchCtrlImgRes.initDefault((Gfx::viewPixelWidth() * Gfx::viewPixelHeight() > 380000) ? 128 : 64);
-			#endif
 		#endif
 
 		#ifdef SUPPORT_ANDROID_DIRECT_TEXTURE
@@ -495,9 +488,6 @@ void startGameFromMenu()
 		bdefault: bug_branch("%d", (int)optionTouchCtrl);
 	}
 	//logMsg("touch control state: %d", touchControlsAreOn);
-	#ifdef INPUT_SUPPORTS_POINTER
-	vController.resetInput();
-	#endif
 	// TODO: simplify this
 	if(!Gfx::setValidOrientations(optionGameOrientation, 1))
 		onViewChange();
@@ -532,7 +522,7 @@ void startGameFromMenu()
 	}
 }
 
-static void restoreMenuFromGame()
+void restoreMenuFromGame()
 {
 	menuViewIsActive = 1;
 	EmuSystem::pause();
@@ -549,8 +539,6 @@ static void restoreMenuFromGame()
 	viewStack.show();
 }
 
-
-
 enum { STATE_RESULT_OK, STATE_RESULT_NO_FILE, STATE_RESULT_NO_FILE_ACCESS, STATE_RESULT_IO_ERROR,
 	STATE_RESULT_INVALID_DATA, STATE_RESULT_OTHER_ERROR };
 
@@ -565,10 +553,6 @@ static const char *stateResultToStr(int res)
 		default: bug_branch("%d", res); return 0;
 	}
 }
-
-
-
-
 
 static struct ExitAppAlertCallback : public YesNoAlertView::Callback
 {
@@ -586,13 +570,9 @@ static void onExit(void *, bool backgrounded)
 	EmuSystem::pause();
 	if(backgrounded)
 	{
-		EmuSystem::saveAutoState();
+		EmuSystem::saveAutoState(0);
 		EmuSystem::saveBackupMem();
 		EmuSystem::resetAutoSaveStateTime();
-		char title[48];
-		snprintf(title, sizeof(title), "%s was suspended", CONFIG_APP_NAME);
-		if(optionNotificationIcon)
-			Base::addNotification(title, title, EmuSystem::gameName);
 	}
 	else
 	{
@@ -681,11 +661,7 @@ static void drawEmuViewContent()
 		logMsg("touch control setup state: %d %d", (int)touchControlsAreOn, (int)touchControlsApplicable());
 		first = 0;
 	}*/
-	if((touchControlsAreOn && touchControlsApplicable())
-	#ifdef CONFIG_VCONTROLLER_KEYBOARD
-	|| vController.kbMode
-	#endif
-	)
+	if((touchControlsAreOn && touchControlsApplicable()))
 	{
 		vController.draw();
 	}
@@ -753,18 +729,15 @@ public:
 			if(e.state == INPUT_PUSHED && optionTouchCtrlMenuPos != NULL2DO && emuMenuB.overlaps(e.x, e.y))
 			{
 				viewStack.top()->clearSelection();
-				restoreMenuFromGame();
+//				restoreMenuFromGame();
+                showSetting();
 				return;
 			}
 			else if(e.state == INPUT_PUSHED && optionTouchCtrlFFPos != NULL2DO && emuFFB.overlaps(e.x, e.y))
 			{
 				toggle(ffGuiTouch);
 			}
-			else if((touchControlsAreOn && touchControlsApplicable())
-				#ifdef CONFIG_VCONTROLLER_KEYBOARD
-				|| vController.kbMode
-				#endif
-				)
+			else if((touchControlsAreOn && touchControlsApplicable()))
 			{
 				vController.applyInput(e);
 			}
@@ -970,7 +943,7 @@ static void drawEmuView()
 	EmuSystem::autoSaveStateFrameCount--;
 	if(EmuSystem::autoSaveStateFrames && EmuSystem::autoSaveStateFrameCount <= 0)
 	{
-		EmuSystem::saveAutoState();
+		EmuSystem::saveAutoState(0);
 		EmuSystem::resetAutoSaveStateTime();
 	}
 }
@@ -1011,7 +984,7 @@ static void handleInputEvent(const InputEvent &e)
 	}
 }
 
-static void onViewChange(void *, Gfx::GfxViewState *)
+void onViewChange(void *, Gfx::GfxViewState *)
 {
 	logMsg("view change");
 	GuiTable1D::setDefaultXIndent();

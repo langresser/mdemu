@@ -17,7 +17,7 @@ static const uint YF = 0x20;
 static const uint ZF = 0x40;
 static const uint SF = 0x80;
 
-#define INLINE ATTRS(hot) static
+#define INLINE static
 
 // TODO: move global instance into Genesis code
 Z80CPU Z80;

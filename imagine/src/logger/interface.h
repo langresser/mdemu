@@ -14,10 +14,10 @@ static const uint loggerMaxVerbosity = LOGGER_DEBUG_MESSAGE;
 extern uint loggerVerbosity;
 
 typedef uint LoggerSeverity;
-#define USE_LOGGER
+//#define USE_LOGGER
 #ifdef USE_LOGGER
 
-CLINK CallResult logger_init() ATTRS(cold);
+CLINK CallResult logger_init();// ATTRS(cold);
 
 #ifdef CONFIG_LOGGER_STDIO
 	static void logger_update() { }

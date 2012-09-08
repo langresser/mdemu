@@ -13,6 +13,9 @@
 #import <OpenGLES/EAGLDrawable.h>
 #import <Foundation/NSPathUtilities.h>
 
+#import "MobClick.h"
+#import "SettingView.h"
+
 #ifdef CONFIG_INPUT
 	#include "input.h"
 #endif
@@ -22,6 +25,7 @@
 #endif
 
 #include <EmuSystem.hh>
+EAGLView *glView;
 
 namespace Base
 {
@@ -29,7 +33,7 @@ const char *appPath = 0;
 static int pointScale = 1;
 
 static UIWindow *window, *externalWindow = 0;
-static EAGLView *glView;
+
 static EAGLContext *mainContext;
 static MainApp *mainApp;
 static CADisplayLink *displayLink = 0;
@@ -232,6 +236,7 @@ uint appState = APP_RUNNING;
 	logMsg("frame time stamp %f, duration %f, now %f", displayLink.timestamp, displayLink.duration, (float)now);*/
 	//[EAGLContext setCurrentContext:context];
 	//glBindFramebufferOES(GL_FRAMEBUFFER_OES, viewFramebuffer);
+    usleep(10);
 	if(unlikely(!Base::displayLinkActive))
 		return;
 
@@ -247,18 +252,36 @@ extern void startGameFromMenu();
 - (void)layoutSubviews
 {
 	logMsg("entered layoutSubviews");
-	[EAGLContext setCurrentContext:context];
-	[self destroyFramebuffer];
-	[self createFramebuffer];
-	Base::engineInit();
-	Base::setAutoOrientation(1);
-	[self drawView];
-    
-    // 默认打开
-    if(EmuSystem::loadGame("lan2_cn.bin", false, false))
-	{
-		startGameFromMenu();
-	}
+    if (Base::openglViewIsInit == 0) {
+        [EAGLContext setCurrentContext:context];
+        [self destroyFramebuffer];
+        [self createFramebuffer];
+        Base::engineInit();
+        Base::setAutoOrientation(1);
+///        [self drawView];
+        
+        NSString* currentRom = [[NSUserDefaults standardUserDefaults]stringForKey:@"currentRom"];
+        if (currentRom == nil || [currentRom length] <= 0) {
+            currentRom = @"langrisser2_cn.smd";
+            [[NSUserDefaults standardUserDefaults]setObject:currentRom forKey:@"currentRom"];
+        }
+        
+        BOOL firstRun = [[NSUserDefaults standardUserDefaults]boolForKey:@"hasShowTip"];
+        if (!firstRun) {
+            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"hasShowTip"];
+            
+            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"小提示" message:@"点击屏幕右上角可以弹出系统菜单。" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        // 默认打开
+        if(EmuSystem::loadGame([currentRom UTF8String], false, false))
+        {
+            startGameFromMenu();
+        }
+        
+        [self drawView];
+    }
+
 	logMsg("exiting layoutSubviews");
 }
 
@@ -431,43 +454,6 @@ extern void startGameFromMenu();
 
 
 @implementation MainApp
-
-#if defined(CONFIG_INPUT) && defined(IPHONE_VKEYBOARD)
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-	if (textView.text.length >= 127 && range.length == 0)
-		return NO;
-	return YES;
-}
-#endif
-
-/*- (void) screenDidConnect:(NSNotification *)aNotification
-{
-	logMsg("New screen connected");
-	UIScreen *screen = [aNotification object];
-	UIScreenMode *mode = [[screen availibleModes] lastObject];
-	screen.currentMode = mode;
-	if(!externalWindow)
-	{
-		externalWindow = [UIWindow alloc];
-	}
-	CGRect rect = CGRectMake(0, 0, mode.size.width, mode.size.height);
-	[externalWindow initWithFrame:rect];
-	externalWindow.screen = screen;
-	[externalWindow makeKeyAndVisible];
-}
- 
-- (void) screenDidDisconnect:(NSNotification *)aNotification
-{
-	logMsg("Screen dis-connected");
-}
- 
-- (void) screenModeDidChange:(NSNotification *)aNotification
-{
-	UIScreen *screen = [aNotification object];
-	logMsg("Screen-mode change"); // [screen currentMode]
-}*/
-
 static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
 {
 	switch(orientation)
@@ -482,6 +468,10 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
+    [MobClick startWithAppkey:@"5033dcb1527015684100000b"];
+    [[DianJinOfferPlatform defaultPlatform] setAppId:8843 andSetAppKey:@"c5226bf1764f90b1daca6cfb40ff1fac"];
+	[[DianJinOfferPlatform defaultPlatform] setOfferViewColor:kDJBrownColor];
+
 	using namespace Base;
 	NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
 	#ifndef NDEBUG
@@ -515,31 +505,6 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
 	// Create a full-screen window
 	window = [[UIWindow alloc] initWithFrame:rect];
 	
-	#if defined(CONFIG_INPUT) && defined(IPHONE_VKEYBOARD)
-		// init input text field
-		//vkbdField = [ [ UITextField alloc ] initWithFrame: CGRectMake(8, 200, 320-16, 48) ];
-		vkbdField = [ [ UITextView alloc ] initWithFrame: CGRectMake(12, 24, 286, 24*4) ];
-		//vkbdField.adjustsFontSizeToFitWidth = YES;
-		vkbdField.textColor = [UIColor blackColor];
-		vkbdField.font = [UIFont systemFontOfSize:16.0];
-		//vkbdField.placeholder = @"";
-		vkbdField.backgroundColor = [UIColor whiteColor];
-		//vkbdField.borderStyle = UITextBorderStyleBezel;
-		vkbdField.autocorrectionType = UITextAutocorrectionTypeNo; // no auto correction support
-		vkbdField.autocapitalizationType = UITextAutocapitalizationTypeNone; // no auto capitalization support
-		vkbdField.textAlignment = UITextAlignmentLeft;
-		vkbdField.keyboardType = UIKeyboardTypeASCIICapable; //UIKeyboardTypeDefault;
-		//vkbdField.returnKeyType = UIReturnKeyDone;
-		//vkbdField.keyboardAppearance = UIKeyboardAppearanceAlert;
-		//vkbdField.tag = 0;
-		vkbdField.delegate = self;
-		//vkbdField.clearButtonMode = UITextFieldViewModeNever; // no clear 'x' button to the right
-		vkbdField.text = @"";
-		vkbdField.enablesReturnKeyAutomatically = YES;
-		//[ vkbdField setEnabled: YES ];
-		logMsg("init vkeyboard");
-	#endif
-	
 	#ifdef GREYSTRIPE
 	initGS(self);
 	#endif
@@ -562,14 +527,19 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
     #endif
        
     glView.multipleTouchEnabled = YES;
-	[window addSubview:glView];
-	[glView release];
+
+    UIView* view = [[UIView alloc]initWithFrame:rect];
+    [view addSubview:glView];
+    [[MDGameViewController sharedInstance] setView:view];
+    
+	[window addSubview:[MDGameViewController sharedInstance].view];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
 	
 	[UIApplication sharedApplication].idleTimerDisabled = YES;
 
 	[window makeKeyAndVisible];
+    
 	#if defined(IPHONE_MSG_COMPOSE) || defined(IPHONE_IMG_PICKER)
 	viewCtrl = [[UIViewController alloc] init];
 	[viewCtrl setView: glView];
@@ -579,6 +549,10 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
 
 - (void)orientationChanged:(NSNotification *)notification
 {
+    if (Base::openglViewIsInit == 0) {
+        return;
+    }
+
 	uint o = iOSOrientationToGfx([[UIDevice currentDevice] orientation]);
 	if(o == 255)
 		return;

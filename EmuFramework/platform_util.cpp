@@ -1,6 +1,7 @@
 #include "platform_util.h"
 #include <locale>
 #include <string.h>
+#include <string>
 
 #ifdef __IPHONEOS__
 char g_application_dir[256] = {0};

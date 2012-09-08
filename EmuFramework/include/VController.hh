@@ -376,10 +376,6 @@ public:
 	int ptrElem[Input::maxCursors][2], prevPtrElem[Input::maxCursors][2];
 	VControllerGamepad<faceBtns, centerBtns, hasTriggerButtons, revFaceMapping> gp;
 	float alpha;
-	#ifdef CONFIG_VCONTROLLER_KEYBOARD
-	VControllerKeyboard kb;
-	uint kbMode;
-	#endif
 
 	bool hasTriggers() const
 	{
@@ -409,59 +405,19 @@ public:
 	{
 		var_selfs(alpha);
 		gp.init(alpha, size);
-		#ifdef CONFIG_VCONTROLLER_KEYBOARD
-		kb.init();
-		kbMode = 0;
-		#endif
 		resetInput(1);
 	}
 
 	void place()
 	{
 		gp.place();
-		#ifdef CONFIG_VCONTROLLER_KEYBOARD
-		kb.place(gp.btnSize, gp.centerBtn[0].ySize * 1.5);
-		#endif
 		resetInput();
 	}
-
-	#ifdef CONFIG_VCONTROLLER_KEYBOARD
-	void toggleKeyboard()
-	{
-		logMsg("toggling keyboard");
-		resetInput();
-		toggle(kbMode);
-	}
-	#endif
 
 	static const int C_ELEM = 0, F_ELEM = 8, D_ELEM = 32;
 
 	void findElementUnderPos(const InputEvent &e, int elemOut[2])
 	{
-		#ifdef CONFIG_VCONTROLLER_KEYBOARD
-		if(kbMode)
-		{
-			int kbChar = kb.getInput(e.x, e.y);
-			if(kbChar == -1)
-				return;
-			if(kbChar == 30 && e.pushed())
-			{
-				logMsg("dismiss kb");
-				toggleKeyboard();
-			}
-			else if((kbChar == 31 || kbChar == 32) && e.pushed())
-			{
-				logMsg("switch kb mode");
-				toggle(kb.mode);
-				kb.updateImg();
-				resetInput();
-			}
-			else
-				elemOut[0] = kbChar;
-			return;
-		}
-		#endif
-
 		int elem = gp.getCenterBtnInput(e.x, e.y);
 		if(elem != -1)
 		{
@@ -547,12 +503,6 @@ public:
 		setImgMode(IMG_MODE_MODULATE);
 		setBlendMode(BLEND_MODE_ALPHA);
 		setColor(1., 1., 1., alpha);
-
-		#ifdef CONFIG_VCONTROLLER_KEYBOARD
-		if(kbMode)
-			kb.draw();
-		else
-		#endif
 		gp.draw();
 	}
 };

@@ -13,8 +13,8 @@ namespace Gfx
 {
 
 // init & control
-CallResult init() ATTRS(cold);
-CallResult setOutputVideoMode(uint x, uint y) ATTRS(cold);
+    CallResult init();// ATTRS(cold);
+    CallResult setOutputVideoMode(uint x, uint y);// ATTRS(cold);
 void resizeDisplay(uint x, uint y);
 
 // commit/sync

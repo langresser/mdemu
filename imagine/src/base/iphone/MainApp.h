@@ -18,6 +18,11 @@
 #import <GameKit/GameKit.h>
 #endif
 
+#import <DianJinOfferPlatform/DianJinOfferPlatform.h>
+#import <DianJinOfferPlatform/DianJinOfferBanner.h>
+#import <DianJinOfferPlatform/DianJinBannerSubViewProperty.h>
+#import <DianJinOfferPlatform/DianJinTransitionParam.h>
+
 @interface MainApp : NSObject <UIApplicationDelegate
 #ifdef IPHONE_VKEYBOARD
 //, UITextFieldDelegate
@@ -37,7 +42,6 @@
 #endif
 >
 {
-
 }
 
 @end

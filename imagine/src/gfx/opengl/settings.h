@@ -38,10 +38,6 @@
 
 namespace Gfx
 {
-
-static int discardFrameBuffer = 0;
-static bool useSGIVidSync = 0;
-
 TextureSizeSupport textureSizeSupport =
 {
 	0, // nonPow2
@@ -185,9 +181,8 @@ static void vsyncEnable()
 	#endif
 }
 
-static GLfloat maximumAnisotropy, anisotropy = 0, forceAnisotropy = 0;
+static GLfloat anisotropy = 0, forceAnisotropy = 0;
 static bool useAnisotropicFiltering = 0;
-static bool forceNoAnisotropicFiltering = 1;
 
 static void checkForAnisotropicFiltering()
 {
@@ -207,7 +202,6 @@ static void checkForAnisotropicFiltering()
 }
 
 static uchar useAutoMipmapGeneration = 0;
-static uchar forceNoAutoMipmapGeneration = 1;
 
 static void checkForAutoMipmapGeneration()
 {
@@ -280,7 +274,6 @@ static void checkForNonPow2Textures()
 
 static uchar supportBGRPixels = 0;
 static uchar useBGRPixels = 0;
-static uchar forceNoBGRPixels = 0;
 
 namespace Gfx
 {
@@ -323,7 +316,6 @@ static void checkForBGRPixelSupport()
 }
 
 static uchar useTextureClampToEdge = 0;
-static uchar forceNoTextureClampToEdge = 0;
 
 static void checkForTextureClampToEdge()
 {
@@ -338,10 +330,6 @@ static void checkForTextureClampToEdge()
 	#endif
 }
 
-static uchar supportCompressedTextures = 0;
-static uchar useCompressedTextures = 0;
-static uchar forceNoCompressedTextures = 1;
-
 static void checkForCompressedTexturesSupport()
 {
 	#ifndef CONFIG_GFX_OPENGL_ES
@@ -355,7 +343,6 @@ static void checkForCompressedTexturesSupport()
 }
 
 static uchar useFBOFuncs = 0;
-static uchar forceNoFBOFuncs = 1;
 
 static void checkForFBOFuncs()
 {

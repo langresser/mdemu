@@ -17,7 +17,6 @@
 
 #include <util/gui/BaseMenuView.hh>
 #include "EmuSystem.hh"
-#include <meta.h>
 
 static void onInputEvent(void *, const InputEvent &e);
 void startGameFromMenu();
@@ -641,7 +640,7 @@ protected:
 	} exitApp;
 
 public:
-	constexpr MenuView(): BaseMenuView(CONFIG_APP_NAME " " IMAGINE_VERSION) { }
+	constexpr MenuView(): BaseMenuView(IMAGINE_VERSION) { }
 
 	void onShow()
 	{
