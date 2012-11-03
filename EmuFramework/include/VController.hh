@@ -329,8 +329,10 @@ public:
 
 			if(e->overlaps(x, y))
 			{
+                logMsg("press:%d (%d %d)    (%d %d %d %d)", e_i, x, y, e->x, e->y, e->x2, e->y2);
 				//logMsg("overlaps %d", (int)e_i);
 				btnOut[count] = e_i;
+
 				count++;
 				if(count == 2)
 					return;
@@ -472,17 +474,22 @@ public:
 		}
 
 		// push new buttons
-		iterateTimes(2, i)
-		{
-			var_copy(vBtn, elem[i]);
+        bool enableDoublePress = (elem[0] <= 10 && elem[1] <= 10) 
+        || (elem[0] > 10 && elem[1] > 10);
+        for(unsigned int i = 0; i < 2; i++) {
+            int vBtn = elem[i];
 			if(vBtn != -1 && !mem_findFirstValue(ptrElem[e.devId], vBtn))
 			{
-				//logMsg("pushing %d", vBtn);
+				logMsg("pushing %d", vBtn);
 				EmuSystem::handleOnScreenInputAction(INPUT_PUSHED, vBtn);
 				if(optionVibrateOnPush)
 				{
 					Base::vibrate(32);
 				}
+                
+                if (!enableDoublePress) {
+                    break;
+                }
 			}
 		}
 

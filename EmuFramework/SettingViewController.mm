@@ -14,8 +14,11 @@
 #include "Option.hh"
 #import "UIDevice+Util.h"
 #import "SettingView.h"
+#import "UIGlossyButton.h"
+#import "UMFeedback.h"
 
-static int g_currentMB = 0;
+
+int g_currentMB = 0;
 
 @implementation SettingViewController
 
@@ -31,26 +34,35 @@ static int g_currentMB = 0;
 -(void)loadView
 {
     settingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
-    m_tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, 320, 430) style:UITableViewStyleGrouped];
+    settingView.backgroundColor = [UIColor colorWithRed:1.0 green:0.94 blue:0.96 alpha:0.8];
+    m_tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 100, 320, 380) style:UITableViewStyleGrouped];
     m_tableView.delegate = self;
     m_tableView.dataSource = self;
+    m_tableView.backgroundColor = [UIColor clearColor];
     [settingView addSubview:m_tableView];
-    DianJinOfferBanner *_banner = [[DianJinOfferBanner alloc] initWithOfferBanner:CGPointMake(0, 0) style:kDJBannerStyle320_50];
-    DianJinTransitionParam *transitionParam = [[DianJinTransitionParam alloc] init];
-    transitionParam.animationType = kDJTransitionCube;
-    transitionParam.animationSubType = kDJTransitionFromTop;
-    transitionParam.duration = 1.0;
-    [_banner setupTransition:transitionParam];
-    [_banner startWithTimeInterval:20 delegate:self];
-    [settingView addSubview:_banner];
-    
-    UIButton* btnBack = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnBack.frame = CGRectMake(260, 50, 50, 30);
-    [btnBack setTitle:@"返回" forState:UIControlStateNormal];
+
+    UIGlossyButton* btnBack = [[UIGlossyButton alloc]initWithFrame:CGRectMake(220, 60, 80, 30)];
+    [btnBack setTitle:@"返回游戏" forState:UIControlStateNormal];
     [btnBack addTarget:self action:@selector(onClickBack) forControlEvents:UIControlEventTouchUpInside];
 
-    btnBack.alpha = 0.7;
+	[btnBack useWhiteLabel: YES];
+    btnBack.tintColor = [UIColor brownColor];
+	[btnBack setShadow:[UIColor blackColor] opacity:0.8 offset:CGSizeMake(0, 1) blurRadius: 4];
+    [btnBack setGradientType:kUIGlossyButtonGradientTypeLinearSmoothBrightToNormal];
+//    btnBack.alpha = 0.7;
     [settingView addSubview:btnBack];
+    
+    UIGlossyButton* btnBackList = [[UIGlossyButton alloc]initWithFrame:CGRectMake(20, 60, 80, 30)];
+    [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btnBackList setTitle:@"游戏列表" forState:UIControlStateNormal];
+    [btnBackList addTarget:self action:@selector(onClickBackList) forControlEvents:UIControlEventTouchUpInside];
+    
+//    btnBackList.alpha = 0.7;
+    [btnBackList useWhiteLabel: YES];
+    btnBackList.tintColor = [UIColor brownColor];
+	[btnBackList setShadow:[UIColor blackColor] opacity:0.8 offset:CGSizeMake(0, 1) blurRadius: 4];
+    [btnBackList setGradientType:kUIGlossyButtonGradientTypeLinearSmoothBrightToNormal];
+    [settingView addSubview:btnBackList];
     
     [self setView:settingView];
 }
@@ -59,6 +71,13 @@ static int g_currentMB = 0;
 {
     [super viewDidLoad];
     self.contentSizeForViewInPopover = CGSizeMake(320, 480);
+    
+    adView = [[AdMoGoView alloc] initWithAppKey:@"1df841c4721346c7abc9bc917339c74b"
+                                         adType:AdViewTypeNormalBanner expressMode:NO
+                             adMoGoViewDelegate:self];
+    adView.adWebBrowswerDelegate = self;
+    adView.frame = CGRectMake(0, 0, 320, 50);
+    [self.view addSubview:adView];
 	// Do any additional setup after loading the view.
 }
 
@@ -66,6 +85,26 @@ static int g_currentMB = 0;
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (UIViewController *)viewControllerForPresentingModalView{
+    return self;
+}
+
+- (void)adMoGoDidStartAd:(AdMoGoView *)adMoGoView{ 
+    NSLog(@"广告开始请求回调");
+} /**
+   * 广告接收成功回调
+   */
+- (void)adMoGoDidReceiveAd:(AdMoGoView *)adMoGoView{
+    NSLog(@"广告接收成功回调"); }
+/**
+ * 广告接收失败回调 */
+- (void)adMoGoDidFailToReceiveAd:(AdMoGoView *)adMoGoView didFailWithError:(NSError *)error{
+    NSLog(@"广告接收失败回调"); }
+/**
+ * 点击广告回调 */
+- (void)adMoGoClickAd:(AdMoGoView *)adMoGoView{ NSLog(@"点击广告回调");
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -79,6 +118,22 @@ static int g_currentMB = 0;
     
     g_currentMB = [[NSUserDefaults standardUserDefaults]integerForKey:@"MB"];
     [m_tableView reloadData];
+}
+
+-(void)onClickBackList
+{
+    EmuSystem::saveAutoState(1);
+    EmuSystem::saveBackupMem();
+    EmuSystem::resetAutoSaveStateTime();
+    
+
+    if (isPad()) {
+        [[MDGameViewController sharedInstance].popoverVC dismissPopoverAnimated:YES];
+    } else {
+        [self dismissModalViewControllerAnimated:NO];
+    }
+    
+    [[MDGameViewController sharedInstance]showGameList];
 }
 
 -(void)onClickBack
@@ -98,44 +153,37 @@ static int g_currentMB = 0;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return @"附加剧本";
+        return @"系统设置";
     } else if (section == 1) {
-        return @"系统";
-    } else if (section == 2) {
-        return @"游戏攻略";
+        return @"其他";
     }
     return @"";
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return [NSString stringWithFormat:@"当您的M币达到100时，将自动解锁所有附加剧本。当前M币：%d", g_currentMB];
-    }
     return @"";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 4;
-    } else if (section == 1) {
         return 6;
-    } else if (section == 2) {
-        return 5;
+    } else if (section == 1) {
+        return 3;
     }
-    return 1;
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 30;
+    return 40;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -147,63 +195,6 @@ static int g_currentMB = 0;
     UITableViewCell* cell = nil;
     
     if (indexPath.section == 0) {
-        static NSString* cellIdent = @"MyCellSetting";
-        cell = [tableView dequeueReusableCellWithIdentifier:cellIdent];
-        if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdent];
-            cell.textLabel.font = [UIFont systemFontOfSize:17.0];
-            cell.selectionStyle = UITableViewCellSelectionStyleGray;
-            cell.accessoryType = UITableViewCellAccessoryNone;
-        }
-        
-        NSString* currentRom = [[NSUserDefaults standardUserDefaults]stringForKey:@"currentRom"];
-        
-        switch (indexPath.row) {
-            case 0:
-                cell.textLabel.text = @"正篇";
-                cell.detailTextLabel.text = @"简体中文版";
-                
-                if ([currentRom compare:@"langrisser2_cn.smd"] == NSOrderedSame) {
-                    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-                } else {
-                    cell.accessoryType = UITableViewCellAccessoryNone;
-                }
-                
-                break;
-            case 1:
-                cell.textLabel.text = @"意志之路修改篇";
-                cell.detailTextLabel.text = @"繁体完整汉化版";
-                
-                if ([currentRom compare:@"langrisser2-yy.bin"] == NSOrderedSame) {
-                    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-                } else {
-                    cell.accessoryType = UITableViewCellAccessoryNone;
-                }
-                break;
-            case 2:
-                cell.textLabel.text =  @"帝国篇";
-                cell.detailTextLabel.text = @"可以选择帝国兵种";
-                
-                if ([currentRom compare:@"langrisser2_1.4.bin"] == NSOrderedSame) {
-                    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-                } else {
-                    cell.accessoryType = UITableViewCellAccessoryNone;
-                }
-                break;
-            case 3:
-                cell.textLabel.text =  @"梦幻模拟战1";
-                cell.detailTextLabel.text = @"有爱的同学推荐玩ss汉化版";
-                
-                if ([currentRom compare:@"langrisser1.bin"] == NSOrderedSame) {
-                    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-                } else {
-                    cell.accessoryType = UITableViewCellAccessoryNone;
-                }
-                break;
-            default:
-                break;
-        }
-    } else if (indexPath.section == 1) {
         if (indexPath.row == 2) {
             static NSString *CellIdentifier = @"PickCell";
             CPPickerViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -305,7 +296,7 @@ static int g_currentMB = 0;
                     break;
             }
         }
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == 1) {
         static NSString* cellIdent = @"MyCellGongl";
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdent];
         if (!cell) {
@@ -317,18 +308,12 @@ static int g_currentMB = 0;
         
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"剧情攻略";
+                cell.textLabel.text = @"意见反馈";
                 break;
             case 1:
-                cell.textLabel.text = @"转职表";
+                cell.textLabel.text = @"论坛交流";
                 break;
             case 2:
-                cell.textLabel.text =  @"游戏秘籍";
-                break;
-            case 3:
-                cell.textLabel.text = @"论坛";
-                break;
-            case 4:
                 cell.textLabel.text = @"精品推荐";
                 break;
             default:
@@ -351,84 +336,6 @@ static int g_currentMB = 0;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 0) {
-        EmuSystem::saveAutoState(1);
-		EmuSystem::saveBackupMem();
-		EmuSystem::resetAutoSaveStateTime();
-        
-        NSString* currentRom = [[NSUserDefaults standardUserDefaults]stringForKey:@"currentRom"];
-        
-        extern void startGameFromMenu();
-        switch (indexPath.row) {
-            case 0:
-                if ([currentRom compare:@"langrisser2_cn.smd"] == NSOrderedSame) {
-                    return;
-                }
-                
-                // 默认打开
-                if(EmuSystem::loadGame("langrisser2_cn.smd", false, false))
-                {
-                    [self onClickBack];
-                    startGameFromMenu();
-                }
-                [[NSUserDefaults standardUserDefaults]setObject:@"langrisser2_cn.smd" forKey:@"currentRom"];
-                break;
-            case 1:
-                if ([currentRom compare:@"langrisser2-yy.bin"] == NSOrderedSame) {
-                    return;
-                }
-                
-                if (![self isHackEnable]) {
-                    return;
-                }
-                
-                // 默认打开
-                if(EmuSystem::loadGame("langrisser2-yy.bin", false, false))
-                {
-                    [self onClickBack];
-                    startGameFromMenu();
-                }
-                [[NSUserDefaults standardUserDefaults]setObject:@"langrisser2-yy.bin" forKey:@"currentRom"];
-                break;
-            case 2:
-            {
-                if ([currentRom compare:@"langrisser2_1.4.bin"] == NSOrderedSame) {
-                    return;
-                }
-                
-                if (![self isHackEnable]) {
-                    return;
-                }
-                
-                // 默认打开
-                if(EmuSystem::loadGame("langrisser2_1.4.bin", false, false))
-                {
-                    [self onClickBack];
-                    startGameFromMenu();
-                }
-                [[NSUserDefaults standardUserDefaults]setObject:@"langrisser2_1.4.bin" forKey:@"currentRom"];
-            }
-                break;
-            case 3:
-                if ([currentRom compare:@"langrisser1.bin"] == NSOrderedSame) {
-                    return;
-                }
-                
-                if (![self isHackEnable]) {
-                    return;
-                }
-                
-                // 默认打开
-                if(EmuSystem::loadGame("langrisser1.bin", false, false))
-                {
-                    [self onClickBack];
-                    startGameFromMenu();
-                }
-                [[NSUserDefaults standardUserDefaults]setObject:@"langrisser1.bin" forKey:@"currentRom"];
-                break;
-            default:
-                break;
-        }
-    } else if (indexPath.section == 1) {
         switch (indexPath.row) {
             case 0:
                 [self onClickBack];
@@ -453,26 +360,17 @@ static int g_currentMB = 0;
             default:
                 break;
         }
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == 1) {
         switch (indexPath.row) {
             case 0:
-                openWebsite("http://langrissers.com/md2/3.htm");
-                //                cell.textLabel.text = @"剧情攻略";
+                [UMFeedback showFeedback:self withAppkey:@"504b6946527015169e00004f"];
                 break;
             case 1:
-                openWebsite("http://langrissers.com/md2/4.htm");
-                //               cell.textLabel.text = @"转职表";
+                openWebsite("http://bananastudio.cn/bbs/forum.php");
                 break;
             case 2:
-                openWebsite("http://langrissers.com/md2/9.htm");
-                //             cell.textLabel.text =  @"游戏秘籍";
-                break;
-            case 3:
-                openWebsite("http://bananastudio.cn/bbs/forum.php");
-                //             cell.textLabel.text = @"论坛";
-                break;
-            case 4:
                 [[DianJinOfferPlatform defaultPlatform]showOfferWall: self delegate:self];
+                break;
                 break;
             default:
                 break;
@@ -489,44 +387,9 @@ static int g_currentMB = 0;
         NSString *identifier = [resultDic objectForKey:@"identifier"];
         NSLog(@"app identifier = %@", identifier);
         g_currentMB += [awardAmount floatValue];
-        
-        if (settingView != nil) {
-            [m_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-        }
-        
-        if (g_currentMB >= 100) {
-            NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-            if (defaults) {
-                [[NSUserDefaults standardUserDefaults] setObject:[[UIDevice currentDevice] uniqueDeviceIdentifier] forKey:kRemoveAdsFlag];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-            }
-        }
         [[NSUserDefaults standardUserDefaults]setInteger:g_currentMB forKey:@"MB"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
-}
-
--(BOOL)isHackEnable
-{
-    NSString* flag = [[NSUserDefaults standardUserDefaults] stringForKey:kRemoveAdsFlag];
-    if (flag && [flag isEqualToString:[[UIDevice currentDevice] uniqueDeviceIdentifier]]) {
-        return YES;
-    }
-    
-    if (g_currentMB >= 100) {
-        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-        if (defaults) {
-            [m_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
-            [[NSUserDefaults standardUserDefaults] setObject:[[UIDevice currentDevice] uniqueDeviceIdentifier] forKey:kRemoveAdsFlag];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }
-        return YES;
-    }
-    
-    NSString* title = [NSString stringWithFormat:@"当您M币达到100时，将自动解锁所有附加剧本。您可以通过安装精品推荐应用的方式免费获取M币。"];
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"提示" message:title delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:@"获取M币", nil];
-    [alert show];
-    return NO;
 }
 
 #pragma mark - CPPickerViewCell DataSource
@@ -537,6 +400,8 @@ static int g_currentMB = 0;
     } else if (pickerPath.row == 3) {
         return 2;
     }
+    
+    return 0;
 }
 
 - (NSString *)pickerViewAtIndexPath:(NSIndexPath *)pickerPath titleForItem:(NSInteger)item {
@@ -576,7 +441,7 @@ static int g_currentMB = 0;
         }
     }
 
-    [m_tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationNone];
+    [m_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 

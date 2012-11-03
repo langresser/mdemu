@@ -13,3 +13,5 @@ void closeAds();
 void showSetting();
 void changeSettingOrientation(int o);
 
+
+#define kRemoveAdsFlag @"bsrmads"

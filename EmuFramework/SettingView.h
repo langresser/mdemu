@@ -8,15 +8,20 @@
 #pragma once
 #import "iosUtil.h"
 #import "SettingViewController.h"
+#import "GameListViewController.h"
 
 @interface MDGameViewController : UIViewController<UIPopoverControllerDelegate>
 {
+    GameListViewController* gameListVC;
     SettingViewController* settingVC;
     UIPopoverController * popoverVC;
 }
 
+@property(nonatomic, strong) GameListViewController* gameListVC;
 @property(nonatomic, strong) SettingViewController* settingVC;
 @property(nonatomic, strong) UIPopoverController * popoverVC;
 +(MDGameViewController*)sharedInstance;
+
+-(void)showGameList;
 @end
 

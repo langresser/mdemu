@@ -26,6 +26,7 @@
 
 #include <EmuSystem.hh>
 EAGLView *glView;
+int openglViewIsInit = 0;
 
 namespace Base
 {
@@ -93,8 +94,6 @@ uint ios_iCadeActive()
 #endif
 
 static const int USE_DEPTH_BUFFER = 0;
-static int openglViewIsInit = 0;
-
 static NSTimer *mainTimer = 0;
 static TimerCallbackFunc timerCallbackFunc = 0;
 static void *timerCallbackFuncCtx = 0;
@@ -248,43 +247,40 @@ uint appState = APP_RUNNING;
 	}
 }
 
-extern void startGameFromMenu();
-- (void)layoutSubviews
+-(void)layoutSubviews
 {
-	logMsg("entered layoutSubviews");
-    if (Base::openglViewIsInit == 0) {
+    if (openglViewIsInit == 0) {
         [EAGLContext setCurrentContext:context];
         [self destroyFramebuffer];
         [self createFramebuffer];
         Base::engineInit();
         Base::setAutoOrientation(1);
-///        [self drawView];
         
-        NSString* currentRom = [[NSUserDefaults standardUserDefaults]stringForKey:@"currentRom"];
-        if (currentRom == nil || [currentRom length] <= 0) {
-            currentRom = @"langrisser2_cn.smd";
-            [[NSUserDefaults standardUserDefaults]setObject:currentRom forKey:@"currentRom"];
+        extern std::string g_romPath;
+        if (!g_romPath.empty()) {
+            if(EmuSystem::loadGame(g_romPath.c_str(), false, false))
+            {
+                startGameFromMenu();
+            }
         }
-        
-        BOOL firstRun = [[NSUserDefaults standardUserDefaults]boolForKey:@"hasShowTip"];
-        if (!firstRun) {
-            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"hasShowTip"];
-            
-            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"小提示" message:@"点击屏幕右上角可以弹出系统菜单。" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-            [alert show];
-        }
-        // 默认打开
-        if(EmuSystem::loadGame([currentRom UTF8String], false, false))
-        {
-            startGameFromMenu();
-        }
-        
-        [self drawView];
     }
-
-	logMsg("exiting layoutSubviews");
 }
 
+extern void startGameFromMenu();
+-(void)loadRecentGame
+{
+    NSString* currentRom = [[NSUserDefaults standardUserDefaults]stringForKey:@"currentRom"];
+    if (currentRom == nil || [currentRom length] <= 0) {
+        currentRom = @"langrisser2_cn.smd";
+        [[NSUserDefaults standardUserDefaults]setObject:currentRom forKey:@"currentRom"];
+    }
+
+    // 默认打开
+    if(EmuSystem::loadGame([currentRom UTF8String], false, false))
+    {
+        startGameFromMenu();
+    }
+}
 
 - (BOOL)createFramebuffer
 {
@@ -313,7 +309,7 @@ extern void startGameFromMenu();
 		return NO;
 	}
 	
-	Base::openglViewIsInit = 1;
+	openglViewIsInit = 1;
 	return YES;
 }
 
@@ -331,7 +327,7 @@ extern void startGameFromMenu();
 		depthRenderbuffer = 0;
 	}
 	
-	Base::openglViewIsInit = 0;
+	openglViewIsInit = 0;
 }
 
 - (void)dealloc
@@ -466,10 +462,11 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
 	}
 }
 
+UIImageView* pauseImage;
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
-    [MobClick startWithAppkey:@"5033dcb1527015684100000b"];
-    [[DianJinOfferPlatform defaultPlatform] setAppId:8843 andSetAppKey:@"c5226bf1764f90b1daca6cfb40ff1fac"];
+    [MobClick startWithAppkey:@"504b6946527015169e00004f"];
+    [[DianJinOfferPlatform defaultPlatform] setAppId:10036 andSetAppKey:@"0f3294fd5e50445ca4d28a259409ffd0"];
 	[[DianJinOfferPlatform defaultPlatform] setOfferViewColor:kDJBrownColor];
 
 	using namespace Base;
@@ -533,8 +530,15 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
     [[MDGameViewController sharedInstance] setView:view];
     
 	[window addSubview:[MDGameViewController sharedInstance].view];
+    
+    pauseImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pause"]];
+    pauseImage.frame = CGRectMake(glView.bounds.size.width - 60, 0, 60, 60);
+    pauseImage.alpha = 0.3;
+    [glView addSubview:pauseImage];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
+    [[MDGameViewController sharedInstance] showGameList];
 	
 	[UIApplication sharedApplication].idleTimerDisabled = YES;
 
@@ -549,15 +553,30 @@ static uint iOSOrientationToGfx(UIDeviceOrientation orientation)
 
 - (void)orientationChanged:(NSNotification *)notification
 {
-    if (Base::openglViewIsInit == 0) {
+    if (openglViewIsInit == 0) {
         return;
     }
 
 	uint o = iOSOrientationToGfx([[UIDevice currentDevice] orientation]);
 	if(o == 255)
 		return;
+
 	if(o != Gfx::VIEW_ROTATE_180)
 	{
+        switch (o) {
+            case Gfx::VIEW_ROTATE_90:
+                pauseImage.frame = CGRectMake(glView.bounds.size.width - 60, glView.bounds.size.height - 60, 60, 60);
+                break;
+            case Gfx::VIEW_ROTATE_270:
+                pauseImage.frame = CGRectMake(0, 0, 60, 60);
+                break;
+            case Gfx::VIEW_ROTATE_0:
+                pauseImage.frame = CGRectMake(glView.bounds.size.width - 60, 0, 60, 60);
+                break;
+            default:
+                break;
+        }
+
 		logMsg("new orientation %s", Gfx::orientationName(o));
 		Gfx::preferedOrientation = o;
 		Gfx::setOrientation(Gfx::preferedOrientation);

@@ -10,18 +10,20 @@
 
 #import "iosUtil.h"
 #import <DianJinOfferPlatform/DianJinOfferPlatform.h>
-#import <DianJinOfferPlatform/DianJinOfferBanner.h>
 #import <DianJinOfferPlatform/DianJinBannerSubViewProperty.h>
 #import <DianJinOfferPlatform/DianJinTransitionParam.h>
 #import <DianJinOfferPlatform/DianJinOfferPlatformProtocol.h>
+#import "AdMoGoDelegateProtocol.h"
+#import "AdMoGoView.h"
+#import "AdMoGoWebBrowserControllerUserDelegate.h"
 #import "CPPickerViewCell.h"
 
-#define kRemoveAdsFlag @"bsrmads"
-
-@interface SettingViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, DianJinOfferBannerDelegate, UIAlertViewDelegate, DianJinOfferPlatformProtocol, CPPickerViewCellDelegate, CPPickerViewCellDataSource>
+@interface SettingViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, DianJinOfferPlatformProtocol, CPPickerViewCellDelegate, CPPickerViewCellDataSource, AdMoGoDelegate,AdMoGoWebBrowserControllerUserDelegate>
 {
     UIView* settingView;
     UITableView* m_tableView;
+    
+    AdMoGoView *adView;
 }
 
 @end

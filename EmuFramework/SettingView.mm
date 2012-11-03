@@ -19,6 +19,7 @@ MDGameViewController* g_delegate = nil;
 
 @implementation MDGameViewController
 @synthesize settingVC, popoverVC;
+@synthesize gameListVC;
 
 +(MDGameViewController*)sharedInstance
 {
@@ -38,26 +39,22 @@ MDGameViewController* g_delegate = nil;
             popoverVC.delegate = self;
         }
 
-        UIDeviceOrientation ori = [[UIDevice currentDevice]orientation];
         CGRect rect;
-        switch (ori) {
-            case UIDeviceOrientationPortrait:
-                rect = CGRectMake(750, 0, 10, 10);
+        switch (Gfx::preferedOrientation) {
+            case Gfx::VIEW_ROTATE_0:
+                rect = CGRectMake(750, 60, 10, 10);
                 break;
-            case UIDeviceOrientationPortraitUpsideDown:
-                rect = CGRectMake(0, 0, 10, 10);
+            case Gfx::VIEW_ROTATE_270:
+                rect = CGRectMake(0, 60, 10, 10);
                 break;
-            case UIDeviceOrientationLandscapeLeft:
-                rect = CGRectMake(750, 1014, 10, 10);
-                break;
-            case UIDeviceOrientationLandscapeRight:
-                rect = CGRectMake(0, 0, 10, 10);
+            case Gfx::VIEW_ROTATE_90:
+                rect = CGRectMake(750, 960, 10, 10);
                 break;
             default:
-                rect = CGRectMake(750, 0, 10, 10);
+                rect = CGRectMake(750, 60, 10, 10);
                 break;
         }
-        [popoverVC presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        [popoverVC presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     } else {
         if (settingVC == nil) {
             settingVC = [[SettingViewController alloc]initWithNibName:nil bundle:nil];
@@ -67,9 +64,22 @@ MDGameViewController* g_delegate = nil;
     }
 }
 
+-(void)showGameList
+{
+    if (gameListVC == nil) {
+        gameListVC = [[GameListViewController alloc]init];
+    }
+    
+    [self presentModalViewController:gameListVC animated:NO];
+}
+
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
     EmuSystem::start();
+    
+    extern void onViewChange(void * = 0, Gfx::GfxViewState * = 0);
+    onViewChange();
+
     Base::displayNeedsUpdate();
 }
 @end

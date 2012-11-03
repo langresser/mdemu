@@ -5,18 +5,18 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>梦幻模拟战2</string>
+	<string>世嘉经典合集</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>lan_icon_144.png</string>
-		<string>lan_icon_57.png</string>
-		<string>lan_icon_72.png</string>
-		<string>lan_icon_114.png</string>
+		<string>icon_144.png</string>
+		<string>icon_57.png</string>
+		<string>icon_72.png</string>
+		<string>icon_114.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.bananastudio.langrisser</string>
+	<string>com.bananastudio.mdall</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,11 +24,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIFileSharingEnabled</key>

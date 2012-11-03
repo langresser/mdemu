@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B221A3B15DFD1FA00219D4B /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3515DFD1FA00219D4B /* ioapi.c */; };
-		3B221A3C15DFD1FA00219D4B /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3715DFD1FA00219D4B /* unzip.c */; };
-		3B221A3D15DFD1FA00219D4B /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3915DFD1FA00219D4B /* zip.c */; };
 		3B221A4215DFD5CC00219D4B /* iosUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A3F15DFD5CC00219D4B /* iosUtil.mm */; };
 		3B221A4315DFD5CC00219D4B /* platform_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A4015DFD5CC00219D4B /* platform_util.cpp */; };
 		3B221A4615DFDBFD00219D4B /* CGJoystick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B221A4515DFDBFD00219D4B /* CGJoystick.mm */; };
@@ -21,18 +18,176 @@
 		3B2C623D15FB291F00C2D4D5 /* stretchableGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B2C623915FB291F00C2D4D5 /* stretchableGlass@2x.png */; };
 		3B2C623E15FB291F00C2D4D5 /* wheelBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B2C623A15FB291F00C2D4D5 /* wheelBackground@2x.png */; };
 		3B2EAFED15F689ED009D62E5 /* SettingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B2EAFEC15F689ED009D62E5 /* SettingViewController.mm */; };
-		3B33EAF615E5733300B96474 /* langrisser1.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B33EAF215E5733300B96474 /* langrisser1.bin */; };
-		3B33EAF715E5733300B96474 /* langrisser2_1.4.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B33EAF315E5733300B96474 /* langrisser2_1.4.bin */; };
-		3B33EAF815E5733300B96474 /* langrisser2_cn.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B33EAF415E5733300B96474 /* langrisser2_cn.smd */; };
-		3B33EAF915E5733300B96474 /* langrisser2-yy.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B33EAF515E5733300B96474 /* langrisser2-yy.bin */; };
 		3B3DDA8E15E6A74C00233D72 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DDA8915E6A74C00233D72 /* Default.png */; };
-		3B3DDA8F15E6A74C00233D72 /* lan_icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DDA8A15E6A74C00233D72 /* lan_icon_57.png */; };
-		3B3DDA9015E6A74C00233D72 /* lan_icon_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DDA8B15E6A74C00233D72 /* lan_icon_72.png */; };
-		3B3DDA9115E6A74C00233D72 /* lan_icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DDA8C15E6A74C00233D72 /* lan_icon_114.png */; };
-		3B3DDA9215E6A74C00233D72 /* lan_icon_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DDA8D15E6A74C00233D72 /* lan_icon_144.png */; };
 		3B44F69615ED1F7A003E18FA /* libbtstack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B44F69515ED1F73003E18FA /* libbtstack.a */; };
 		3B44F69715ED1F7D003E18FA /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B44F68315ED1F54003E18FA /* libfreetype.a */; };
 		3B44F69815ED1F81003E18FA /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B44F68C15ED1F67003E18FA /* liblibpng.a */; };
+		3B45E08115FCA24A00383AA3 /* 梦幻之星4.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08015FCA24A00383AA3 /* 梦幻之星4.smd */; };
+		3B45E08515FCA77900383AA3 /* 梦幻之星4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08415FCA77900383AA3 /* 梦幻之星4.png */; };
+		3B45E09215FCAB2A00383AA3 /* 怒之铁拳2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08E15FCAB2A00383AA3 /* 怒之铁拳2.bin */; };
+		3B45E09315FCAB2A00383AA3 /* 怒之铁拳2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08F15FCAB2A00383AA3 /* 怒之铁拳2.png */; };
+		3B45E09415FCAB2A00383AA3 /* 怒之铁拳3.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E09015FCAB2A00383AA3 /* 怒之铁拳3.bin */; };
+		3B45E09515FCAB2A00383AA3 /* 怒之铁拳3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E09115FCAB2A00383AA3 /* 怒之铁拳3.png */; };
+		3B45E09815FCAC7700383AA3 /* 梦幻模拟战2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E09615FCAC7700383AA3 /* 梦幻模拟战2.png */; };
+		3B45E09915FCAC7700383AA3 /* 梦幻模拟战2.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E09715FCAC7700383AA3 /* 梦幻模拟战2.smd */; };
+		3B45E09E15FCAE1F00383AA3 /* 灌篮高手.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E09B15FCAE1F00383AA3 /* 灌篮高手.smd */; };
+		3B45E09F15FCAE1F00383AA3 /* 幽游白书.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E09C15FCAE1F00383AA3 /* 幽游白书.smd */; };
+		3B45E0AB15FCB3B900383AA3 /* 魂斗罗4铁血兵团.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A015FCB3B900383AA3 /* 魂斗罗4铁血兵团.bin */; };
+		3B45E0AC15FCB3B900383AA3 /* 大航海时代2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A115FCB3B900383AA3 /* 大航海时代2.bin */; };
+		3B45E0AD15FCB3B900383AA3 /* 光明力量2.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A215FCB3B900383AA3 /* 光明力量2.smd */; };
+		3B45E0AE15FCB3B900383AA3 /* 恐龙兄弟2.gen in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A315FCB3B900383AA3 /* 恐龙兄弟2.gen */; };
+		3B45E0AF15FCB3B900383AA3 /* 粒子斗士2.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A415FCB3B900383AA3 /* 粒子斗士2.smd */; };
+		3B45E0B115FCB3B900383AA3 /* 三国志5.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A615FCB3B900383AA3 /* 三国志5.smd */; };
+		3B45E0B215FCB3B900383AA3 /* 太空战士.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A715FCB3B900383AA3 /* 太空战士.smd */; };
+		3B45E0B315FCB3B900383AA3 /* 吞食天地3.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A815FCB3B900383AA3 /* 吞食天地3.smd */; };
+		3B45E0B415FCB3B900383AA3 /* 超级忍3.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0A915FCB3B900383AA3 /* 超级忍3.bin */; };
+		3B45E0B515FCB3B900383AA3 /* 超级忍3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0AA15FCB3B900383AA3 /* 超级忍3.png */; };
+		3B45E0BA15FCDDA900383AA3 /* 暴力克星.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0B615FCDDA600383AA3 /* 暴力克星.smd */; };
+		3B45E0BB15FCDDA900383AA3 /* 街霸2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0B715FCDDA700383AA3 /* 街霸2.bin */; };
+		3B45E0BC15FCDDA900383AA3 /* 炮灰.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0B815FCDDA700383AA3 /* 炮灰.bin */; };
+		3B45E0BD15FCDDA900383AA3 /* 双截龙.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0B915FCDDA800383AA3 /* 双截龙.smd */; };
+		3B45E0D415FCEB7A00383AA3 /* 超级忍.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0BE15FCEB6B00383AA3 /* 超级忍.bin */; };
+		3B45E0D515FCEB7A00383AA3 /* 大战略.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0BF15FCEB6C00383AA3 /* 大战略.bin */; };
+		3B45E0D615FCEB7A00383AA3 /* 海豚2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C015FCEB6D00383AA3 /* 海豚2.bin */; };
+		3B45E0D715FCEB7A00383AA3 /* 毁灭公爵.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C115FCEB6F00383AA3 /* 毁灭公爵.bin */; };
+		3B45E0D815FCEB7A00383AA3 /* 火枪英雄.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C215FCEB7100383AA3 /* 火枪英雄.bin */; };
+		3B45E0D915FCEB7A00383AA3 /* 鲛鲛鲛.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C315FCEB7100383AA3 /* 鲛鲛鲛.bin */; };
+		3B45E0DA15FCEB7A00383AA3 /* 究极七龙珠.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C415FCEB7200383AA3 /* 究极七龙珠.bin */; };
+		3B45E0DB15FCEB7A00383AA3 /* 空牙.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C515FCEB7300383AA3 /* 空牙.bin */; };
+		3B45E0DC15FCEB7A00383AA3 /* 雷电.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C615FCEB7300383AA3 /* 雷电.bin */; };
+		3B45E0DE15FCEB7A00383AA3 /* 热血足球.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C815FCEB7400383AA3 /* 热血足球.bin */; };
+		3B45E0DF15FCEB7A00383AA3 /* 忍者神龟.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0C915FCEB7500383AA3 /* 忍者神龟.bin */; };
+		3B45E0E015FCEB7A00383AA3 /* 双截龙2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0CA15FCEB7500383AA3 /* 双截龙2.bin */; };
+		3B45E0E115FCEB7A00383AA3 /* 双截龙3.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0CB15FCEB7600383AA3 /* 双截龙3.bin */; };
+		3B45E0E215FCEB7A00383AA3 /* 天使之翼.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0CC15FCEB7600383AA3 /* 天使之翼.bin */; };
+		3B45E0E315FCEB7A00383AA3 /* 威虎战机.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0CD15FCEB7700383AA3 /* 威虎战机.bin */; };
+		3B45E0E415FCEB7A00383AA3 /* 雪人兄弟.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0CE15FCEB7700383AA3 /* 雪人兄弟.bin */; };
+		3B45E0E715FCEB7A00383AA3 /* 音速小子3.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0D115FCEB7800383AA3 /* 音速小子3.bin */; };
+		3B45E0E815FCEB7A00383AA3 /* 炸弹人.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0D215FCEB7900383AA3 /* 炸弹人.bin */; };
+		3B45E0E915FCEB7A00383AA3 /* 战斗蛙与双截龙.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0D315FCEB7900383AA3 /* 战斗蛙与双截龙.bin */; };
+		3B45E0F015FCEFCD00383AA3 /* 火箭骑士.gen in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0EB15FCEFCB00383AA3 /* 火箭骑士.gen */; };
+		3B45E0F115FCEFCD00383AA3 /* 魔法气泡外传.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0EC15FCEFCC00383AA3 /* 魔法气泡外传.bin */; };
+		3B45E0F215FCEFCD00383AA3 /* 外星战士.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0ED15FCEFCC00383AA3 /* 外星战士.bin */; };
+		3B45E0F315FCEFCD00383AA3 /* 战斧3.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0EE15FCEFCD00383AA3 /* 战斧3.bin */; };
+		3B45E0FD15FD04F400383AA3 /* 蝙蝠侠与罗宾的冒险.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0F415FD04A300383AA3 /* 蝙蝠侠与罗宾的冒险.bin */; };
+		3B45E0FE15FD04F400383AA3 /* 饿狼传说.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0F515FD04A500383AA3 /* 饿狼传说.bin */; };
+		3B45E0FF15FD04F400383AA3 /* 机动战神.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0F615FD04AC00383AA3 /* 机动战神.bin */; };
+		3B45E10115FD04F400383AA3 /* 洛克人.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0F815FD04BC00383AA3 /* 洛克人.bin */; };
+		3B45E10215FD04F400383AA3 /* 漫画地带.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0F915FD04C600383AA3 /* 漫画地带.smd */; };
+		3B45E10415FD04F400383AA3 /* 蚯蚓吉姆2.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0FB15FD04DC00383AA3 /* 蚯蚓吉姆2.smd */; };
+		3B45E10515FD04F400383AA3 /* 武者Aleste.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0FC15FD04E800383AA3 /* 武者Aleste.bin */; };
+		3B45E10B15FD064900383AA3 /* 联合前线汉化版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10815FD064800383AA3 /* 联合前线汉化版.bin */; };
+		3B45E10C15FD064900383AA3 /* 秘境魔宝中文版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10915FD064900383AA3 /* 秘境魔宝中文版.bin */; };
+		3B45E10D15FD064900383AA3 /* 新创世纪中文版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10A15FD064900383AA3 /* 新创世纪中文版.bin */; };
+		3B45E10F15FD075F00383AA3 /* 机甲神兵中文版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10E15FD075E00383AA3 /* 机甲神兵中文版.bin */; };
+		3B45E11215FD098D00383AA3 /* 霸王三国志中文版.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E11015FD098C00383AA3 /* 霸王三国志中文版.smd */; };
+		3B45E11315FD098D00383AA3 /* 光之继承者中文版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E11115FD098C00383AA3 /* 光之继承者中文版.bin */; };
+		3B45E13B15FD0EEE00383AA3 /* 霸王三国志中文版.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12515FD0EEE00383AA3 /* 霸王三国志中文版.jpg */; };
+		3B45E13C15FD0EEE00383AA3 /* 暴力克星.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12615FD0EEE00383AA3 /* 暴力克星.png */; };
+		3B45E13D15FD0EEE00383AA3 /* 蝙蝠侠与罗宾的冒险.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12715FD0EEE00383AA3 /* 蝙蝠侠与罗宾的冒险.png */; };
+		3B45E13E15FD0EEE00383AA3 /* 超级忍.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12815FD0EEE00383AA3 /* 超级忍.png */; };
+		3B45E13F15FD0EEE00383AA3 /* 大航海时代2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12915FD0EEE00383AA3 /* 大航海时代2.png */; };
+		3B45E14015FD0EEE00383AA3 /* 大战略.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12A15FD0EEE00383AA3 /* 大战略.png */; };
+		3B45E14115FD0EEE00383AA3 /* 饿狼传说.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12B15FD0EEE00383AA3 /* 饿狼传说.png */; };
+		3B45E14215FD0EEE00383AA3 /* 灌篮高手.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12C15FD0EEE00383AA3 /* 灌篮高手.png */; };
+		3B45E14315FD0EEE00383AA3 /* 光明力量2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12D15FD0EEE00383AA3 /* 光明力量2.png */; };
+		3B45E14415FD0EEE00383AA3 /* 光之继承者中文版.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12E15FD0EEE00383AA3 /* 光之继承者中文版.png */; };
+		3B45E14515FD0EEE00383AA3 /* 海豚2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E12F15FD0EEE00383AA3 /* 海豚2.png */; };
+		3B45E14615FD0EEE00383AA3 /* 毁灭公爵.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13015FD0EEE00383AA3 /* 毁灭公爵.png */; };
+		3B45E14715FD0EEE00383AA3 /* 魂斗罗4铁血兵团.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13115FD0EEE00383AA3 /* 魂斗罗4铁血兵团.png */; };
+		3B45E14815FD0EEE00383AA3 /* 火箭骑士.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13215FD0EEE00383AA3 /* 火箭骑士.png */; };
+		3B45E14915FD0EEE00383AA3 /* 机动战神.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13315FD0EEE00383AA3 /* 机动战神.png */; };
+		3B45E14A15FD0EEE00383AA3 /* 机甲神兵中文版.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13415FD0EEE00383AA3 /* 机甲神兵中文版.png */; };
+		3B45E14B15FD0EEE00383AA3 /* 鲛鲛鲛.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13515FD0EEE00383AA3 /* 鲛鲛鲛.png */; };
+		3B45E14C15FD0EEE00383AA3 /* 街霸2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13615FD0EEE00383AA3 /* 街霸2.png */; };
+		3B45E14D15FD0EEE00383AA3 /* 空牙.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13715FD0EEE00383AA3 /* 空牙.png */; };
+		3B45E14E15FD0EEE00383AA3 /* 恐龙兄弟2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13815FD0EEE00383AA3 /* 恐龙兄弟2.png */; };
+		3B45E14F15FD0EEE00383AA3 /* 雷电.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13915FD0EEE00383AA3 /* 雷电.png */; };
+		3B45E15015FD0EEE00383AA3 /* 粒子斗士2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E13A15FD0EEE00383AA3 /* 粒子斗士2.png */; };
+		3B45E15C15FD11B900383AA3 /* 究极七龙珠.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15115FD11B900383AA3 /* 究极七龙珠.png */; };
+		3B45E15D15FD11B900383AA3 /* 联合前线汉化版.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15215FD11B900383AA3 /* 联合前线汉化版.png */; };
+		3B45E15E15FD11B900383AA3 /* 洛克人.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15315FD11B900383AA3 /* 洛克人.png */; };
+		3B45E15F15FD11B900383AA3 /* 漫画地带.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15415FD11B900383AA3 /* 漫画地带.png */; };
+		3B45E16015FD11B900383AA3 /* 魔法气泡外传.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15515FD11B900383AA3 /* 魔法气泡外传.png */; };
+		3B45E16115FD11B900383AA3 /* 炮灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15615FD11B900383AA3 /* 炮灰.png */; };
+		3B45E16215FD11B900383AA3 /* 蚯蚓吉姆2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15715FD11B900383AA3 /* 蚯蚓吉姆2.png */; };
+		3B45E16315FD11B900383AA3 /* 三国志5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15815FD11B900383AA3 /* 三国志5.png */; };
+		3B45E16415FD11B900383AA3 /* 双截龙.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15915FD11B900383AA3 /* 双截龙.png */; };
+		3B45E16515FD11B900383AA3 /* 双截龙2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15A15FD11B900383AA3 /* 双截龙2.png */; };
+		3B45E16615FD11B900383AA3 /* 双截龙3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E15B15FD11B900383AA3 /* 双截龙3.png */; };
+		3B45E17A15FD16F500383AA3 /* 火枪英雄.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16715FD16F400383AA3 /* 火枪英雄.jpg */; };
+		3B45E17B15FD16F500383AA3 /* 秘境魔宝中文版.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16815FD16F400383AA3 /* 秘境魔宝中文版.png */; };
+		3B45E17C15FD16F500383AA3 /* 热血足球.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16915FD16F400383AA3 /* 热血足球.jpg */; };
+		3B45E17D15FD16F500383AA3 /* 忍者神龟.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16A15FD16F400383AA3 /* 忍者神龟.jpg */; };
+		3B45E17E15FD16F500383AA3 /* 太空战士.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16B15FD16F400383AA3 /* 太空战士.png */; };
+		3B45E17F15FD16F500383AA3 /* 天使之翼.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16C15FD16F400383AA3 /* 天使之翼.png */; };
+		3B45E18015FD16F500383AA3 /* 吞食天地3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16D15FD16F500383AA3 /* 吞食天地3.png */; };
+		3B45E18115FD16F500383AA3 /* 外星战士.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16E15FD16F500383AA3 /* 外星战士.png */; };
+		3B45E18215FD16F500383AA3 /* 威虎战机.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E16F15FD16F500383AA3 /* 威虎战机.png */; };
+		3B45E18315FD16F500383AA3 /* 武者Aleste.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17015FD16F500383AA3 /* 武者Aleste.png */; };
+		3B45E18415FD16F500383AA3 /* 新创世纪中文版.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17115FD16F500383AA3 /* 新创世纪中文版.png */; };
+		3B45E18515FD16F500383AA3 /* 雪人兄弟.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17215FD16F500383AA3 /* 雪人兄弟.png */; };
+		3B45E18615FD16F500383AA3 /* 音速小子3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17315FD16F500383AA3 /* 音速小子3.png */; };
+		3B45E18715FD16F500383AA3 /* 幽游白书.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17415FD16F500383AA3 /* 幽游白书.png */; };
+		3B45E18815FD16F500383AA3 /* 炸弹人.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17515FD16F500383AA3 /* 炸弹人.jpg */; };
+		3B45E18915FD16F500383AA3 /* 战斗蛙与双截龙.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17615FD16F500383AA3 /* 战斗蛙与双截龙.png */; };
+		3B45E18A15FD16F500383AA3 /* 战斧3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17715FD16F500383AA3 /* 战斧3.png */; };
+		3B45E18B15FD16F500383AA3 /* 致命杀手2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17815FD16F500383AA3 /* 致命杀手2.bin */; };
+		3B45E18C15FD16F500383AA3 /* 致命杀手2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E17915FD16F500383AA3 /* 致命杀手2.png */; };
+		3B45E1AA15FD1DD900383AA3 /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B45E1A315FD1DD900383AA3 /* UIGlossyButton.m */; };
+		3B45E1AC15FD1DD900383AA3 /* UIImageView+Reflected.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B45E1A715FD1DD900383AA3 /* UIImageView+Reflected.m */; };
+		3B45E1AD15FD1DD900383AA3 /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B45E1A915FD1DD900383AA3 /* UIView+LayerEffects.m */; };
+		3B45E1B115FD24AE00383AA3 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E1AE15FD24AE00383AA3 /* libUMFeedback.a */; };
+		3B45E1B215FD24AE00383AA3 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1AF15FD24AE00383AA3 /* umFeedback.bundle */; };
+		3B45E20D15FD27EE00383AA3 /* AdMoGoAdapterGoogleAdMobAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B45E1C115FD27EE00383AA3 /* AdMoGoAdapterGoogleAdMobAds.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B45E20E15FD27EE00383AA3 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E1CB15FD27EE00383AA3 /* libGoogleAdMobAds.a */; };
+		3B45E20F15FD27EE00383AA3 /* AdMoGoAdapterDoMob.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B45E1CF15FD27EE00383AA3 /* AdMoGoAdapterDoMob.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B45E21015FD27EE00383AA3 /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1D415FD27EE00383AA3 /* DomobAdSDKBundle.bundle */; };
+		3B45E21115FD27EE00383AA3 /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E1D515FD27EE00383AA3 /* libDomobAdSDK.a */; };
+		3B45E21615FD27EE00383AA3 /* adsmogo_adclose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1E715FD27EE00383AA3 /* adsmogo_adclose@2x.png */; };
+		3B45E21715FD27EE00383AA3 /* adsmogo_bannerbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1E815FD27EE00383AA3 /* adsmogo_bannerbg@2x.png */; };
+		3B45E21815FD27EE00383AA3 /* adsmogo_btnbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1E915FD27EE00383AA3 /* adsmogo_btnbg@2x.png */; };
+		3B45E21915FD27EE00383AA3 /* adsmogo_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1EA15FD27EE00383AA3 /* adsmogo_close@2x.png */; };
+		3B45E21A15FD27EE00383AA3 /* adsmogo_corner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1EB15FD27EE00383AA3 /* adsmogo_corner@2x.png */; };
+		3B45E21B15FD27EE00383AA3 /* adsmogo_picrollbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1EC15FD27EE00383AA3 /* adsmogo_picrollbg@2x.png */; };
+		3B45E21D15FD27EE00383AA3 /* adsmogo_adclose.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1EF15FD27EE00383AA3 /* adsmogo_adclose.png */; };
+		3B45E21E15FD27EE00383AA3 /* adsmogo_bannerbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1F015FD27EE00383AA3 /* adsmogo_bannerbg.png */; };
+		3B45E21F15FD27EE00383AA3 /* adsmogo_btnbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1F115FD27EE00383AA3 /* adsmogo_btnbg.png */; };
+		3B45E22015FD27EE00383AA3 /* adsmogo_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1F215FD27EE00383AA3 /* adsmogo_close.png */; };
+		3B45E22115FD27EE00383AA3 /* adsmogo_corner.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1F315FD27EE00383AA3 /* adsmogo_corner.png */; };
+		3B45E22215FD27EE00383AA3 /* adsmogo_picrollbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E1F415FD27EE00383AA3 /* adsmogo_picrollbg.png */; };
+		3B45E22415FD27EE00383AA3 /* AdMoGoWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E20615FD27EE00383AA3 /* AdMoGoWebBrowser.xib */; };
+		3B45E22515FD27EE00383AA3 /* libAdsMogo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E20915FD27EE00383AA3 /* libAdsMogo.a */; };
+		3B45E22615FD27EE00383AA3 /* libAdsMogo_i386.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E20A15FD27EE00383AA3 /* libAdsMogo_i386.a */; };
+		3B45E24A15FD2A9100383AA3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E24915FD2A9100383AA3 /* libsqlite3.dylib */; };
+		3B45E24C15FD2A9E00383AA3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E24B15FD2A9D00383AA3 /* CFNetwork.framework */; };
+		3B45E24E15FD2AA700383AA3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E24D15FD2AA700383AA3 /* CoreLocation.framework */; };
+		3B45E25015FD2AB900383AA3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E24F15FD2AB900383AA3 /* MobileCoreServices.framework */; };
+		3B45E25215FD2AC500383AA3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E25115FD2AC500383AA3 /* CoreTelephony.framework */; };
+		3B45E25415FD2AD000383AA3 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E25315FD2AD000383AA3 /* EventKit.framework */; };
+		3B45E25615FD2AE500383AA3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45E25515FD2AE500383AA3 /* MapKit.framework */; };
+		3B4716C615FE3462000FE47C /* icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4716C215FE3462000FE47C /* icon_57.png */; };
+		3B4716C715FE3462000FE47C /* icon_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4716C315FE3462000FE47C /* icon_72.png */; };
+		3B4716C815FE3462000FE47C /* icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4716C415FE3462000FE47C /* icon_114.png */; };
+		3B4716C915FE3462000FE47C /* icon_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4716C515FE3462000FE47C /* icon_144.png */; };
+		3B4716D215FE7571000FE47C /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4716D115FE7571000FE47C /* pause.png */; };
+		3B58AAA015FB94E60062B79F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B58AA9F15FB94E60062B79F /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3B58AAA415FB95690062B79F /* GameListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B58AAA215FB95690062B79F /* GameListViewController.mm */; };
+		3B58AAAB15FBA8C90062B79F /* romlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AAAA15FBA8C90062B79F /* romlist.json */; };
+		3B58AABC15FBCBE00062B79F /* star_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AAB815FBCBE00062B79F /* star_empty.png */; };
+		3B58AABD15FBCBE00062B79F /* star_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AAB915FBCBE00062B79F /* star_empty@2x.png */; };
+		3B58AABE15FBCBE00062B79F /* star_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AABA15FBCBE00062B79F /* star_full.png */; };
+		3B58AABF15FBCBE00062B79F /* star_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AABB15FBCBE00062B79F /* star_full@2x.png */; };
+		3B58AAD615FBD8990062B79F /* DLStarRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B58AACA15FBD8990062B79F /* DLStarRatingControl.m */; };
+		3B58AAD715FBD8990062B79F /* DLStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B58AACC15FBD8990062B79F /* DLStarView.m */; };
+		3B58AAD815FBD8990062B79F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AACE15FBD8990062B79F /* star.png */; };
+		3B58AAD915FBD8990062B79F /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AACF15FBD8990062B79F /* star@2x.png */; };
+		3B58AADA15FBD8990062B79F /* star_highlighted-darker.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AAD015FBD8990062B79F /* star_highlighted-darker.png */; };
+		3B58AADB15FBD8990062B79F /* star_highlighted-darker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AAD115FBD8990062B79F /* star_highlighted-darker@2x.png */; };
+		3B58AADC15FBD8990062B79F /* star_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AAD215FBD8990062B79F /* star_highlighted.png */; };
+		3B58AADD15FBD8990062B79F /* star_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AAD315FBD8990062B79F /* star_highlighted@2x.png */; };
+		3B58AADE15FBD8990062B79F /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B58AAD515FBD8990062B79F /* UIView+Subviews.m */; };
+		3B58AAE015FBDD2B0062B79F /* gui_lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AADF15FBDD2B0062B79F /* gui_lock.png */; };
 		3B6FDDA615E15A4B003BAFA1 /* overlays128.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6FDDA215E15A4B003BAFA1 /* overlays128.png */; };
 		3B6FDDA715E15A4B003BAFA1 /* padButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6FDDA315E15A4B003BAFA1 /* padButton.png */; };
 		3B6FDDA815E15A4B003BAFA1 /* Vera.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B6FDDA415E15A4B003BAFA1 /* Vera.ttf */; };
@@ -207,11 +362,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B221A3515DFD1FA00219D4B /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = imagine/bundle/all/src/unzip/ioapi.c; sourceTree = SOURCE_ROOT; };
 		3B221A3615DFD1FA00219D4B /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = imagine/bundle/all/src/unzip/ioapi.h; sourceTree = SOURCE_ROOT; };
-		3B221A3715DFD1FA00219D4B /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = imagine/bundle/all/src/unzip/unzip.c; sourceTree = SOURCE_ROOT; };
 		3B221A3815DFD1FA00219D4B /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = imagine/bundle/all/src/unzip/unzip.h; sourceTree = SOURCE_ROOT; };
-		3B221A3915DFD1FA00219D4B /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = imagine/bundle/all/src/unzip/zip.c; sourceTree = SOURCE_ROOT; };
 		3B221A3A15DFD1FA00219D4B /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = imagine/bundle/all/src/unzip/zip.h; sourceTree = SOURCE_ROOT; };
 		3B221A3E15DFD5CC00219D4B /* iosUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iosUtil.h; path = EmuFramework/iosUtil.h; sourceTree = SOURCE_ROOT; };
 		3B221A3F15DFD5CC00219D4B /* iosUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = iosUtil.mm; path = EmuFramework/iosUtil.mm; sourceTree = SOURCE_ROOT; };
@@ -252,18 +404,216 @@
 		3B2C623A15FB291F00C2D4D5 /* wheelBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wheelBackground@2x.png"; sourceTree = "<group>"; };
 		3B2EAFEB15F689ED009D62E5 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = EmuFramework/SettingViewController.h; sourceTree = SOURCE_ROOT; };
 		3B2EAFEC15F689ED009D62E5 /* SettingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SettingViewController.mm; path = EmuFramework/SettingViewController.mm; sourceTree = SOURCE_ROOT; };
-		3B33EAF215E5733300B96474 /* langrisser1.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = langrisser1.bin; sourceTree = "<group>"; };
-		3B33EAF315E5733300B96474 /* langrisser2_1.4.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = langrisser2_1.4.bin; sourceTree = "<group>"; };
-		3B33EAF415E5733300B96474 /* langrisser2_cn.smd */ = {isa = PBXFileReference; lastKnownFileType = file; path = langrisser2_cn.smd; sourceTree = "<group>"; };
-		3B33EAF515E5733300B96474 /* langrisser2-yy.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "langrisser2-yy.bin"; sourceTree = "<group>"; };
 		3B3DDA8915E6A74C00233D72 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = res/Default.png; sourceTree = "<group>"; };
-		3B3DDA8A15E6A74C00233D72 /* lan_icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lan_icon_57.png; path = res/lan_icon_57.png; sourceTree = "<group>"; };
-		3B3DDA8B15E6A74C00233D72 /* lan_icon_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lan_icon_72.png; path = res/lan_icon_72.png; sourceTree = "<group>"; };
-		3B3DDA8C15E6A74C00233D72 /* lan_icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lan_icon_114.png; path = res/lan_icon_114.png; sourceTree = "<group>"; };
-		3B3DDA8D15E6A74C00233D72 /* lan_icon_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lan_icon_144.png; path = res/lan_icon_144.png; sourceTree = "<group>"; };
 		3B44F67B15ED1F54003E18FA /* freetype.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = freetype.xcodeproj; path = ../../3rdframework/freetype/builds/ios/freetype.xcodeproj; sourceTree = "<group>"; };
 		3B44F68415ED1F66003E18FA /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../../3rdframework/png/projects/ios/libpng.xcodeproj; sourceTree = "<group>"; };
 		3B44F68D15ED1F73003E18FA /* btstack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = btstack.xcodeproj; path = ../../3rdframework/btstack/btstack.xcodeproj; sourceTree = "<group>"; };
+		3B45E08015FCA24A00383AA3 /* 梦幻之星4.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "梦幻之星4.smd"; path = "rom/梦幻之星4.smd"; sourceTree = "<group>"; };
+		3B45E08415FCA77900383AA3 /* 梦幻之星4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "梦幻之星4.png"; path = "rom/梦幻之星4.png"; sourceTree = "<group>"; };
+		3B45E08E15FCAB2A00383AA3 /* 怒之铁拳2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "怒之铁拳2.bin"; path = "rom/怒之铁拳2.bin"; sourceTree = "<group>"; };
+		3B45E08F15FCAB2A00383AA3 /* 怒之铁拳2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "怒之铁拳2.png"; path = "rom/怒之铁拳2.png"; sourceTree = "<group>"; };
+		3B45E09015FCAB2A00383AA3 /* 怒之铁拳3.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "怒之铁拳3.bin"; path = "rom/怒之铁拳3.bin"; sourceTree = "<group>"; };
+		3B45E09115FCAB2A00383AA3 /* 怒之铁拳3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "怒之铁拳3.png"; path = "rom/怒之铁拳3.png"; sourceTree = "<group>"; };
+		3B45E09615FCAC7700383AA3 /* 梦幻模拟战2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "梦幻模拟战2.png"; path = "rom/梦幻模拟战2.png"; sourceTree = "<group>"; };
+		3B45E09715FCAC7700383AA3 /* 梦幻模拟战2.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "梦幻模拟战2.smd"; path = "rom/梦幻模拟战2.smd"; sourceTree = "<group>"; };
+		3B45E09B15FCAE1F00383AA3 /* 灌篮高手.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "灌篮高手.smd"; path = "rom/灌篮高手.smd"; sourceTree = "<group>"; };
+		3B45E09C15FCAE1F00383AA3 /* 幽游白书.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "幽游白书.smd"; path = "rom/幽游白书.smd"; sourceTree = "<group>"; };
+		3B45E0A015FCB3B900383AA3 /* 魂斗罗4铁血兵团.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "魂斗罗4铁血兵团.bin"; path = "rom/魂斗罗4铁血兵团.bin"; sourceTree = "<group>"; };
+		3B45E0A115FCB3B900383AA3 /* 大航海时代2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "大航海时代2.bin"; path = "rom/大航海时代2.bin"; sourceTree = "<group>"; };
+		3B45E0A215FCB3B900383AA3 /* 光明力量2.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "光明力量2.smd"; path = "rom/光明力量2.smd"; sourceTree = "<group>"; };
+		3B45E0A315FCB3B900383AA3 /* 恐龙兄弟2.gen */ = {isa = PBXFileReference; lastKnownFileType = file; name = "恐龙兄弟2.gen"; path = "rom/恐龙兄弟2.gen"; sourceTree = "<group>"; };
+		3B45E0A415FCB3B900383AA3 /* 粒子斗士2.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "粒子斗士2.smd"; path = "rom/粒子斗士2.smd"; sourceTree = "<group>"; };
+		3B45E0A615FCB3B900383AA3 /* 三国志5.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "三国志5.smd"; path = "rom/三国志5.smd"; sourceTree = "<group>"; };
+		3B45E0A715FCB3B900383AA3 /* 太空战士.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "太空战士.smd"; path = "rom/太空战士.smd"; sourceTree = "<group>"; };
+		3B45E0A815FCB3B900383AA3 /* 吞食天地3.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "吞食天地3.smd"; path = "rom/吞食天地3.smd"; sourceTree = "<group>"; };
+		3B45E0A915FCB3B900383AA3 /* 超级忍3.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "超级忍3.bin"; path = "rom/超级忍3.bin"; sourceTree = "<group>"; };
+		3B45E0AA15FCB3B900383AA3 /* 超级忍3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "超级忍3.png"; path = "rom/超级忍3.png"; sourceTree = "<group>"; };
+		3B45E0B615FCDDA600383AA3 /* 暴力克星.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "暴力克星.smd"; path = "rom/暴力克星.smd"; sourceTree = "<group>"; };
+		3B45E0B715FCDDA700383AA3 /* 街霸2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "街霸2.bin"; path = "rom/街霸2.bin"; sourceTree = "<group>"; };
+		3B45E0B815FCDDA700383AA3 /* 炮灰.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "炮灰.bin"; path = "rom/炮灰.bin"; sourceTree = "<group>"; };
+		3B45E0B915FCDDA800383AA3 /* 双截龙.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "双截龙.smd"; path = "rom/双截龙.smd"; sourceTree = "<group>"; };
+		3B45E0BE15FCEB6B00383AA3 /* 超级忍.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "超级忍.bin"; path = "rom/超级忍.bin"; sourceTree = "<group>"; };
+		3B45E0BF15FCEB6C00383AA3 /* 大战略.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "大战略.bin"; path = "rom/大战略.bin"; sourceTree = "<group>"; };
+		3B45E0C015FCEB6D00383AA3 /* 海豚2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "海豚2.bin"; path = "rom/海豚2.bin"; sourceTree = "<group>"; };
+		3B45E0C115FCEB6F00383AA3 /* 毁灭公爵.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "毁灭公爵.bin"; path = "rom/毁灭公爵.bin"; sourceTree = "<group>"; };
+		3B45E0C215FCEB7100383AA3 /* 火枪英雄.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "火枪英雄.bin"; path = "rom/火枪英雄.bin"; sourceTree = "<group>"; };
+		3B45E0C315FCEB7100383AA3 /* 鲛鲛鲛.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "鲛鲛鲛.bin"; path = "rom/鲛鲛鲛.bin"; sourceTree = "<group>"; };
+		3B45E0C415FCEB7200383AA3 /* 究极七龙珠.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "究极七龙珠.bin"; path = "rom/究极七龙珠.bin"; sourceTree = "<group>"; };
+		3B45E0C515FCEB7300383AA3 /* 空牙.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "空牙.bin"; path = "rom/空牙.bin"; sourceTree = "<group>"; };
+		3B45E0C615FCEB7300383AA3 /* 雷电.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "雷电.bin"; path = "rom/雷电.bin"; sourceTree = "<group>"; };
+		3B45E0C815FCEB7400383AA3 /* 热血足球.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "热血足球.bin"; path = "rom/热血足球.bin"; sourceTree = "<group>"; };
+		3B45E0C915FCEB7500383AA3 /* 忍者神龟.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "忍者神龟.bin"; path = "rom/忍者神龟.bin"; sourceTree = "<group>"; };
+		3B45E0CA15FCEB7500383AA3 /* 双截龙2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "双截龙2.bin"; path = "rom/双截龙2.bin"; sourceTree = "<group>"; };
+		3B45E0CB15FCEB7600383AA3 /* 双截龙3.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "双截龙3.bin"; path = "rom/双截龙3.bin"; sourceTree = "<group>"; };
+		3B45E0CC15FCEB7600383AA3 /* 天使之翼.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "天使之翼.bin"; path = "rom/天使之翼.bin"; sourceTree = "<group>"; };
+		3B45E0CD15FCEB7700383AA3 /* 威虎战机.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "威虎战机.bin"; path = "rom/威虎战机.bin"; sourceTree = "<group>"; };
+		3B45E0CE15FCEB7700383AA3 /* 雪人兄弟.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "雪人兄弟.bin"; path = "rom/雪人兄弟.bin"; sourceTree = "<group>"; };
+		3B45E0D115FCEB7800383AA3 /* 音速小子3.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "音速小子3.bin"; path = "rom/音速小子3.bin"; sourceTree = "<group>"; };
+		3B45E0D215FCEB7900383AA3 /* 炸弹人.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "炸弹人.bin"; path = "rom/炸弹人.bin"; sourceTree = "<group>"; };
+		3B45E0D315FCEB7900383AA3 /* 战斗蛙与双截龙.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "战斗蛙与双截龙.bin"; path = "rom/战斗蛙与双截龙.bin"; sourceTree = "<group>"; };
+		3B45E0EB15FCEFCB00383AA3 /* 火箭骑士.gen */ = {isa = PBXFileReference; lastKnownFileType = file; name = "火箭骑士.gen"; path = "rom/火箭骑士.gen"; sourceTree = "<group>"; };
+		3B45E0EC15FCEFCC00383AA3 /* 魔法气泡外传.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "魔法气泡外传.bin"; path = "rom/魔法气泡外传.bin"; sourceTree = "<group>"; };
+		3B45E0ED15FCEFCC00383AA3 /* 外星战士.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "外星战士.bin"; path = "rom/外星战士.bin"; sourceTree = "<group>"; };
+		3B45E0EE15FCEFCD00383AA3 /* 战斧3.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "战斧3.bin"; path = "rom/战斧3.bin"; sourceTree = "<group>"; };
+		3B45E0F415FD04A300383AA3 /* 蝙蝠侠与罗宾的冒险.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "蝙蝠侠与罗宾的冒险.bin"; path = "rom/蝙蝠侠与罗宾的冒险.bin"; sourceTree = "<group>"; };
+		3B45E0F515FD04A500383AA3 /* 饿狼传说.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "饿狼传说.bin"; path = "rom/饿狼传说.bin"; sourceTree = "<group>"; };
+		3B45E0F615FD04AC00383AA3 /* 机动战神.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "机动战神.bin"; path = "rom/机动战神.bin"; sourceTree = "<group>"; };
+		3B45E0F815FD04BC00383AA3 /* 洛克人.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "洛克人.bin"; path = "rom/洛克人.bin"; sourceTree = "<group>"; };
+		3B45E0F915FD04C600383AA3 /* 漫画地带.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "漫画地带.smd"; path = "rom/漫画地带.smd"; sourceTree = "<group>"; };
+		3B45E0FB15FD04DC00383AA3 /* 蚯蚓吉姆2.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "蚯蚓吉姆2.smd"; path = "rom/蚯蚓吉姆2.smd"; sourceTree = "<group>"; };
+		3B45E0FC15FD04E800383AA3 /* 武者Aleste.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "武者Aleste.bin"; path = "rom/武者Aleste.bin"; sourceTree = "<group>"; };
+		3B45E10815FD064800383AA3 /* 联合前线汉化版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "联合前线汉化版.bin"; path = "rom/联合前线汉化版.bin"; sourceTree = "<group>"; };
+		3B45E10915FD064900383AA3 /* 秘境魔宝中文版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "秘境魔宝中文版.bin"; path = "rom/秘境魔宝中文版.bin"; sourceTree = "<group>"; };
+		3B45E10A15FD064900383AA3 /* 新创世纪中文版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "新创世纪中文版.bin"; path = "rom/新创世纪中文版.bin"; sourceTree = "<group>"; };
+		3B45E10E15FD075E00383AA3 /* 机甲神兵中文版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "机甲神兵中文版.bin"; path = "rom/机甲神兵中文版.bin"; sourceTree = "<group>"; };
+		3B45E11015FD098C00383AA3 /* 霸王三国志中文版.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "霸王三国志中文版.smd"; path = "rom/霸王三国志中文版.smd"; sourceTree = "<group>"; };
+		3B45E11115FD098C00383AA3 /* 光之继承者中文版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "光之继承者中文版.bin"; path = "rom/光之继承者中文版.bin"; sourceTree = "<group>"; };
+		3B45E12515FD0EEE00383AA3 /* 霸王三国志中文版.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "霸王三国志中文版.jpg"; path = "rom/霸王三国志中文版.jpg"; sourceTree = "<group>"; };
+		3B45E12615FD0EEE00383AA3 /* 暴力克星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "暴力克星.png"; path = "rom/暴力克星.png"; sourceTree = "<group>"; };
+		3B45E12715FD0EEE00383AA3 /* 蝙蝠侠与罗宾的冒险.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "蝙蝠侠与罗宾的冒险.png"; path = "rom/蝙蝠侠与罗宾的冒险.png"; sourceTree = "<group>"; };
+		3B45E12815FD0EEE00383AA3 /* 超级忍.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "超级忍.png"; path = "rom/超级忍.png"; sourceTree = "<group>"; };
+		3B45E12915FD0EEE00383AA3 /* 大航海时代2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "大航海时代2.png"; path = "rom/大航海时代2.png"; sourceTree = "<group>"; };
+		3B45E12A15FD0EEE00383AA3 /* 大战略.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "大战略.png"; path = "rom/大战略.png"; sourceTree = "<group>"; };
+		3B45E12B15FD0EEE00383AA3 /* 饿狼传说.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "饿狼传说.png"; path = "rom/饿狼传说.png"; sourceTree = "<group>"; };
+		3B45E12C15FD0EEE00383AA3 /* 灌篮高手.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "灌篮高手.png"; path = "rom/灌篮高手.png"; sourceTree = "<group>"; };
+		3B45E12D15FD0EEE00383AA3 /* 光明力量2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "光明力量2.png"; path = "rom/光明力量2.png"; sourceTree = "<group>"; };
+		3B45E12E15FD0EEE00383AA3 /* 光之继承者中文版.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "光之继承者中文版.png"; path = "rom/光之继承者中文版.png"; sourceTree = "<group>"; };
+		3B45E12F15FD0EEE00383AA3 /* 海豚2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "海豚2.png"; path = "rom/海豚2.png"; sourceTree = "<group>"; };
+		3B45E13015FD0EEE00383AA3 /* 毁灭公爵.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "毁灭公爵.png"; path = "rom/毁灭公爵.png"; sourceTree = "<group>"; };
+		3B45E13115FD0EEE00383AA3 /* 魂斗罗4铁血兵团.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "魂斗罗4铁血兵团.png"; path = "rom/魂斗罗4铁血兵团.png"; sourceTree = "<group>"; };
+		3B45E13215FD0EEE00383AA3 /* 火箭骑士.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "火箭骑士.png"; path = "rom/火箭骑士.png"; sourceTree = "<group>"; };
+		3B45E13315FD0EEE00383AA3 /* 机动战神.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "机动战神.png"; path = "rom/机动战神.png"; sourceTree = "<group>"; };
+		3B45E13415FD0EEE00383AA3 /* 机甲神兵中文版.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "机甲神兵中文版.png"; path = "rom/机甲神兵中文版.png"; sourceTree = "<group>"; };
+		3B45E13515FD0EEE00383AA3 /* 鲛鲛鲛.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "鲛鲛鲛.png"; path = "rom/鲛鲛鲛.png"; sourceTree = "<group>"; };
+		3B45E13615FD0EEE00383AA3 /* 街霸2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "街霸2.png"; path = "rom/街霸2.png"; sourceTree = "<group>"; };
+		3B45E13715FD0EEE00383AA3 /* 空牙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "空牙.png"; path = "rom/空牙.png"; sourceTree = "<group>"; };
+		3B45E13815FD0EEE00383AA3 /* 恐龙兄弟2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "恐龙兄弟2.png"; path = "rom/恐龙兄弟2.png"; sourceTree = "<group>"; };
+		3B45E13915FD0EEE00383AA3 /* 雷电.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "雷电.png"; path = "rom/雷电.png"; sourceTree = "<group>"; };
+		3B45E13A15FD0EEE00383AA3 /* 粒子斗士2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "粒子斗士2.png"; path = "rom/粒子斗士2.png"; sourceTree = "<group>"; };
+		3B45E15115FD11B900383AA3 /* 究极七龙珠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "究极七龙珠.png"; path = "rom/究极七龙珠.png"; sourceTree = "<group>"; };
+		3B45E15215FD11B900383AA3 /* 联合前线汉化版.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "联合前线汉化版.png"; path = "rom/联合前线汉化版.png"; sourceTree = "<group>"; };
+		3B45E15315FD11B900383AA3 /* 洛克人.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "洛克人.png"; path = "rom/洛克人.png"; sourceTree = "<group>"; };
+		3B45E15415FD11B900383AA3 /* 漫画地带.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "漫画地带.png"; path = "rom/漫画地带.png"; sourceTree = "<group>"; };
+		3B45E15515FD11B900383AA3 /* 魔法气泡外传.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "魔法气泡外传.png"; path = "rom/魔法气泡外传.png"; sourceTree = "<group>"; };
+		3B45E15615FD11B900383AA3 /* 炮灰.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "炮灰.png"; path = "rom/炮灰.png"; sourceTree = "<group>"; };
+		3B45E15715FD11B900383AA3 /* 蚯蚓吉姆2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "蚯蚓吉姆2.png"; path = "rom/蚯蚓吉姆2.png"; sourceTree = "<group>"; };
+		3B45E15815FD11B900383AA3 /* 三国志5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "三国志5.png"; path = "rom/三国志5.png"; sourceTree = "<group>"; };
+		3B45E15915FD11B900383AA3 /* 双截龙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "双截龙.png"; path = "rom/双截龙.png"; sourceTree = "<group>"; };
+		3B45E15A15FD11B900383AA3 /* 双截龙2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "双截龙2.png"; path = "rom/双截龙2.png"; sourceTree = "<group>"; };
+		3B45E15B15FD11B900383AA3 /* 双截龙3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "双截龙3.png"; path = "rom/双截龙3.png"; sourceTree = "<group>"; };
+		3B45E16715FD16F400383AA3 /* 火枪英雄.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "火枪英雄.jpg"; path = "rom/火枪英雄.jpg"; sourceTree = "<group>"; };
+		3B45E16815FD16F400383AA3 /* 秘境魔宝中文版.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "秘境魔宝中文版.png"; path = "rom/秘境魔宝中文版.png"; sourceTree = "<group>"; };
+		3B45E16915FD16F400383AA3 /* 热血足球.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "热血足球.jpg"; path = "rom/热血足球.jpg"; sourceTree = "<group>"; };
+		3B45E16A15FD16F400383AA3 /* 忍者神龟.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "忍者神龟.jpg"; path = "rom/忍者神龟.jpg"; sourceTree = "<group>"; };
+		3B45E16B15FD16F400383AA3 /* 太空战士.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "太空战士.png"; path = "rom/太空战士.png"; sourceTree = "<group>"; };
+		3B45E16C15FD16F400383AA3 /* 天使之翼.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "天使之翼.png"; path = "rom/天使之翼.png"; sourceTree = "<group>"; };
+		3B45E16D15FD16F500383AA3 /* 吞食天地3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "吞食天地3.png"; path = "rom/吞食天地3.png"; sourceTree = "<group>"; };
+		3B45E16E15FD16F500383AA3 /* 外星战士.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "外星战士.png"; path = "rom/外星战士.png"; sourceTree = "<group>"; };
+		3B45E16F15FD16F500383AA3 /* 威虎战机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "威虎战机.png"; path = "rom/威虎战机.png"; sourceTree = "<group>"; };
+		3B45E17015FD16F500383AA3 /* 武者Aleste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "武者Aleste.png"; path = "rom/武者Aleste.png"; sourceTree = "<group>"; };
+		3B45E17115FD16F500383AA3 /* 新创世纪中文版.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "新创世纪中文版.png"; path = "rom/新创世纪中文版.png"; sourceTree = "<group>"; };
+		3B45E17215FD16F500383AA3 /* 雪人兄弟.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "雪人兄弟.png"; path = "rom/雪人兄弟.png"; sourceTree = "<group>"; };
+		3B45E17315FD16F500383AA3 /* 音速小子3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "音速小子3.png"; path = "rom/音速小子3.png"; sourceTree = "<group>"; };
+		3B45E17415FD16F500383AA3 /* 幽游白书.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "幽游白书.png"; path = "rom/幽游白书.png"; sourceTree = "<group>"; };
+		3B45E17515FD16F500383AA3 /* 炸弹人.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "炸弹人.jpg"; path = "rom/炸弹人.jpg"; sourceTree = "<group>"; };
+		3B45E17615FD16F500383AA3 /* 战斗蛙与双截龙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "战斗蛙与双截龙.png"; path = "rom/战斗蛙与双截龙.png"; sourceTree = "<group>"; };
+		3B45E17715FD16F500383AA3 /* 战斧3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "战斧3.png"; path = "rom/战斧3.png"; sourceTree = "<group>"; };
+		3B45E17815FD16F500383AA3 /* 致命杀手2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "致命杀手2.bin"; path = "rom/致命杀手2.bin"; sourceTree = "<group>"; };
+		3B45E17915FD16F500383AA3 /* 致命杀手2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "致命杀手2.png"; path = "rom/致命杀手2.png"; sourceTree = "<group>"; };
+		3B45E1A215FD1DD900383AA3 /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIGlossyButton.h; path = EmuFramework/UIGlossyButton.h; sourceTree = SOURCE_ROOT; };
+		3B45E1A315FD1DD900383AA3 /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIGlossyButton.m; path = EmuFramework/UIGlossyButton.m; sourceTree = SOURCE_ROOT; };
+		3B45E1A615FD1DD900383AA3 /* UIImageView+Reflected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Reflected.h"; path = "EmuFramework/UIImageView+Reflected.h"; sourceTree = SOURCE_ROOT; };
+		3B45E1A715FD1DD900383AA3 /* UIImageView+Reflected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Reflected.m"; path = "EmuFramework/UIImageView+Reflected.m"; sourceTree = SOURCE_ROOT; };
+		3B45E1A815FD1DD900383AA3 /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+LayerEffects.h"; path = "EmuFramework/UIView+LayerEffects.h"; sourceTree = SOURCE_ROOT; };
+		3B45E1A915FD1DD900383AA3 /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+LayerEffects.m"; path = "EmuFramework/UIView+LayerEffects.m"; sourceTree = SOURCE_ROOT; };
+		3B45E1AE15FD24AE00383AA3 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUMFeedback.a; path = lib/libUMFeedback.a; sourceTree = "<group>"; };
+		3B45E1AF15FD24AE00383AA3 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = umFeedback.bundle; path = lib/umFeedback.bundle; sourceTree = "<group>"; };
+		3B45E1B015FD24AE00383AA3 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMFeedback.h; path = lib/UMFeedback.h; sourceTree = "<group>"; };
+		3B45E1C015FD27EE00383AA3 /* AdMoGoAdapterGoogleAdMobAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoAdapterGoogleAdMobAds.h; sourceTree = "<group>"; };
+		3B45E1C115FD27EE00383AA3 /* AdMoGoAdapterGoogleAdMobAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdMoGoAdapterGoogleAdMobAds.m; sourceTree = "<group>"; };
+		3B45E1C215FD27EE00383AA3 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
+		3B45E1C315FD27EE00383AA3 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
+		3B45E1C415FD27EE00383AA3 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
+		3B45E1C515FD27EE00383AA3 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		3B45E1C615FD27EE00383AA3 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		3B45E1C715FD27EE00383AA3 /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		3B45E1C815FD27EE00383AA3 /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		3B45E1C915FD27EE00383AA3 /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		3B45E1CA15FD27EE00383AA3 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		3B45E1CB15FD27EE00383AA3 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		3B45E1CE15FD27EE00383AA3 /* AdMoGoAdapterDoMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoAdapterDoMob.h; sourceTree = "<group>"; };
+		3B45E1CF15FD27EE00383AA3 /* AdMoGoAdapterDoMob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdMoGoAdapterDoMob.m; sourceTree = "<group>"; };
+		3B45E1D015FD27EE00383AA3 /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
+		3B45E1D115FD27EE00383AA3 /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
+		3B45E1D215FD27EE00383AA3 /* DMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTools.h; sourceTree = "<group>"; };
+		3B45E1D415FD27EE00383AA3 /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
+		3B45E1D515FD27EE00383AA3 /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobAdSDK.a; sourceTree = "<group>"; };
+		3B45E1E715FD27EE00383AA3 /* adsmogo_adclose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adsmogo_adclose@2x.png"; sourceTree = "<group>"; };
+		3B45E1E815FD27EE00383AA3 /* adsmogo_bannerbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adsmogo_bannerbg@2x.png"; sourceTree = "<group>"; };
+		3B45E1E915FD27EE00383AA3 /* adsmogo_btnbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adsmogo_btnbg@2x.png"; sourceTree = "<group>"; };
+		3B45E1EA15FD27EE00383AA3 /* adsmogo_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adsmogo_close@2x.png"; sourceTree = "<group>"; };
+		3B45E1EB15FD27EE00383AA3 /* adsmogo_corner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adsmogo_corner@2x.png"; sourceTree = "<group>"; };
+		3B45E1EC15FD27EE00383AA3 /* adsmogo_picrollbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "adsmogo_picrollbg@2x.png"; sourceTree = "<group>"; };
+		3B45E1EF15FD27EE00383AA3 /* adsmogo_adclose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adsmogo_adclose.png; sourceTree = "<group>"; };
+		3B45E1F015FD27EE00383AA3 /* adsmogo_bannerbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adsmogo_bannerbg.png; sourceTree = "<group>"; };
+		3B45E1F115FD27EE00383AA3 /* adsmogo_btnbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adsmogo_btnbg.png; sourceTree = "<group>"; };
+		3B45E1F215FD27EE00383AA3 /* adsmogo_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adsmogo_close.png; sourceTree = "<group>"; };
+		3B45E1F315FD27EE00383AA3 /* adsmogo_corner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adsmogo_corner.png; sourceTree = "<group>"; };
+		3B45E1F415FD27EE00383AA3 /* adsmogo_picrollbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adsmogo_picrollbg.png; sourceTree = "<group>"; };
+		3B45E1F715FD27EE00383AA3 /* AdMoGoAdNetworkAdapter+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AdMoGoAdNetworkAdapter+Helpers.h"; sourceTree = "<group>"; };
+		3B45E1F815FD27EE00383AA3 /* AdMoGoAdNetworkAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoAdNetworkAdapter.h; sourceTree = "<group>"; };
+		3B45E1F915FD27EE00383AA3 /* AdMoGoAdNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoAdNetworkConfig.h; sourceTree = "<group>"; };
+		3B45E1FA15FD27EE00383AA3 /* AdMoGoAdNetworkRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoAdNetworkRegistry.h; sourceTree = "<group>"; };
+		3B45E1FB15FD27EE00383AA3 /* AdMoGoConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoConfigData.h; sourceTree = "<group>"; };
+		3B45E1FC15FD27EE00383AA3 /* AdMoGoConfigDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoConfigDataCenter.h; sourceTree = "<group>"; };
+		3B45E1FD15FD27EE00383AA3 /* AdMogoConfigDic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMogoConfigDic.h; sourceTree = "<group>"; };
+		3B45E1FE15FD27EE00383AA3 /* AdMoGoCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoCore.h; sourceTree = "<group>"; };
+		3B45E1FF15FD27EE00383AA3 /* AdMoGoCoreTimerFireDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoCoreTimerFireDelegate.h; sourceTree = "<group>"; };
+		3B45E20015FD27EE00383AA3 /* AdMoGoCountryCodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoCountryCodeHelper.h; sourceTree = "<group>"; };
+		3B45E20115FD27EE00383AA3 /* AdMoGoDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoDelegateProtocol.h; sourceTree = "<group>"; };
+		3B45E20215FD27EE00383AA3 /* AdMoGoDeviceInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoDeviceInfoHelper.h; sourceTree = "<group>"; };
+		3B45E20315FD27EE00383AA3 /* AdMoGoLocationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoLocationDelegate.h; sourceTree = "<group>"; };
+		3B45E20415FD27EE00383AA3 /* AdMoGoReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoReachability.h; sourceTree = "<group>"; };
+		3B45E20515FD27EE00383AA3 /* AdMoGoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoView.h; sourceTree = "<group>"; };
+		3B45E20615FD27EE00383AA3 /* AdMoGoWebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdMoGoWebBrowser.xib; sourceTree = "<group>"; };
+		3B45E20715FD27EE00383AA3 /* AdMoGoWebBrowserControllerUserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMoGoWebBrowserControllerUserDelegate.h; sourceTree = "<group>"; };
+		3B45E20815FD27EE00383AA3 /* AdViewType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdViewType.h; sourceTree = "<group>"; };
+		3B45E20915FD27EE00383AA3 /* libAdsMogo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdsMogo.a; sourceTree = "<group>"; };
+		3B45E20A15FD27EE00383AA3 /* libAdsMogo_i386.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdsMogo_i386.a; sourceTree = "<group>"; };
+		3B45E24915FD2A9100383AA3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3B45E24B15FD2A9D00383AA3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3B45E24D15FD2AA700383AA3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3B45E24F15FD2AB900383AA3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3B45E25115FD2AC500383AA3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3B45E25315FD2AD000383AA3 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		3B45E25515FD2AE500383AA3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3B4716C215FE3462000FE47C /* icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_57.png; path = res/icon_57.png; sourceTree = "<group>"; };
+		3B4716C315FE3462000FE47C /* icon_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_72.png; path = res/icon_72.png; sourceTree = "<group>"; };
+		3B4716C415FE3462000FE47C /* icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_114.png; path = res/icon_114.png; sourceTree = "<group>"; };
+		3B4716C515FE3462000FE47C /* icon_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_144.png; path = res/icon_144.png; sourceTree = "<group>"; };
+		3B4716D115FE7571000FE47C /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = res/pause.png; sourceTree = "<group>"; };
+		3B58AA9E15FB94E60062B79F /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = EmuFramework/JSONKit.h; sourceTree = SOURCE_ROOT; };
+		3B58AA9F15FB94E60062B79F /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = EmuFramework/JSONKit.m; sourceTree = SOURCE_ROOT; };
+		3B58AAA115FB95690062B79F /* GameListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameListViewController.h; path = EmuFramework/GameListViewController.h; sourceTree = SOURCE_ROOT; };
+		3B58AAA215FB95690062B79F /* GameListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GameListViewController.mm; path = EmuFramework/GameListViewController.mm; sourceTree = SOURCE_ROOT; };
+		3B58AAAA15FBA8C90062B79F /* romlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = romlist.json; sourceTree = "<group>"; };
+		3B58AAB815FBCBE00062B79F /* star_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star_empty.png; path = res/star_empty.png; sourceTree = "<group>"; };
+		3B58AAB915FBCBE00062B79F /* star_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star_empty@2x.png"; path = "res/star_empty@2x.png"; sourceTree = "<group>"; };
+		3B58AABA15FBCBE00062B79F /* star_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star_full.png; path = res/star_full.png; sourceTree = "<group>"; };
+		3B58AABB15FBCBE00062B79F /* star_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star_full@2x.png"; path = "res/star_full@2x.png"; sourceTree = "<group>"; };
+		3B58AAC915FBD8990062B79F /* DLStarRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStarRatingControl.h; sourceTree = "<group>"; };
+		3B58AACA15FBD8990062B79F /* DLStarRatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStarRatingControl.m; sourceTree = "<group>"; };
+		3B58AACB15FBD8990062B79F /* DLStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStarView.h; sourceTree = "<group>"; };
+		3B58AACC15FBD8990062B79F /* DLStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStarView.m; sourceTree = "<group>"; };
+		3B58AACE15FBD8990062B79F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		3B58AACF15FBD8990062B79F /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		3B58AAD015FBD8990062B79F /* star_highlighted-darker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlighted-darker.png"; sourceTree = "<group>"; };
+		3B58AAD115FBD8990062B79F /* star_highlighted-darker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlighted-darker@2x.png"; sourceTree = "<group>"; };
+		3B58AAD215FBD8990062B79F /* star_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_highlighted.png; sourceTree = "<group>"; };
+		3B58AAD315FBD8990062B79F /* star_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_highlighted@2x.png"; sourceTree = "<group>"; };
+		3B58AAD415FBD8990062B79F /* UIView+Subviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Subviews.h"; sourceTree = "<group>"; };
+		3B58AAD515FBD8990062B79F /* UIView+Subviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subviews.m"; sourceTree = "<group>"; };
+		3B58AADF15FBDD2B0062B79F /* gui_lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_lock.png; path = res/gui_lock.png; sourceTree = "<group>"; };
 		3B6FDDA215E15A4B003BAFA1 /* overlays128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlays128.png; path = MD.emu/res/overlays128.png; sourceTree = "<group>"; };
 		3B6FDDA315E15A4B003BAFA1 /* padButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = padButton.png; path = MD.emu/res/padButton.png; sourceTree = "<group>"; };
 		3B6FDDA415E15A4B003BAFA1 /* Vera.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Vera.ttf; path = MD.emu/res/Vera.ttf; sourceTree = "<group>"; };
@@ -311,7 +661,7 @@
 		3BDF50B915E4243600332CD0 /* dianjin_offer_cell_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianjin_offer_cell_background.png; sourceTree = "<group>"; };
 		3BDF50BA15E4243600332CD0 /* dianjin_uninstalled_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianjin_uninstalled_normal.png; sourceTree = "<group>"; };
 		3BDF50BB15E4243600332CD0 /* dianjin_uninstalled_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianjin_uninstalled_press.png; sourceTree = "<group>"; };
-		69CFDD581506039500F0C0AE /* MD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69CFDD581506039500F0C0AE /* MDAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69CFDD5C1506039500F0C0AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		69CFDD5E1506039500F0C0AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		69CFDD601506039500F0C0AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -602,10 +952,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B45E25615FD2AE500383AA3 /* MapKit.framework in Frameworks */,
+				3B45E25415FD2AD000383AA3 /* EventKit.framework in Frameworks */,
+				3B45E25215FD2AC500383AA3 /* CoreTelephony.framework in Frameworks */,
+				3B45E25015FD2AB900383AA3 /* MobileCoreServices.framework in Frameworks */,
+				3BDF509915E4210900332CD0 /* SystemConfiguration.framework in Frameworks */,
+				3B45E24E15FD2AA700383AA3 /* CoreLocation.framework in Frameworks */,
+				3B45E24C15FD2A9E00383AA3 /* CFNetwork.framework in Frameworks */,
+				3B45E24A15FD2A9100383AA3 /* libsqlite3.dylib in Frameworks */,
 				3B44F69815ED1F81003E18FA /* liblibpng.a in Frameworks */,
 				3B44F69715ED1F7D003E18FA /* libfreetype.a in Frameworks */,
 				3B44F69615ED1F7A003E18FA /* libbtstack.a in Frameworks */,
-				3BDF509915E4210900332CD0 /* SystemConfiguration.framework in Frameworks */,
 				69E5586115061F5B001407C0 /* libz.dylib in Frameworks */,
 				69CFDF391506099000F0C0AE /* UIKit.framework in Frameworks */,
 				69CFDF381506097E00F0C0AE /* MessageUI.framework in Frameworks */,
@@ -618,6 +975,11 @@
 				3BDF508715E41BA200332CD0 /* DianJinOfferPlatform.framework in Frameworks */,
 				3BDF508815E41BA200332CD0 /* Log.framework in Frameworks */,
 				3BDF508915E41BA200332CD0 /* Zip.framework in Frameworks */,
+				3B45E1B115FD24AE00383AA3 /* libUMFeedback.a in Frameworks */,
+				3B45E20E15FD27EE00383AA3 /* libGoogleAdMobAds.a in Frameworks */,
+				3B45E21115FD27EE00383AA3 /* libDomobAdSDK.a in Frameworks */,
+				3B45E22515FD27EE00383AA3 /* libAdsMogo.a in Frameworks */,
+				3B45E22615FD27EE00383AA3 /* libAdsMogo_i386.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,10 +989,8 @@
 		3B221A4715DFDFF100219D4B /* Roms */ = {
 			isa = PBXGroup;
 			children = (
-				3B33EAF215E5733300B96474 /* langrisser1.bin */,
-				3B33EAF315E5733300B96474 /* langrisser2_1.4.bin */,
-				3B33EAF415E5733300B96474 /* langrisser2_cn.smd */,
-				3B33EAF515E5733300B96474 /* langrisser2-yy.bin */,
+				3B45E07F15FCA01300383AA3 /* rom */,
+				3B58AAAA15FBA8C90062B79F /* romlist.json */,
 			);
 			path = Roms;
 			sourceTree = "<group>";
@@ -714,9 +1074,299 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3B45E07F15FCA01300383AA3 /* rom */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E16715FD16F400383AA3 /* 火枪英雄.jpg */,
+				3B45E16815FD16F400383AA3 /* 秘境魔宝中文版.png */,
+				3B45E16915FD16F400383AA3 /* 热血足球.jpg */,
+				3B45E16A15FD16F400383AA3 /* 忍者神龟.jpg */,
+				3B45E16B15FD16F400383AA3 /* 太空战士.png */,
+				3B45E16C15FD16F400383AA3 /* 天使之翼.png */,
+				3B45E16D15FD16F500383AA3 /* 吞食天地3.png */,
+				3B45E16E15FD16F500383AA3 /* 外星战士.png */,
+				3B45E16F15FD16F500383AA3 /* 威虎战机.png */,
+				3B45E17015FD16F500383AA3 /* 武者Aleste.png */,
+				3B45E17115FD16F500383AA3 /* 新创世纪中文版.png */,
+				3B45E17215FD16F500383AA3 /* 雪人兄弟.png */,
+				3B45E17315FD16F500383AA3 /* 音速小子3.png */,
+				3B45E17415FD16F500383AA3 /* 幽游白书.png */,
+				3B45E17515FD16F500383AA3 /* 炸弹人.jpg */,
+				3B45E17615FD16F500383AA3 /* 战斗蛙与双截龙.png */,
+				3B45E17715FD16F500383AA3 /* 战斧3.png */,
+				3B45E17815FD16F500383AA3 /* 致命杀手2.bin */,
+				3B45E17915FD16F500383AA3 /* 致命杀手2.png */,
+				3B45E15115FD11B900383AA3 /* 究极七龙珠.png */,
+				3B45E15215FD11B900383AA3 /* 联合前线汉化版.png */,
+				3B45E15315FD11B900383AA3 /* 洛克人.png */,
+				3B45E15415FD11B900383AA3 /* 漫画地带.png */,
+				3B45E15515FD11B900383AA3 /* 魔法气泡外传.png */,
+				3B45E15615FD11B900383AA3 /* 炮灰.png */,
+				3B45E15715FD11B900383AA3 /* 蚯蚓吉姆2.png */,
+				3B45E15815FD11B900383AA3 /* 三国志5.png */,
+				3B45E15915FD11B900383AA3 /* 双截龙.png */,
+				3B45E15A15FD11B900383AA3 /* 双截龙2.png */,
+				3B45E15B15FD11B900383AA3 /* 双截龙3.png */,
+				3B45E12515FD0EEE00383AA3 /* 霸王三国志中文版.jpg */,
+				3B45E12615FD0EEE00383AA3 /* 暴力克星.png */,
+				3B45E12715FD0EEE00383AA3 /* 蝙蝠侠与罗宾的冒险.png */,
+				3B45E12815FD0EEE00383AA3 /* 超级忍.png */,
+				3B45E12915FD0EEE00383AA3 /* 大航海时代2.png */,
+				3B45E12A15FD0EEE00383AA3 /* 大战略.png */,
+				3B45E12B15FD0EEE00383AA3 /* 饿狼传说.png */,
+				3B45E12C15FD0EEE00383AA3 /* 灌篮高手.png */,
+				3B45E12D15FD0EEE00383AA3 /* 光明力量2.png */,
+				3B45E12E15FD0EEE00383AA3 /* 光之继承者中文版.png */,
+				3B45E12F15FD0EEE00383AA3 /* 海豚2.png */,
+				3B45E13015FD0EEE00383AA3 /* 毁灭公爵.png */,
+				3B45E13115FD0EEE00383AA3 /* 魂斗罗4铁血兵团.png */,
+				3B45E13215FD0EEE00383AA3 /* 火箭骑士.png */,
+				3B45E13315FD0EEE00383AA3 /* 机动战神.png */,
+				3B45E13415FD0EEE00383AA3 /* 机甲神兵中文版.png */,
+				3B45E13515FD0EEE00383AA3 /* 鲛鲛鲛.png */,
+				3B45E13615FD0EEE00383AA3 /* 街霸2.png */,
+				3B45E13715FD0EEE00383AA3 /* 空牙.png */,
+				3B45E13815FD0EEE00383AA3 /* 恐龙兄弟2.png */,
+				3B45E13915FD0EEE00383AA3 /* 雷电.png */,
+				3B45E13A15FD0EEE00383AA3 /* 粒子斗士2.png */,
+				3B45E11015FD098C00383AA3 /* 霸王三国志中文版.smd */,
+				3B45E11115FD098C00383AA3 /* 光之继承者中文版.bin */,
+				3B45E10E15FD075E00383AA3 /* 机甲神兵中文版.bin */,
+				3B45E10815FD064800383AA3 /* 联合前线汉化版.bin */,
+				3B45E10915FD064900383AA3 /* 秘境魔宝中文版.bin */,
+				3B45E10A15FD064900383AA3 /* 新创世纪中文版.bin */,
+				3B45E0F415FD04A300383AA3 /* 蝙蝠侠与罗宾的冒险.bin */,
+				3B45E0F515FD04A500383AA3 /* 饿狼传说.bin */,
+				3B45E0F615FD04AC00383AA3 /* 机动战神.bin */,
+				3B45E0F815FD04BC00383AA3 /* 洛克人.bin */,
+				3B45E0F915FD04C600383AA3 /* 漫画地带.smd */,
+				3B45E0FB15FD04DC00383AA3 /* 蚯蚓吉姆2.smd */,
+				3B45E0FC15FD04E800383AA3 /* 武者Aleste.bin */,
+				3B45E0EB15FCEFCB00383AA3 /* 火箭骑士.gen */,
+				3B45E0EC15FCEFCC00383AA3 /* 魔法气泡外传.bin */,
+				3B45E0ED15FCEFCC00383AA3 /* 外星战士.bin */,
+				3B45E0EE15FCEFCD00383AA3 /* 战斧3.bin */,
+				3B45E0BE15FCEB6B00383AA3 /* 超级忍.bin */,
+				3B45E0BF15FCEB6C00383AA3 /* 大战略.bin */,
+				3B45E0C015FCEB6D00383AA3 /* 海豚2.bin */,
+				3B45E0C115FCEB6F00383AA3 /* 毁灭公爵.bin */,
+				3B45E0C215FCEB7100383AA3 /* 火枪英雄.bin */,
+				3B45E0C315FCEB7100383AA3 /* 鲛鲛鲛.bin */,
+				3B45E0C415FCEB7200383AA3 /* 究极七龙珠.bin */,
+				3B45E0C515FCEB7300383AA3 /* 空牙.bin */,
+				3B45E0C615FCEB7300383AA3 /* 雷电.bin */,
+				3B45E0C815FCEB7400383AA3 /* 热血足球.bin */,
+				3B45E0C915FCEB7500383AA3 /* 忍者神龟.bin */,
+				3B45E0CA15FCEB7500383AA3 /* 双截龙2.bin */,
+				3B45E0CB15FCEB7600383AA3 /* 双截龙3.bin */,
+				3B45E0CC15FCEB7600383AA3 /* 天使之翼.bin */,
+				3B45E0CD15FCEB7700383AA3 /* 威虎战机.bin */,
+				3B45E0CE15FCEB7700383AA3 /* 雪人兄弟.bin */,
+				3B45E0D115FCEB7800383AA3 /* 音速小子3.bin */,
+				3B45E0D215FCEB7900383AA3 /* 炸弹人.bin */,
+				3B45E0D315FCEB7900383AA3 /* 战斗蛙与双截龙.bin */,
+				3B45E0B615FCDDA600383AA3 /* 暴力克星.smd */,
+				3B45E0B715FCDDA700383AA3 /* 街霸2.bin */,
+				3B45E0B815FCDDA700383AA3 /* 炮灰.bin */,
+				3B45E0B915FCDDA800383AA3 /* 双截龙.smd */,
+				3B45E0A015FCB3B900383AA3 /* 魂斗罗4铁血兵团.bin */,
+				3B45E0A115FCB3B900383AA3 /* 大航海时代2.bin */,
+				3B45E0A215FCB3B900383AA3 /* 光明力量2.smd */,
+				3B45E0A315FCB3B900383AA3 /* 恐龙兄弟2.gen */,
+				3B45E0A415FCB3B900383AA3 /* 粒子斗士2.smd */,
+				3B45E0A615FCB3B900383AA3 /* 三国志5.smd */,
+				3B45E0A715FCB3B900383AA3 /* 太空战士.smd */,
+				3B45E0A815FCB3B900383AA3 /* 吞食天地3.smd */,
+				3B45E0A915FCB3B900383AA3 /* 超级忍3.bin */,
+				3B45E0AA15FCB3B900383AA3 /* 超级忍3.png */,
+				3B45E09B15FCAE1F00383AA3 /* 灌篮高手.smd */,
+				3B45E09C15FCAE1F00383AA3 /* 幽游白书.smd */,
+				3B45E09615FCAC7700383AA3 /* 梦幻模拟战2.png */,
+				3B45E09715FCAC7700383AA3 /* 梦幻模拟战2.smd */,
+				3B45E08E15FCAB2A00383AA3 /* 怒之铁拳2.bin */,
+				3B45E08F15FCAB2A00383AA3 /* 怒之铁拳2.png */,
+				3B45E09015FCAB2A00383AA3 /* 怒之铁拳3.bin */,
+				3B45E09115FCAB2A00383AA3 /* 怒之铁拳3.png */,
+				3B45E08415FCA77900383AA3 /* 梦幻之星4.png */,
+				3B45E08015FCA24A00383AA3 /* 梦幻之星4.smd */,
+			);
+			name = rom;
+			sourceTree = "<group>";
+		};
+		3B45E1B315FD27EE00383AA3 /* AdsMoGoLib */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1B415FD27EE00383AA3 /* AdNetworkLibs */,
+				3B45E1E515FD27EE00383AA3 /* AdsMoGoRes */,
+				3B45E1F615FD27EE00383AA3 /* AdsMoGoSDK */,
+			);
+			name = AdsMoGoLib;
+			path = lib/AdsMoGoLib;
+			sourceTree = "<group>";
+		};
+		3B45E1B415FD27EE00383AA3 /* AdNetworkLibs */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1BE15FD27EE00383AA3 /* AdMob */,
+				3B45E1CC15FD27EE00383AA3 /* DoMob */,
+			);
+			path = AdNetworkLibs;
+			sourceTree = "<group>";
+		};
+		3B45E1BE15FD27EE00383AA3 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1BF15FD27EE00383AA3 /* AdsMoGoAdapter */,
+				3B45E1C215FD27EE00383AA3 /* GADAdMobExtras.h */,
+				3B45E1C315FD27EE00383AA3 /* GADAdNetworkExtras.h */,
+				3B45E1C415FD27EE00383AA3 /* GADAdSize.h */,
+				3B45E1C515FD27EE00383AA3 /* GADBannerView.h */,
+				3B45E1C615FD27EE00383AA3 /* GADBannerViewDelegate.h */,
+				3B45E1C715FD27EE00383AA3 /* GADInterstitial.h */,
+				3B45E1C815FD27EE00383AA3 /* GADInterstitialDelegate.h */,
+				3B45E1C915FD27EE00383AA3 /* GADRequest.h */,
+				3B45E1CA15FD27EE00383AA3 /* GADRequestError.h */,
+				3B45E1CB15FD27EE00383AA3 /* libGoogleAdMobAds.a */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
+		3B45E1BF15FD27EE00383AA3 /* AdsMoGoAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1C015FD27EE00383AA3 /* AdMoGoAdapterGoogleAdMobAds.h */,
+				3B45E1C115FD27EE00383AA3 /* AdMoGoAdapterGoogleAdMobAds.m */,
+			);
+			path = AdsMoGoAdapter;
+			sourceTree = "<group>";
+		};
+		3B45E1CC15FD27EE00383AA3 /* DoMob */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1CD15FD27EE00383AA3 /* AdsMoGoAdapter */,
+				3B45E1D015FD27EE00383AA3 /* DMAdView.h */,
+				3B45E1D115FD27EE00383AA3 /* DMInterstitialAdController.h */,
+				3B45E1D215FD27EE00383AA3 /* DMTools.h */,
+				3B45E1D315FD27EE00383AA3 /* DomobAdSDKBundle */,
+				3B45E1D515FD27EE00383AA3 /* libDomobAdSDK.a */,
+			);
+			path = DoMob;
+			sourceTree = "<group>";
+		};
+		3B45E1CD15FD27EE00383AA3 /* AdsMoGoAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1CE15FD27EE00383AA3 /* AdMoGoAdapterDoMob.h */,
+				3B45E1CF15FD27EE00383AA3 /* AdMoGoAdapterDoMob.m */,
+			);
+			path = AdsMoGoAdapter;
+			sourceTree = "<group>";
+		};
+		3B45E1D315FD27EE00383AA3 /* DomobAdSDKBundle */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1D415FD27EE00383AA3 /* DomobAdSDKBundle.bundle */,
+			);
+			path = DomobAdSDKBundle;
+			sourceTree = "<group>";
+		};
+		3B45E1E515FD27EE00383AA3 /* AdsMoGoRes */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1E615FD27EE00383AA3 /* High */,
+				3B45E1EE15FD27EE00383AA3 /* Normal */,
+			);
+			path = AdsMoGoRes;
+			sourceTree = "<group>";
+		};
+		3B45E1E615FD27EE00383AA3 /* High */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1E715FD27EE00383AA3 /* adsmogo_adclose@2x.png */,
+				3B45E1E815FD27EE00383AA3 /* adsmogo_bannerbg@2x.png */,
+				3B45E1E915FD27EE00383AA3 /* adsmogo_btnbg@2x.png */,
+				3B45E1EA15FD27EE00383AA3 /* adsmogo_close@2x.png */,
+				3B45E1EB15FD27EE00383AA3 /* adsmogo_corner@2x.png */,
+				3B45E1EC15FD27EE00383AA3 /* adsmogo_picrollbg@2x.png */,
+			);
+			path = High;
+			sourceTree = "<group>";
+		};
+		3B45E1EE15FD27EE00383AA3 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1EF15FD27EE00383AA3 /* adsmogo_adclose.png */,
+				3B45E1F015FD27EE00383AA3 /* adsmogo_bannerbg.png */,
+				3B45E1F115FD27EE00383AA3 /* adsmogo_btnbg.png */,
+				3B45E1F215FD27EE00383AA3 /* adsmogo_close.png */,
+				3B45E1F315FD27EE00383AA3 /* adsmogo_corner.png */,
+				3B45E1F415FD27EE00383AA3 /* adsmogo_picrollbg.png */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
+		3B45E1F615FD27EE00383AA3 /* AdsMoGoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3B45E1F715FD27EE00383AA3 /* AdMoGoAdNetworkAdapter+Helpers.h */,
+				3B45E1F815FD27EE00383AA3 /* AdMoGoAdNetworkAdapter.h */,
+				3B45E1F915FD27EE00383AA3 /* AdMoGoAdNetworkConfig.h */,
+				3B45E1FA15FD27EE00383AA3 /* AdMoGoAdNetworkRegistry.h */,
+				3B45E1FB15FD27EE00383AA3 /* AdMoGoConfigData.h */,
+				3B45E1FC15FD27EE00383AA3 /* AdMoGoConfigDataCenter.h */,
+				3B45E1FD15FD27EE00383AA3 /* AdMogoConfigDic.h */,
+				3B45E1FE15FD27EE00383AA3 /* AdMoGoCore.h */,
+				3B45E1FF15FD27EE00383AA3 /* AdMoGoCoreTimerFireDelegate.h */,
+				3B45E20015FD27EE00383AA3 /* AdMoGoCountryCodeHelper.h */,
+				3B45E20115FD27EE00383AA3 /* AdMoGoDelegateProtocol.h */,
+				3B45E20215FD27EE00383AA3 /* AdMoGoDeviceInfoHelper.h */,
+				3B45E20315FD27EE00383AA3 /* AdMoGoLocationDelegate.h */,
+				3B45E20415FD27EE00383AA3 /* AdMoGoReachability.h */,
+				3B45E20515FD27EE00383AA3 /* AdMoGoView.h */,
+				3B45E20615FD27EE00383AA3 /* AdMoGoWebBrowser.xib */,
+				3B45E20715FD27EE00383AA3 /* AdMoGoWebBrowserControllerUserDelegate.h */,
+				3B45E20815FD27EE00383AA3 /* AdViewType.h */,
+				3B45E20915FD27EE00383AA3 /* libAdsMogo.a */,
+				3B45E20A15FD27EE00383AA3 /* libAdsMogo_i386.a */,
+			);
+			path = AdsMoGoSDK;
+			sourceTree = "<group>";
+		};
+		3B58AAC815FBD8980062B79F /* DLStarRating */ = {
+			isa = PBXGroup;
+			children = (
+				3B58AAC915FBD8990062B79F /* DLStarRatingControl.h */,
+				3B58AACA15FBD8990062B79F /* DLStarRatingControl.m */,
+				3B58AACB15FBD8990062B79F /* DLStarView.h */,
+				3B58AACC15FBD8990062B79F /* DLStarView.m */,
+				3B58AACD15FBD8990062B79F /* images */,
+				3B58AAD415FBD8990062B79F /* UIView+Subviews.h */,
+				3B58AAD515FBD8990062B79F /* UIView+Subviews.m */,
+			);
+			name = DLStarRating;
+			path = EmuFramework/DLStarRating;
+			sourceTree = SOURCE_ROOT;
+		};
+		3B58AACD15FBD8990062B79F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				3B58AACE15FBD8990062B79F /* star.png */,
+				3B58AACF15FBD8990062B79F /* star@2x.png */,
+				3B58AAD015FBD8990062B79F /* star_highlighted-darker.png */,
+				3B58AAD115FBD8990062B79F /* star_highlighted-darker@2x.png */,
+				3B58AAD215FBD8990062B79F /* star_highlighted.png */,
+				3B58AAD315FBD8990062B79F /* star_highlighted@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		3BDF507315E413E700332CD0 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				3B45E1B315FD27EE00383AA3 /* AdsMoGoLib */,
+				3B45E1AE15FD24AE00383AA3 /* libUMFeedback.a */,
+				3B45E1AF15FD24AE00383AA3 /* umFeedback.bundle */,
+				3B45E1B015FD24AE00383AA3 /* UMFeedback.h */,
 				3BDF509C15E4243600332CD0 /* DianJinOfferPlatformResources */,
 				3BDF508315E41BA200332CD0 /* DianJinFramework */,
 				3BDF507415E4140300332CD0 /* libMobClickLibrary.a */,
@@ -778,12 +1428,12 @@
 		69CFDD4D1506039500F0C0AE = {
 			isa = PBXGroup;
 			children = (
+				69E5584115061D51001407C0 /* EmuFramework */,
 				3B44F68D15ED1F73003E18FA /* btstack.xcodeproj */,
 				3B44F68415ED1F66003E18FA /* libpng.xcodeproj */,
 				3B44F67B15ED1F54003E18FA /* freetype.xcodeproj */,
 				3BDF507315E413E700332CD0 /* lib */,
 				3B221A4715DFDFF100219D4B /* Roms */,
-				69E5584115061D51001407C0 /* EmuFramework */,
 				69CFDD5B1506039500F0C0AE /* Frameworks */,
 				69CFDD73150603F600F0C0AE /* Imagine */,
 				69CFDD621506039500F0C0AE /* MD */,
@@ -795,7 +1445,7 @@
 		69CFDD591506039500F0C0AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69CFDD581506039500F0C0AE /* MD.app */,
+				69CFDD581506039500F0C0AE /* MDAll.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -803,6 +1453,13 @@
 		69CFDD5B1506039500F0C0AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B45E25515FD2AE500383AA3 /* MapKit.framework */,
+				3B45E25315FD2AD000383AA3 /* EventKit.framework */,
+				3B45E25115FD2AC500383AA3 /* CoreTelephony.framework */,
+				3B45E24F15FD2AB900383AA3 /* MobileCoreServices.framework */,
+				3B45E24D15FD2AA700383AA3 /* CoreLocation.framework */,
+				3B45E24B15FD2A9D00383AA3 /* CFNetwork.framework */,
+				3B45E24915FD2A9100383AA3 /* libsqlite3.dylib */,
 				3BDF509815E4210900332CD0 /* SystemConfiguration.framework */,
 				69E5586015061F5B001407C0 /* libz.dylib */,
 				69CFDF33150608C800F0C0AE /* AudioToolbox.framework */,
@@ -842,11 +1499,8 @@
 		69CFDD73150603F600F0C0AE /* Imagine */ = {
 			isa = PBXGroup;
 			children = (
-				3B221A3515DFD1FA00219D4B /* ioapi.c */,
 				3B221A3615DFD1FA00219D4B /* ioapi.h */,
-				3B221A3715DFD1FA00219D4B /* unzip.c */,
 				3B221A3815DFD1FA00219D4B /* unzip.h */,
-				3B221A3915DFD1FA00219D4B /* zip.c */,
 				3B221A3A15DFD1FA00219D4B /* zip.h */,
 				69CFDD78150604AC00F0C0AE /* assert.h */,
 				69CFDD79150604AC00F0C0AE /* audio */,
@@ -1661,6 +2315,15 @@
 		69E5584115061D51001407C0 /* EmuFramework */ = {
 			isa = PBXGroup;
 			children = (
+				3B45E1A215FD1DD900383AA3 /* UIGlossyButton.h */,
+				3B45E1A315FD1DD900383AA3 /* UIGlossyButton.m */,
+				3B45E1A615FD1DD900383AA3 /* UIImageView+Reflected.h */,
+				3B45E1A715FD1DD900383AA3 /* UIImageView+Reflected.m */,
+				3B45E1A815FD1DD900383AA3 /* UIView+LayerEffects.h */,
+				3B45E1A915FD1DD900383AA3 /* UIView+LayerEffects.m */,
+				3B58AAC815FBD8980062B79F /* DLStarRating */,
+				3B58AA9E15FB94E60062B79F /* JSONKit.h */,
+				3B58AA9F15FB94E60062B79F /* JSONKit.m */,
 				3B2C622F15FB287000C2D4D5 /* CPPickerView */,
 				3BCF0FE515E6AAB100856915 /* NSString+MD5Addition.h */,
 				3BCF0FE615E6AAB100856915 /* NSString+MD5Addition.m */,
@@ -1686,6 +2349,8 @@
 				3B6FDDAD15E15E1F003BAFA1 /* SettingView.mm */,
 				3B2EAFEB15F689ED009D62E5 /* SettingViewController.h */,
 				3B2EAFEC15F689ED009D62E5 /* SettingViewController.mm */,
+				3B58AAA115FB95690062B79F /* GameListViewController.h */,
+				3B58AAA215FB95690062B79F /* GameListViewController.mm */,
 			);
 			name = EmuFramework;
 			path = MD;
@@ -1702,11 +2367,17 @@
 		69E558A1150645C7001407C0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3B4716D115FE7571000FE47C /* pause.png */,
+				3B4716C215FE3462000FE47C /* icon_57.png */,
+				3B4716C315FE3462000FE47C /* icon_72.png */,
+				3B4716C415FE3462000FE47C /* icon_114.png */,
+				3B4716C515FE3462000FE47C /* icon_144.png */,
+				3B58AADF15FBDD2B0062B79F /* gui_lock.png */,
+				3B58AAB815FBCBE00062B79F /* star_empty.png */,
+				3B58AAB915FBCBE00062B79F /* star_empty@2x.png */,
+				3B58AABA15FBCBE00062B79F /* star_full.png */,
+				3B58AABB15FBCBE00062B79F /* star_full@2x.png */,
 				3B3DDA8915E6A74C00233D72 /* Default.png */,
-				3B3DDA8A15E6A74C00233D72 /* lan_icon_57.png */,
-				3B3DDA8B15E6A74C00233D72 /* lan_icon_72.png */,
-				3B3DDA8C15E6A74C00233D72 /* lan_icon_114.png */,
-				3B3DDA8D15E6A74C00233D72 /* lan_icon_144.png */,
 				3B6FDDA215E15A4B003BAFA1 /* overlays128.png */,
 				3B6FDDA315E15A4B003BAFA1 /* padButton.png */,
 				3B6FDDA415E15A4B003BAFA1 /* Vera.ttf */,
@@ -1735,7 +2406,7 @@
 			);
 			name = MD;
 			productName = MD;
-			productReference = 69CFDD581506039500F0C0AE /* MD.app */;
+			productReference = 69CFDD581506039500F0C0AE /* MDAll.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1842,19 +2513,155 @@
 				3BDF50D815E4243600332CD0 /* dianjin_offer_cell_background.png in Resources */,
 				3BDF50D915E4243600332CD0 /* dianjin_uninstalled_normal.png in Resources */,
 				3BDF50DA15E4243600332CD0 /* dianjin_uninstalled_press.png in Resources */,
-				3B33EAF615E5733300B96474 /* langrisser1.bin in Resources */,
-				3B33EAF715E5733300B96474 /* langrisser2_1.4.bin in Resources */,
-				3B33EAF815E5733300B96474 /* langrisser2_cn.smd in Resources */,
-				3B33EAF915E5733300B96474 /* langrisser2-yy.bin in Resources */,
 				3B3DDA8E15E6A74C00233D72 /* Default.png in Resources */,
-				3B3DDA8F15E6A74C00233D72 /* lan_icon_57.png in Resources */,
-				3B3DDA9015E6A74C00233D72 /* lan_icon_72.png in Resources */,
-				3B3DDA9115E6A74C00233D72 /* lan_icon_114.png in Resources */,
-				3B3DDA9215E6A74C00233D72 /* lan_icon_144.png in Resources */,
 				3B2C623B15FB291F00C2D4D5 /* horizontalPickerShadow@2x.png in Resources */,
 				3B2C623C15FB291F00C2D4D5 /* shadowOverlay@2x.png in Resources */,
 				3B2C623D15FB291F00C2D4D5 /* stretchableGlass@2x.png in Resources */,
 				3B2C623E15FB291F00C2D4D5 /* wheelBackground@2x.png in Resources */,
+				3B58AAAB15FBA8C90062B79F /* romlist.json in Resources */,
+				3B58AABC15FBCBE00062B79F /* star_empty.png in Resources */,
+				3B58AABD15FBCBE00062B79F /* star_empty@2x.png in Resources */,
+				3B58AABE15FBCBE00062B79F /* star_full.png in Resources */,
+				3B58AABF15FBCBE00062B79F /* star_full@2x.png in Resources */,
+				3B58AAD815FBD8990062B79F /* star.png in Resources */,
+				3B58AAD915FBD8990062B79F /* star@2x.png in Resources */,
+				3B58AADA15FBD8990062B79F /* star_highlighted-darker.png in Resources */,
+				3B58AADB15FBD8990062B79F /* star_highlighted-darker@2x.png in Resources */,
+				3B58AADC15FBD8990062B79F /* star_highlighted.png in Resources */,
+				3B58AADD15FBD8990062B79F /* star_highlighted@2x.png in Resources */,
+				3B58AAE015FBDD2B0062B79F /* gui_lock.png in Resources */,
+				3B45E08115FCA24A00383AA3 /* 梦幻之星4.smd in Resources */,
+				3B45E08515FCA77900383AA3 /* 梦幻之星4.png in Resources */,
+				3B45E09215FCAB2A00383AA3 /* 怒之铁拳2.bin in Resources */,
+				3B45E09315FCAB2A00383AA3 /* 怒之铁拳2.png in Resources */,
+				3B45E09415FCAB2A00383AA3 /* 怒之铁拳3.bin in Resources */,
+				3B45E09515FCAB2A00383AA3 /* 怒之铁拳3.png in Resources */,
+				3B45E09815FCAC7700383AA3 /* 梦幻模拟战2.png in Resources */,
+				3B45E09915FCAC7700383AA3 /* 梦幻模拟战2.smd in Resources */,
+				3B45E09E15FCAE1F00383AA3 /* 灌篮高手.smd in Resources */,
+				3B45E09F15FCAE1F00383AA3 /* 幽游白书.smd in Resources */,
+				3B45E0AB15FCB3B900383AA3 /* 魂斗罗4铁血兵团.bin in Resources */,
+				3B45E0AC15FCB3B900383AA3 /* 大航海时代2.bin in Resources */,
+				3B45E0AD15FCB3B900383AA3 /* 光明力量2.smd in Resources */,
+				3B45E0AE15FCB3B900383AA3 /* 恐龙兄弟2.gen in Resources */,
+				3B45E0AF15FCB3B900383AA3 /* 粒子斗士2.smd in Resources */,
+				3B45E0B115FCB3B900383AA3 /* 三国志5.smd in Resources */,
+				3B45E0B215FCB3B900383AA3 /* 太空战士.smd in Resources */,
+				3B45E0B315FCB3B900383AA3 /* 吞食天地3.smd in Resources */,
+				3B45E0B415FCB3B900383AA3 /* 超级忍3.bin in Resources */,
+				3B45E0B515FCB3B900383AA3 /* 超级忍3.png in Resources */,
+				3B45E0BA15FCDDA900383AA3 /* 暴力克星.smd in Resources */,
+				3B45E0BB15FCDDA900383AA3 /* 街霸2.bin in Resources */,
+				3B45E0BC15FCDDA900383AA3 /* 炮灰.bin in Resources */,
+				3B45E0BD15FCDDA900383AA3 /* 双截龙.smd in Resources */,
+				3B45E0D415FCEB7A00383AA3 /* 超级忍.bin in Resources */,
+				3B45E0D515FCEB7A00383AA3 /* 大战略.bin in Resources */,
+				3B45E0D615FCEB7A00383AA3 /* 海豚2.bin in Resources */,
+				3B45E0D715FCEB7A00383AA3 /* 毁灭公爵.bin in Resources */,
+				3B45E0D815FCEB7A00383AA3 /* 火枪英雄.bin in Resources */,
+				3B45E0D915FCEB7A00383AA3 /* 鲛鲛鲛.bin in Resources */,
+				3B45E0DA15FCEB7A00383AA3 /* 究极七龙珠.bin in Resources */,
+				3B45E0DB15FCEB7A00383AA3 /* 空牙.bin in Resources */,
+				3B45E0DC15FCEB7A00383AA3 /* 雷电.bin in Resources */,
+				3B45E0DE15FCEB7A00383AA3 /* 热血足球.bin in Resources */,
+				3B45E0DF15FCEB7A00383AA3 /* 忍者神龟.bin in Resources */,
+				3B45E0E015FCEB7A00383AA3 /* 双截龙2.bin in Resources */,
+				3B45E0E115FCEB7A00383AA3 /* 双截龙3.bin in Resources */,
+				3B45E0E215FCEB7A00383AA3 /* 天使之翼.bin in Resources */,
+				3B45E0E315FCEB7A00383AA3 /* 威虎战机.bin in Resources */,
+				3B45E0E415FCEB7A00383AA3 /* 雪人兄弟.bin in Resources */,
+				3B45E0E715FCEB7A00383AA3 /* 音速小子3.bin in Resources */,
+				3B45E0E815FCEB7A00383AA3 /* 炸弹人.bin in Resources */,
+				3B45E0E915FCEB7A00383AA3 /* 战斗蛙与双截龙.bin in Resources */,
+				3B45E0F015FCEFCD00383AA3 /* 火箭骑士.gen in Resources */,
+				3B45E0F115FCEFCD00383AA3 /* 魔法气泡外传.bin in Resources */,
+				3B45E0F215FCEFCD00383AA3 /* 外星战士.bin in Resources */,
+				3B45E0F315FCEFCD00383AA3 /* 战斧3.bin in Resources */,
+				3B45E0FD15FD04F400383AA3 /* 蝙蝠侠与罗宾的冒险.bin in Resources */,
+				3B45E0FE15FD04F400383AA3 /* 饿狼传说.bin in Resources */,
+				3B45E0FF15FD04F400383AA3 /* 机动战神.bin in Resources */,
+				3B45E10115FD04F400383AA3 /* 洛克人.bin in Resources */,
+				3B45E10215FD04F400383AA3 /* 漫画地带.smd in Resources */,
+				3B45E10415FD04F400383AA3 /* 蚯蚓吉姆2.smd in Resources */,
+				3B45E10515FD04F400383AA3 /* 武者Aleste.bin in Resources */,
+				3B45E10B15FD064900383AA3 /* 联合前线汉化版.bin in Resources */,
+				3B45E10C15FD064900383AA3 /* 秘境魔宝中文版.bin in Resources */,
+				3B45E10D15FD064900383AA3 /* 新创世纪中文版.bin in Resources */,
+				3B45E10F15FD075F00383AA3 /* 机甲神兵中文版.bin in Resources */,
+				3B45E11215FD098D00383AA3 /* 霸王三国志中文版.smd in Resources */,
+				3B45E11315FD098D00383AA3 /* 光之继承者中文版.bin in Resources */,
+				3B45E13B15FD0EEE00383AA3 /* 霸王三国志中文版.jpg in Resources */,
+				3B45E13C15FD0EEE00383AA3 /* 暴力克星.png in Resources */,
+				3B45E13D15FD0EEE00383AA3 /* 蝙蝠侠与罗宾的冒险.png in Resources */,
+				3B45E13E15FD0EEE00383AA3 /* 超级忍.png in Resources */,
+				3B45E13F15FD0EEE00383AA3 /* 大航海时代2.png in Resources */,
+				3B45E14015FD0EEE00383AA3 /* 大战略.png in Resources */,
+				3B45E14115FD0EEE00383AA3 /* 饿狼传说.png in Resources */,
+				3B45E14215FD0EEE00383AA3 /* 灌篮高手.png in Resources */,
+				3B45E14315FD0EEE00383AA3 /* 光明力量2.png in Resources */,
+				3B45E14415FD0EEE00383AA3 /* 光之继承者中文版.png in Resources */,
+				3B45E14515FD0EEE00383AA3 /* 海豚2.png in Resources */,
+				3B45E14615FD0EEE00383AA3 /* 毁灭公爵.png in Resources */,
+				3B45E14715FD0EEE00383AA3 /* 魂斗罗4铁血兵团.png in Resources */,
+				3B45E14815FD0EEE00383AA3 /* 火箭骑士.png in Resources */,
+				3B45E14915FD0EEE00383AA3 /* 机动战神.png in Resources */,
+				3B45E14A15FD0EEE00383AA3 /* 机甲神兵中文版.png in Resources */,
+				3B45E14B15FD0EEE00383AA3 /* 鲛鲛鲛.png in Resources */,
+				3B45E14C15FD0EEE00383AA3 /* 街霸2.png in Resources */,
+				3B45E14D15FD0EEE00383AA3 /* 空牙.png in Resources */,
+				3B45E14E15FD0EEE00383AA3 /* 恐龙兄弟2.png in Resources */,
+				3B45E14F15FD0EEE00383AA3 /* 雷电.png in Resources */,
+				3B45E15015FD0EEE00383AA3 /* 粒子斗士2.png in Resources */,
+				3B45E15C15FD11B900383AA3 /* 究极七龙珠.png in Resources */,
+				3B45E15D15FD11B900383AA3 /* 联合前线汉化版.png in Resources */,
+				3B45E15E15FD11B900383AA3 /* 洛克人.png in Resources */,
+				3B45E15F15FD11B900383AA3 /* 漫画地带.png in Resources */,
+				3B45E16015FD11B900383AA3 /* 魔法气泡外传.png in Resources */,
+				3B45E16115FD11B900383AA3 /* 炮灰.png in Resources */,
+				3B45E16215FD11B900383AA3 /* 蚯蚓吉姆2.png in Resources */,
+				3B45E16315FD11B900383AA3 /* 三国志5.png in Resources */,
+				3B45E16415FD11B900383AA3 /* 双截龙.png in Resources */,
+				3B45E16515FD11B900383AA3 /* 双截龙2.png in Resources */,
+				3B45E16615FD11B900383AA3 /* 双截龙3.png in Resources */,
+				3B45E17A15FD16F500383AA3 /* 火枪英雄.jpg in Resources */,
+				3B45E17B15FD16F500383AA3 /* 秘境魔宝中文版.png in Resources */,
+				3B45E17C15FD16F500383AA3 /* 热血足球.jpg in Resources */,
+				3B45E17D15FD16F500383AA3 /* 忍者神龟.jpg in Resources */,
+				3B45E17E15FD16F500383AA3 /* 太空战士.png in Resources */,
+				3B45E17F15FD16F500383AA3 /* 天使之翼.png in Resources */,
+				3B45E18015FD16F500383AA3 /* 吞食天地3.png in Resources */,
+				3B45E18115FD16F500383AA3 /* 外星战士.png in Resources */,
+				3B45E18215FD16F500383AA3 /* 威虎战机.png in Resources */,
+				3B45E18315FD16F500383AA3 /* 武者Aleste.png in Resources */,
+				3B45E18415FD16F500383AA3 /* 新创世纪中文版.png in Resources */,
+				3B45E18515FD16F500383AA3 /* 雪人兄弟.png in Resources */,
+				3B45E18615FD16F500383AA3 /* 音速小子3.png in Resources */,
+				3B45E18715FD16F500383AA3 /* 幽游白书.png in Resources */,
+				3B45E18815FD16F500383AA3 /* 炸弹人.jpg in Resources */,
+				3B45E18915FD16F500383AA3 /* 战斗蛙与双截龙.png in Resources */,
+				3B45E18A15FD16F500383AA3 /* 战斧3.png in Resources */,
+				3B45E18B15FD16F500383AA3 /* 致命杀手2.bin in Resources */,
+				3B45E18C15FD16F500383AA3 /* 致命杀手2.png in Resources */,
+				3B45E1B215FD24AE00383AA3 /* umFeedback.bundle in Resources */,
+				3B45E21015FD27EE00383AA3 /* DomobAdSDKBundle.bundle in Resources */,
+				3B45E21615FD27EE00383AA3 /* adsmogo_adclose@2x.png in Resources */,
+				3B45E21715FD27EE00383AA3 /* adsmogo_bannerbg@2x.png in Resources */,
+				3B45E21815FD27EE00383AA3 /* adsmogo_btnbg@2x.png in Resources */,
+				3B45E21915FD27EE00383AA3 /* adsmogo_close@2x.png in Resources */,
+				3B45E21A15FD27EE00383AA3 /* adsmogo_corner@2x.png in Resources */,
+				3B45E21B15FD27EE00383AA3 /* adsmogo_picrollbg@2x.png in Resources */,
+				3B45E21D15FD27EE00383AA3 /* adsmogo_adclose.png in Resources */,
+				3B45E21E15FD27EE00383AA3 /* adsmogo_bannerbg.png in Resources */,
+				3B45E21F15FD27EE00383AA3 /* adsmogo_btnbg.png in Resources */,
+				3B45E22015FD27EE00383AA3 /* adsmogo_close.png in Resources */,
+				3B45E22115FD27EE00383AA3 /* adsmogo_corner.png in Resources */,
+				3B45E22215FD27EE00383AA3 /* adsmogo_picrollbg.png in Resources */,
+				3B45E22415FD27EE00383AA3 /* AdMoGoWebBrowser.xib in Resources */,
+				3B4716C615FE3462000FE47C /* icon_57.png in Resources */,
+				3B4716C715FE3462000FE47C /* icon_72.png in Resources */,
+				3B4716C815FE3462000FE47C /* icon_114.png in Resources */,
+				3B4716C915FE3462000FE47C /* icon_144.png in Resources */,
+				3B4716D215FE7571000FE47C /* pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1941,9 +2748,6 @@
 				69E5585215061D6D001407C0 /* Screenshot.cc in Sources */,
 				69E5585315061D6D001407C0 /* VController.cc in Sources */,
 				69E5585D15061F32001407C0 /* btstack.cc in Sources */,
-				3B221A3B15DFD1FA00219D4B /* ioapi.c in Sources */,
-				3B221A3C15DFD1FA00219D4B /* unzip.c in Sources */,
-				3B221A3D15DFD1FA00219D4B /* zip.c in Sources */,
 				3B221A4215DFD5CC00219D4B /* iosUtil.mm in Sources */,
 				3B221A4315DFD5CC00219D4B /* platform_util.cpp in Sources */,
 				3B221A4615DFDBFD00219D4B /* CGJoystick.mm in Sources */,
@@ -1953,6 +2757,16 @@
 				3B2EAFED15F689ED009D62E5 /* SettingViewController.mm in Sources */,
 				3B2C623415FB287000C2D4D5 /* CPPickerView.m in Sources */,
 				3B2C623515FB287000C2D4D5 /* CPPickerViewCell.m in Sources */,
+				3B58AAA015FB94E60062B79F /* JSONKit.m in Sources */,
+				3B58AAA415FB95690062B79F /* GameListViewController.mm in Sources */,
+				3B58AAD615FBD8990062B79F /* DLStarRatingControl.m in Sources */,
+				3B58AAD715FBD8990062B79F /* DLStarView.m in Sources */,
+				3B58AADE15FBD8990062B79F /* UIView+Subviews.m in Sources */,
+				3B45E1AA15FD1DD900383AA3 /* UIGlossyButton.m in Sources */,
+				3B45E1AC15FD1DD900383AA3 /* UIImageView+Reflected.m in Sources */,
+				3B45E1AD15FD1DD900383AA3 /* UIView+LayerEffects.m in Sources */,
+				3B45E20D15FD27EE00383AA3 /* AdMoGoAdapterGoogleAdMobAds.m in Sources */,
+				3B45E20F15FD27EE00383AA3 /* AdMoGoAdapterDoMob.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2048,6 +2862,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/SDK/DianJinFramework\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/MobWin/AdsMoGoAdapter/build/Framework\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/MobWin/build/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MD/MD-Prefix.pch";
@@ -2066,9 +2882,17 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/Adermob\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/AdMob\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/DoMob\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/MobWin\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdsMoGoSDK\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = MDAll;
 				PROVISIONING_PROFILE = "104ADA9F-7D80-4823-A4C3-7EF6DF5F6F2F";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "104ADA9F-7D80-4823-A4C3-7EF6DF5F6F2F";
 				WRAPPER_EXTENSION = app;
@@ -2083,6 +2907,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/SDK/DianJinFramework\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/MobWin/AdsMoGoAdapter/build/Framework\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/MobWin/build/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MD/MD-Prefix.pch";
@@ -2101,9 +2927,17 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/Adermob\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/AdMob\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/DoMob\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdNetworkLibs/MobWin\"",
+					"\"$(SRCROOT)/lib/AdsMoGoLib/AdsMoGoSDK\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = MDAll;
 				PROVISIONING_PROFILE = "104ADA9F-7D80-4823-A4C3-7EF6DF5F6F2F";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "104ADA9F-7D80-4823-A4C3-7EF6DF5F6F2F";
 				WRAPPER_EXTENSION = app;

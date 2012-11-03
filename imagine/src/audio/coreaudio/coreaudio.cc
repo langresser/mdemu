@@ -53,7 +53,7 @@ static void audioCallback(void *userdata, AudioQueueRef inQ, AudioQueueBufferRef
 	//logMsg("buffer queue down to %d, last buffer with %d bytes, total %d, time %u", buffersQueued, (int)outQB->mAudioDataByteSize, bytesQueued, nsLatency);
 	if(nsLatency < 50000000 || bytesQueued < pcmFormat.framesToBytes(bufferFrames * 3))
 	{
-		logMsg("xrun, only %u ns of buffer", nsLatency);
+//		logMsg("xrun, only %u ns of buffer", nsLatency);
 		AudioQueuePause(inQ);
 		isPlaying = 0;
 	}
@@ -151,7 +151,7 @@ static void startPlaybackIfNeeded()
 	// TODO: base off total bytes and only use buffer count when max buffers reached
 	if(unlikely(!isPlaying && buffersQueued >= buffers-2))
 	{
-		logMsg("playback starting with %d buffers", buffersQueued);
+//		logMsg("playback starting with %d buffers", buffersQueued);
 		int err = AudioQueueStart(queue, 0);
 		if(err)
 		{

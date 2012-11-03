@@ -117,7 +117,7 @@ public:
 	{
 		setXPosRel(newX, xSize, origin);
 		setYPosRel(newY, ySize, origin);
-		//logMsg("set rect pos to %d,%d %d,%d", x, y, x2, y2);
+		logMsg("set rect pos to %d,%d %d,%d", x, y, x2, y2);
 	}
 
 	void setPosRel(T newX, T newY, T size, _2DOrigin origin)
