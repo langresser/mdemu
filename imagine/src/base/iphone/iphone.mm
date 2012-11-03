@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <OpenGLES/EAGLDrawable.h>
 #import <Foundation/NSPathUtilities.h>
+#import "UMFeedback.h"
 
 #import "MobClick.h"
 #import "SettingView.h"
@@ -544,11 +545,36 @@ UIImageView* pauseImage;
 
 	[window makeKeyAndVisible];
     
+    [UMFeedback checkWithAppkey:@"504b6946527015169e00004f"];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRecNewMsg:) name:UMFBCheckFinishedNotification object:nil];
+    
 	#if defined(IPHONE_MSG_COMPOSE) || defined(IPHONE_IMG_PICKER)
 	viewCtrl = [[UIViewController alloc] init];
 	[viewCtrl setView: glView];
 	#endif
 	logMsg("exiting applicationDidFinishLaunching");
+}
+
+-(void)onRecNewMsg:(NSNotification*)notification
+{
+    NSArray * newReplies = [notification.userInfo objectForKey:@"newReplies"];
+    if (!newReplies) {
+        return;
+    }
+    
+    UIAlertView *alertView;
+    NSString *title = [NSString stringWithFormat:@"有%d条新回复", [newReplies count]];
+    NSMutableString *content = [NSMutableString string];
+    for (int i = 0; i < [newReplies count]; i++) {
+        NSString * dateTime = [[newReplies objectAtIndex:i] objectForKey:@"datetime"];
+        NSString *_content = [[newReplies objectAtIndex:i] objectForKey:@"content"];
+        [content appendString:[NSString stringWithFormat:@"%d: %@---%@\n", i+1, _content, dateTime]];
+    }
+    
+    alertView = [[UIAlertView alloc] initWithTitle:title message:content delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    ((UILabel *) [[alertView subviews] objectAtIndex:1]).textAlignment = NSTextAlignmentLeft ;
+    [alertView show];
+    
 }
 
 - (void)orientationChanged:(NSNotification *)notification

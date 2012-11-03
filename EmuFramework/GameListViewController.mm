@@ -15,6 +15,7 @@
 #import "UIDevice+Util.h"
 #import "UIGlossyButton.h"
 #import "MobClick.h"
+#import "TDBadgedCell.h"
 
 extern int g_currentMB ;
 
@@ -226,6 +227,7 @@ extern int g_currentMB ;
         CGRect rectIntro = CGRectMake(60, 30, 230, 50);
         CGRect rectRate = CGRectMake(180, 0, 90, 30);
         CGRect rectLock = CGRectMake(280, 5, 16, 16);
+        CGRect rectNew = CGRectMake(260, 55, 36, 16);
         float fontSize = 14;
         
         if (isPad()) {
@@ -233,7 +235,8 @@ extern int g_currentMB ;
             rectName = CGRectMake(120, 3, 220, 25);
             rectIntro = CGRectMake(120, 30, 500, 80);
             rectRate = CGRectMake(200, -5, 90, 30);
-            rectLock = CGRectMake(640, 5, 32, 32);
+            rectLock = CGRectMake(640, 5, 28, 28);
+            rectNew = CGRectMake(640, 80, 36, 16);
             fontSize = 20;
         }
         
@@ -251,6 +254,14 @@ extern int g_currentMB ;
         intro.numberOfLines = 0;
         intro.tag = 302;
         
+        TDBadgeView* newBadge = [[TDBadgeView alloc]initWithFrame:rectNew];
+        newBadge.radius = 9;
+        newBadge.badgeColor = [UIColor colorWithRed:0.197 green:0.592 blue:0.219 alpha:1.000];
+        [newBadge setParent:cell];
+        [newBadge setBadgeString:@"New"];
+        [newBadge setShowShadow:YES];
+        newBadge.tag = 305;
+        
         DLStarRatingControl* rate = [[DLStarRatingControl alloc]initWithFrame:rectRate];
         rate.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
         rate.tag = 303;
@@ -265,6 +276,7 @@ extern int g_currentMB ;
         [cell.contentView addSubview:intro];
         [cell.contentView addSubview:rate];
         [cell.contentView addSubview:imgLock];
+        [cell.contentView addSubview:newBadge];
         
         //为视图增加边框
         image.layer.masksToBounds=YES;
@@ -283,6 +295,7 @@ extern int g_currentMB ;
     UILabel* intro = (UILabel*)[cell.contentView viewWithTag:302];
     DLStarRatingControl* rate = (DLStarRatingControl*)[cell.contentView viewWithTag:303];
     UIImageView* imgLock = (UIImageView*)[cell.contentView viewWithTag:304];
+    TDBadgeView* imgNew = (TDBadgeView*)[cell.contentView viewWithTag:305];
 
     NSDictionary* dict = [[[m_romData objectAtIndex:indexPath.section]objectForKey:@"roms"]objectAtIndex:indexPath.row];
     NSString* romPath = [dict objectForKey:@"rom"];
@@ -300,6 +313,8 @@ extern int g_currentMB ;
     intro.text = [dict objectForKey:@"intro"];
     float rateNum = [[dict objectForKey:@"star"]floatValue];
     rate.rating = rateNum;
+    bool isNew = [[dict objectForKey:@"new"]intValue] != 0;
+    imgNew.hidden = !isNew;
     
     imgLock.hidden = [self isRomPurchase:indexPath notify:NO];
     

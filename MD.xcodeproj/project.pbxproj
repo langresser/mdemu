@@ -22,7 +22,7 @@
 		3B44F69615ED1F7A003E18FA /* libbtstack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B44F69515ED1F73003E18FA /* libbtstack.a */; };
 		3B44F69715ED1F7D003E18FA /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B44F68315ED1F54003E18FA /* libfreetype.a */; };
 		3B44F69815ED1F81003E18FA /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B44F68C15ED1F67003E18FA /* liblibpng.a */; };
-		3B45E08115FCA24A00383AA3 /* 梦幻之星4.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08015FCA24A00383AA3 /* 梦幻之星4.smd */; };
+		3B45E08115FCA24A00383AA3 /* 梦幻之星4.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08015FCA24A00383AA3 /* 梦幻之星4.bin */; };
 		3B45E08515FCA77900383AA3 /* 梦幻之星4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08415FCA77900383AA3 /* 梦幻之星4.png */; };
 		3B45E09215FCAB2A00383AA3 /* 怒之铁拳2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08E15FCAB2A00383AA3 /* 怒之铁拳2.bin */; };
 		3B45E09315FCAB2A00383AA3 /* 怒之铁拳2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E08F15FCAB2A00383AA3 /* 怒之铁拳2.png */; };
@@ -76,8 +76,8 @@
 		3B45E10215FD04F400383AA3 /* 漫画地带.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0F915FD04C600383AA3 /* 漫画地带.smd */; };
 		3B45E10415FD04F400383AA3 /* 蚯蚓吉姆2.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0FB15FD04DC00383AA3 /* 蚯蚓吉姆2.smd */; };
 		3B45E10515FD04F400383AA3 /* 武者Aleste.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E0FC15FD04E800383AA3 /* 武者Aleste.bin */; };
-		3B45E10B15FD064900383AA3 /* 联合前线汉化版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10815FD064800383AA3 /* 联合前线汉化版.bin */; };
-		3B45E10C15FD064900383AA3 /* 秘境魔宝中文版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10915FD064900383AA3 /* 秘境魔宝中文版.bin */; };
+		3B45E10B15FD064900383AA3 /* 联合前线汉化版.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10815FD064800383AA3 /* 联合前线汉化版.smd */; };
+		3B45E10C15FD064900383AA3 /* 秘境魔宝中文版.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10915FD064900383AA3 /* 秘境魔宝中文版.smd */; };
 		3B45E10D15FD064900383AA3 /* 新创世纪中文版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10A15FD064900383AA3 /* 新创世纪中文版.bin */; };
 		3B45E10F15FD075F00383AA3 /* 机甲神兵中文版.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E10E15FD075E00383AA3 /* 机甲神兵中文版.bin */; };
 		3B45E11215FD098D00383AA3 /* 霸王三国志中文版.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B45E11015FD098C00383AA3 /* 霸王三国志中文版.smd */; };
@@ -188,6 +188,23 @@
 		3B58AADD15FBD8990062B79F /* star_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AAD315FBD8990062B79F /* star_highlighted@2x.png */; };
 		3B58AADE15FBD8990062B79F /* UIView+Subviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B58AAD515FBD8990062B79F /* UIView+Subviews.m */; };
 		3B58AAE015FBDD2B0062B79F /* gui_lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B58AADF15FBDD2B0062B79F /* gui_lock.png */; };
+		3B5E42C416452538003763FD /* 帝国皇朝亚瑟传说.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42B416452538003763FD /* 帝国皇朝亚瑟传说.jpg */; };
+		3B5E42C516452538003763FD /* 帝国皇朝亚瑟传说.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42B516452538003763FD /* 帝国皇朝亚瑟传说.smd */; };
+		3B5E42C616452538003763FD /* 光明与黑暗众神的遗产.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42B616452538003763FD /* 光明与黑暗众神的遗产.bin */; };
+		3B5E42C716452538003763FD /* 光明与黑暗众神的遗产.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42B716452538003763FD /* 光明与黑暗众神的遗产.jpg */; };
+		3B5E42C816452538003763FD /* 七龙珠超武斗会完结篇.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42B816452538003763FD /* 七龙珠超武斗会完结篇.jpg */; };
+		3B5E42C916452538003763FD /* 七龙珠超武斗会完结篇.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42B916452538003763FD /* 七龙珠超武斗会完结篇.smd */; };
+		3B5E42CA16452538003763FD /* 水浒传.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42BA16452538003763FD /* 水浒传.jpg */; };
+		3B5E42CB16452538003763FD /* 水浒传.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42BB16452538003763FD /* 水浒传.smd */; };
+		3B5E42CC16452538003763FD /* 太阁立志传1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42BC16452538003763FD /* 太阁立志传1.jpg */; };
+		3B5E42CD16452538003763FD /* 太阁立志传1.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42BD16452538003763FD /* 太阁立志传1.smd */; };
+		3B5E42CE16452538003763FD /* 信长野望霸王传.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42BE16452538003763FD /* 信长野望霸王传.bin */; };
+		3B5E42CF16452538003763FD /* 信长野望霸王传.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42BF16452538003763FD /* 信长野望霸王传.jpg */; };
+		3B5E42D016452538003763FD /* 蜘蛛人VS匪首.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42C016452538003763FD /* 蜘蛛人VS匪首.png */; };
+		3B5E42D116452538003763FD /* 蜘蛛人VS匪首.smd in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42C116452538003763FD /* 蜘蛛人VS匪首.smd */; };
+		3B5E42D216452538003763FD /* 终结者2.bin in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42C216452538003763FD /* 终结者2.bin */; };
+		3B5E42D316452538003763FD /* 终结者2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B5E42C316452538003763FD /* 终结者2.png */; };
+		3B5E42EB164527BC003763FD /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E42EA164527BC003763FD /* TDBadgedCell.m */; };
 		3B6FDDA615E15A4B003BAFA1 /* overlays128.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6FDDA215E15A4B003BAFA1 /* overlays128.png */; };
 		3B6FDDA715E15A4B003BAFA1 /* padButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6FDDA315E15A4B003BAFA1 /* padButton.png */; };
 		3B6FDDA815E15A4B003BAFA1 /* Vera.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B6FDDA415E15A4B003BAFA1 /* Vera.ttf */; };
@@ -408,7 +425,7 @@
 		3B44F67B15ED1F54003E18FA /* freetype.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = freetype.xcodeproj; path = ../../3rdframework/freetype/builds/ios/freetype.xcodeproj; sourceTree = "<group>"; };
 		3B44F68415ED1F66003E18FA /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../../3rdframework/png/projects/ios/libpng.xcodeproj; sourceTree = "<group>"; };
 		3B44F68D15ED1F73003E18FA /* btstack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = btstack.xcodeproj; path = ../../3rdframework/btstack/btstack.xcodeproj; sourceTree = "<group>"; };
-		3B45E08015FCA24A00383AA3 /* 梦幻之星4.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "梦幻之星4.smd"; path = "rom/梦幻之星4.smd"; sourceTree = "<group>"; };
+		3B45E08015FCA24A00383AA3 /* 梦幻之星4.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "梦幻之星4.bin"; path = "rom/梦幻之星4.bin"; sourceTree = "<group>"; };
 		3B45E08415FCA77900383AA3 /* 梦幻之星4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "梦幻之星4.png"; path = "rom/梦幻之星4.png"; sourceTree = "<group>"; };
 		3B45E08E15FCAB2A00383AA3 /* 怒之铁拳2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "怒之铁拳2.bin"; path = "rom/怒之铁拳2.bin"; sourceTree = "<group>"; };
 		3B45E08F15FCAB2A00383AA3 /* 怒之铁拳2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "怒之铁拳2.png"; path = "rom/怒之铁拳2.png"; sourceTree = "<group>"; };
@@ -462,8 +479,8 @@
 		3B45E0F915FD04C600383AA3 /* 漫画地带.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "漫画地带.smd"; path = "rom/漫画地带.smd"; sourceTree = "<group>"; };
 		3B45E0FB15FD04DC00383AA3 /* 蚯蚓吉姆2.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "蚯蚓吉姆2.smd"; path = "rom/蚯蚓吉姆2.smd"; sourceTree = "<group>"; };
 		3B45E0FC15FD04E800383AA3 /* 武者Aleste.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "武者Aleste.bin"; path = "rom/武者Aleste.bin"; sourceTree = "<group>"; };
-		3B45E10815FD064800383AA3 /* 联合前线汉化版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "联合前线汉化版.bin"; path = "rom/联合前线汉化版.bin"; sourceTree = "<group>"; };
-		3B45E10915FD064900383AA3 /* 秘境魔宝中文版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "秘境魔宝中文版.bin"; path = "rom/秘境魔宝中文版.bin"; sourceTree = "<group>"; };
+		3B45E10815FD064800383AA3 /* 联合前线汉化版.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "联合前线汉化版.smd"; path = "rom/联合前线汉化版.smd"; sourceTree = "<group>"; };
+		3B45E10915FD064900383AA3 /* 秘境魔宝中文版.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "秘境魔宝中文版.smd"; path = "rom/秘境魔宝中文版.smd"; sourceTree = "<group>"; };
 		3B45E10A15FD064900383AA3 /* 新创世纪中文版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "新创世纪中文版.bin"; path = "rom/新创世纪中文版.bin"; sourceTree = "<group>"; };
 		3B45E10E15FD075E00383AA3 /* 机甲神兵中文版.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "机甲神兵中文版.bin"; path = "rom/机甲神兵中文版.bin"; sourceTree = "<group>"; };
 		3B45E11015FD098C00383AA3 /* 霸王三国志中文版.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "霸王三国志中文版.smd"; path = "rom/霸王三国志中文版.smd"; sourceTree = "<group>"; };
@@ -614,6 +631,24 @@
 		3B58AAD415FBD8990062B79F /* UIView+Subviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Subviews.h"; sourceTree = "<group>"; };
 		3B58AAD515FBD8990062B79F /* UIView+Subviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Subviews.m"; sourceTree = "<group>"; };
 		3B58AADF15FBDD2B0062B79F /* gui_lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_lock.png; path = res/gui_lock.png; sourceTree = "<group>"; };
+		3B5E42B416452538003763FD /* 帝国皇朝亚瑟传说.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "帝国皇朝亚瑟传说.jpg"; path = "rom/帝国皇朝亚瑟传说.jpg"; sourceTree = "<group>"; };
+		3B5E42B516452538003763FD /* 帝国皇朝亚瑟传说.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "帝国皇朝亚瑟传说.smd"; path = "rom/帝国皇朝亚瑟传说.smd"; sourceTree = "<group>"; };
+		3B5E42B616452538003763FD /* 光明与黑暗众神的遗产.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "光明与黑暗众神的遗产.bin"; path = "rom/光明与黑暗众神的遗产.bin"; sourceTree = "<group>"; };
+		3B5E42B716452538003763FD /* 光明与黑暗众神的遗产.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "光明与黑暗众神的遗产.jpg"; path = "rom/光明与黑暗众神的遗产.jpg"; sourceTree = "<group>"; };
+		3B5E42B816452538003763FD /* 七龙珠超武斗会完结篇.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "七龙珠超武斗会完结篇.jpg"; path = "rom/七龙珠超武斗会完结篇.jpg"; sourceTree = "<group>"; };
+		3B5E42B916452538003763FD /* 七龙珠超武斗会完结篇.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "七龙珠超武斗会完结篇.smd"; path = "rom/七龙珠超武斗会完结篇.smd"; sourceTree = "<group>"; };
+		3B5E42BA16452538003763FD /* 水浒传.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "水浒传.jpg"; path = "rom/水浒传.jpg"; sourceTree = "<group>"; };
+		3B5E42BB16452538003763FD /* 水浒传.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "水浒传.smd"; path = "rom/水浒传.smd"; sourceTree = "<group>"; };
+		3B5E42BC16452538003763FD /* 太阁立志传1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "太阁立志传1.jpg"; path = "rom/太阁立志传1.jpg"; sourceTree = "<group>"; };
+		3B5E42BD16452538003763FD /* 太阁立志传1.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "太阁立志传1.smd"; path = "rom/太阁立志传1.smd"; sourceTree = "<group>"; };
+		3B5E42BE16452538003763FD /* 信长野望霸王传.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "信长野望霸王传.bin"; path = "rom/信长野望霸王传.bin"; sourceTree = "<group>"; };
+		3B5E42BF16452538003763FD /* 信长野望霸王传.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "信长野望霸王传.jpg"; path = "rom/信长野望霸王传.jpg"; sourceTree = "<group>"; };
+		3B5E42C016452538003763FD /* 蜘蛛人VS匪首.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "蜘蛛人VS匪首.png"; path = "rom/蜘蛛人VS匪首.png"; sourceTree = "<group>"; };
+		3B5E42C116452538003763FD /* 蜘蛛人VS匪首.smd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "蜘蛛人VS匪首.smd"; path = "rom/蜘蛛人VS匪首.smd"; sourceTree = "<group>"; };
+		3B5E42C216452538003763FD /* 终结者2.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; name = "终结者2.bin"; path = "rom/终结者2.bin"; sourceTree = "<group>"; };
+		3B5E42C316452538003763FD /* 终结者2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "终结者2.png"; path = "rom/终结者2.png"; sourceTree = "<group>"; };
+		3B5E42E9164527BC003763FD /* TDBadgedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDBadgedCell.h; path = EmuFramework/TDBadgedCell.h; sourceTree = SOURCE_ROOT; };
+		3B5E42EA164527BC003763FD /* TDBadgedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDBadgedCell.m; path = EmuFramework/TDBadgedCell.m; sourceTree = SOURCE_ROOT; };
 		3B6FDDA215E15A4B003BAFA1 /* overlays128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overlays128.png; path = MD.emu/res/overlays128.png; sourceTree = "<group>"; };
 		3B6FDDA315E15A4B003BAFA1 /* padButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = padButton.png; path = MD.emu/res/padButton.png; sourceTree = "<group>"; };
 		3B6FDDA415E15A4B003BAFA1 /* Vera.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Vera.ttf; path = MD.emu/res/Vera.ttf; sourceTree = "<group>"; };
@@ -1077,6 +1112,22 @@
 		3B45E07F15FCA01300383AA3 /* rom */ = {
 			isa = PBXGroup;
 			children = (
+				3B5E42B416452538003763FD /* 帝国皇朝亚瑟传说.jpg */,
+				3B5E42B516452538003763FD /* 帝国皇朝亚瑟传说.smd */,
+				3B5E42B616452538003763FD /* 光明与黑暗众神的遗产.bin */,
+				3B5E42B716452538003763FD /* 光明与黑暗众神的遗产.jpg */,
+				3B5E42B816452538003763FD /* 七龙珠超武斗会完结篇.jpg */,
+				3B5E42B916452538003763FD /* 七龙珠超武斗会完结篇.smd */,
+				3B5E42BA16452538003763FD /* 水浒传.jpg */,
+				3B5E42BB16452538003763FD /* 水浒传.smd */,
+				3B5E42BC16452538003763FD /* 太阁立志传1.jpg */,
+				3B5E42BD16452538003763FD /* 太阁立志传1.smd */,
+				3B5E42BE16452538003763FD /* 信长野望霸王传.bin */,
+				3B5E42BF16452538003763FD /* 信长野望霸王传.jpg */,
+				3B5E42C016452538003763FD /* 蜘蛛人VS匪首.png */,
+				3B5E42C116452538003763FD /* 蜘蛛人VS匪首.smd */,
+				3B5E42C216452538003763FD /* 终结者2.bin */,
+				3B5E42C316452538003763FD /* 终结者2.png */,
 				3B45E16715FD16F400383AA3 /* 火枪英雄.jpg */,
 				3B45E16815FD16F400383AA3 /* 秘境魔宝中文版.png */,
 				3B45E16915FD16F400383AA3 /* 热血足球.jpg */,
@@ -1132,8 +1183,8 @@
 				3B45E11015FD098C00383AA3 /* 霸王三国志中文版.smd */,
 				3B45E11115FD098C00383AA3 /* 光之继承者中文版.bin */,
 				3B45E10E15FD075E00383AA3 /* 机甲神兵中文版.bin */,
-				3B45E10815FD064800383AA3 /* 联合前线汉化版.bin */,
-				3B45E10915FD064900383AA3 /* 秘境魔宝中文版.bin */,
+				3B45E10815FD064800383AA3 /* 联合前线汉化版.smd */,
+				3B45E10915FD064900383AA3 /* 秘境魔宝中文版.smd */,
 				3B45E10A15FD064900383AA3 /* 新创世纪中文版.bin */,
 				3B45E0F415FD04A300383AA3 /* 蝙蝠侠与罗宾的冒险.bin */,
 				3B45E0F515FD04A500383AA3 /* 饿狼传说.bin */,
@@ -1188,7 +1239,7 @@
 				3B45E09015FCAB2A00383AA3 /* 怒之铁拳3.bin */,
 				3B45E09115FCAB2A00383AA3 /* 怒之铁拳3.png */,
 				3B45E08415FCA77900383AA3 /* 梦幻之星4.png */,
-				3B45E08015FCA24A00383AA3 /* 梦幻之星4.smd */,
+				3B45E08015FCA24A00383AA3 /* 梦幻之星4.bin */,
 			);
 			name = rom;
 			sourceTree = "<group>";
@@ -2315,6 +2366,8 @@
 		69E5584115061D51001407C0 /* EmuFramework */ = {
 			isa = PBXGroup;
 			children = (
+				3B5E42E9164527BC003763FD /* TDBadgedCell.h */,
+				3B5E42EA164527BC003763FD /* TDBadgedCell.m */,
 				3B45E1A215FD1DD900383AA3 /* UIGlossyButton.h */,
 				3B45E1A315FD1DD900383AA3 /* UIGlossyButton.m */,
 				3B45E1A615FD1DD900383AA3 /* UIImageView+Reflected.h */,
@@ -2530,7 +2583,7 @@
 				3B58AADC15FBD8990062B79F /* star_highlighted.png in Resources */,
 				3B58AADD15FBD8990062B79F /* star_highlighted@2x.png in Resources */,
 				3B58AAE015FBDD2B0062B79F /* gui_lock.png in Resources */,
-				3B45E08115FCA24A00383AA3 /* 梦幻之星4.smd in Resources */,
+				3B45E08115FCA24A00383AA3 /* 梦幻之星4.bin in Resources */,
 				3B45E08515FCA77900383AA3 /* 梦幻之星4.png in Resources */,
 				3B45E09215FCAB2A00383AA3 /* 怒之铁拳2.bin in Resources */,
 				3B45E09315FCAB2A00383AA3 /* 怒之铁拳2.png in Resources */,
@@ -2584,8 +2637,8 @@
 				3B45E10215FD04F400383AA3 /* 漫画地带.smd in Resources */,
 				3B45E10415FD04F400383AA3 /* 蚯蚓吉姆2.smd in Resources */,
 				3B45E10515FD04F400383AA3 /* 武者Aleste.bin in Resources */,
-				3B45E10B15FD064900383AA3 /* 联合前线汉化版.bin in Resources */,
-				3B45E10C15FD064900383AA3 /* 秘境魔宝中文版.bin in Resources */,
+				3B45E10B15FD064900383AA3 /* 联合前线汉化版.smd in Resources */,
+				3B45E10C15FD064900383AA3 /* 秘境魔宝中文版.smd in Resources */,
 				3B45E10D15FD064900383AA3 /* 新创世纪中文版.bin in Resources */,
 				3B45E10F15FD075F00383AA3 /* 机甲神兵中文版.bin in Resources */,
 				3B45E11215FD098D00383AA3 /* 霸王三国志中文版.smd in Resources */,
@@ -2662,6 +2715,22 @@
 				3B4716C815FE3462000FE47C /* icon_114.png in Resources */,
 				3B4716C915FE3462000FE47C /* icon_144.png in Resources */,
 				3B4716D215FE7571000FE47C /* pause.png in Resources */,
+				3B5E42C416452538003763FD /* 帝国皇朝亚瑟传说.jpg in Resources */,
+				3B5E42C516452538003763FD /* 帝国皇朝亚瑟传说.smd in Resources */,
+				3B5E42C616452538003763FD /* 光明与黑暗众神的遗产.bin in Resources */,
+				3B5E42C716452538003763FD /* 光明与黑暗众神的遗产.jpg in Resources */,
+				3B5E42C816452538003763FD /* 七龙珠超武斗会完结篇.jpg in Resources */,
+				3B5E42C916452538003763FD /* 七龙珠超武斗会完结篇.smd in Resources */,
+				3B5E42CA16452538003763FD /* 水浒传.jpg in Resources */,
+				3B5E42CB16452538003763FD /* 水浒传.smd in Resources */,
+				3B5E42CC16452538003763FD /* 太阁立志传1.jpg in Resources */,
+				3B5E42CD16452538003763FD /* 太阁立志传1.smd in Resources */,
+				3B5E42CE16452538003763FD /* 信长野望霸王传.bin in Resources */,
+				3B5E42CF16452538003763FD /* 信长野望霸王传.jpg in Resources */,
+				3B5E42D016452538003763FD /* 蜘蛛人VS匪首.png in Resources */,
+				3B5E42D116452538003763FD /* 蜘蛛人VS匪首.smd in Resources */,
+				3B5E42D216452538003763FD /* 终结者2.bin in Resources */,
+				3B5E42D316452538003763FD /* 终结者2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2767,6 +2836,7 @@
 				3B45E1AD15FD1DD900383AA3 /* UIView+LayerEffects.m in Sources */,
 				3B45E20D15FD27EE00383AA3 /* AdMoGoAdapterGoogleAdMobAds.m in Sources */,
 				3B45E20F15FD27EE00383AA3 /* AdMoGoAdapterDoMob.m in Sources */,
+				3B5E42EB164527BC003763FD /* TDBadgedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2857,8 +2927,8 @@
 		69CFDD711506039500F0C0AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: ADAM GEISS (8SJU4ZD534)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ADAM GEISS (8SJU4ZD534)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Jia (DURHCMMSUL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wang Jia (DURHCMMSUL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/SDK/DianJinFramework\"",
@@ -2893,8 +2963,9 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = MDAll;
-				PROVISIONING_PROFILE = "104ADA9F-7D80-4823-A4C3-7EF6DF5F6F2F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "104ADA9F-7D80-4823-A4C3-7EF6DF5F6F2F";
+				PROVISIONING_PROFILE = "A187660D-3577-4A7C-9151-6BE4F2F0D5E3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A187660D-3577-4A7C-9151-6BE4F2F0D5E3";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2902,8 +2973,8 @@
 		69CFDD721506039500F0C0AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: ADAM GEISS (8SJU4ZD534)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ADAM GEISS (8SJU4ZD534)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wang Jia (DURHCMMSUL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wang Jia (DURHCMMSUL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/SDK/DianJinFramework\"",
@@ -2938,8 +3009,9 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = MDAll;
-				PROVISIONING_PROFILE = "104ADA9F-7D80-4823-A4C3-7EF6DF5F6F2F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "104ADA9F-7D80-4823-A4C3-7EF6DF5F6F2F";
+				PROVISIONING_PROFILE = "A187660D-3577-4A7C-9151-6BE4F2F0D5E3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A187660D-3577-4A7C-9151-6BE4F2F0D5E3";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

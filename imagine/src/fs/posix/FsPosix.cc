@@ -21,7 +21,7 @@
 #include <errno.h>
 
 #if defined(__APPLE__)
-	#define SELECTOR_CONST
+	#define SELECTOR_CONST const
 #else
 	#define SELECTOR_CONST const
 #endif
@@ -29,7 +29,8 @@
 #if defined(CONFIG_BASE_ANDROID)
 	#define CMP_CAST (int (*)(const dirent**, const dirent**))
 #elif defined(CONFIG_BASE_IOS) || defined(CONFIG_BASE_MACOSX)
-	#define CMP_CAST (int (*)(const void*, const void*))
+	//#define CMP_CAST (int (*)(const void*, const void*))
+    #define CMP_CAST (int (*)(const dirent**, const dirent**))
 #else
 	#define CMP_CAST
 #endif
